@@ -13,5 +13,9 @@ namespace Esubao.Controllers.DXF
         {
             return View();
         }
+        public ActionResult Homepage()
+        {
+            return View();
+        }
     }
 }
