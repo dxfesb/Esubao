@@ -4,12 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Esubao.Controllers.ZHX
+namespace Esubao.Controllers.MT
 {
-    public class DefaultController : Controller
+    public class OrderonlineController : Controller
     {
-        // GET: Default
+        // GET: Orderonline
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult Orderonline()
         {
             return View();
         }

@@ -4,12 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Esubao.Controllers
+namespace Esubao.Controllers.ZHX
 {
-    public class DefaultController : Controller
+    public class RegisterController : Controller
     {
-        // GET: Default
+        // GET: Register
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult Register()
         {
             return View();
         }
