@@ -6,10 +6,14 @@ using System.Web.Mvc;
 using Esubao.Controllers.MT;
 namespace Esubao.Controllers.MT
 {
-    public class DefaultController : Controller
+    public class BatchorderController : Controller
     {
-        // GET: Default
+        // GET: Batchorder
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult Batchorder()
         {
             return View();
         }

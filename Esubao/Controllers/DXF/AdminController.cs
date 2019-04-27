@@ -4,12 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Esubao.Controllers
+namespace Esubao.Controllers.DXF
 {
-    public class DefaultController : Controller
+    public class AdminController : Controller
     {
-        // GET: Default
+        // GET: Admin
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult Adminpage()
         {
             return View();
         }
