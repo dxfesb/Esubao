@@ -116,10 +116,6 @@
     <Compile Include="Controllers\DXF\AdminController.cs" />
     <Compile Include="Controllers\DXF\DefaultController.cs" />
     <Compile Include="Controllers\LWJ\MyinforController.cs" />
-    <Compile Include="Controllers\MT\BatchorderController.cs" />
-    <Compile Include="Controllers\MT\HelpSupportController.cs" />
-    <Compile Include="Controllers\MT\OrderonlineController.cs" />
-    <Compile Include="Controllers\ZHX\HomePageController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -154,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\MT\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
