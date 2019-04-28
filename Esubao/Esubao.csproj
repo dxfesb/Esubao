@@ -92,6 +92,7 @@
     <Content Include="image\h-loginfooter.png" />
     <Content Include="image\h-loginfooter1.png" />
     <Content Include="image\h-user-banner.jpg" />
+    <Content Include="image\help_banner .jpg" />
     <Content Include="image\icon_lock.png" />
     <Content Include="image\loginfooter-jiameng1.png" />
     <Content Include="image\loginfooter-platform1.png" />
@@ -109,6 +110,7 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="script\bootstrap-3.3.7-dist\jquery-3.3.1.js" />
+    <Content Include="script\vue.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +118,7 @@
     <Compile Include="Controllers\DXF\AdminController.cs" />
     <Compile Include="Controllers\DXF\DefaultController.cs" />
     <Compile Include="Controllers\LWJ\MyinforController.cs" />
+    <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -141,6 +144,7 @@
     <Content Include="Views\HelpSupport\HelpSupport.cshtml" />
     <Content Include="Views\Admin\Adminpage.cshtml" />
     <Content Include="Views\Myinfor\MyInfor.cshtml" />
+    <Content Include="Views\Helpe\HelpeIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -150,7 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\MT\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
