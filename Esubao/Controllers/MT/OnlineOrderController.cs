@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Esubao.Controllers.MT;
+
 namespace Esubao.Controllers.MT
 {
-    public class BatchorderController : Controller
+    public class OnlineOrderController : Controller
     {
-        // GET: Batchorder
+        // GET: OnlineOrder
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Batchorder()
+        public ActionResult OnlineOrder()
+        {
+            return View();
+        }
+        public ActionResult Jin()
         {
             return View();
         }
