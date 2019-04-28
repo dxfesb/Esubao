@@ -89,6 +89,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
+    <Content Include="image\h-loginfooter.png" />
+    <Content Include="image\h-loginfooter1.png" />
+    <Content Include="image\h-user-banner.jpg" />
+    <Content Include="image\icon_lock.png" />
+    <Content Include="image\loginfooter-jiameng1.png" />
+    <Content Include="image\loginfooter-platform1.png" />
+    <Content Include="image\loginfooter-solution1.png" />
+    <Content Include="image\my_order_unselect_ico%401x.png" />
+    <Content Include="image\password.png" />
+    <Content Include="image\timg.jpg" />
+    <Content Include="image\userName.png" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap.css" />
@@ -108,9 +119,7 @@
     <Compile Include="Controllers\MT\BatchorderController.cs" />
     <Compile Include="Controllers\MT\HelpSupportController.cs" />
     <Compile Include="Controllers\MT\OrderonlineController.cs" />
-    <Compile Include="Controllers\ZHX\HomePageController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
-    <Compile Include="Controllers\ZHX\RegisterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -127,15 +136,7 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Views\Default\Homepage.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
-    <Content Include="Views\Register\Register.cshtml" />
-    <Content Include="Views\HomePage\HomePage.cshtml" />
-    <Content Include="Views\Orderonline\Orderonline.cshtml" />
-    <Content Include="Views\Batchorder\Batchorder.cshtml" />
-    <Content Include="Views\HelpSupport\HelpSupport.cshtml" />
-    <Content Include="Views\Admin\Adminpage.cshtml" />
-    <Content Include="Views\Myinfor\MyInfor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
