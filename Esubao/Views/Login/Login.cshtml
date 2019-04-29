@@ -14,32 +14,178 @@
     <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet" />
     <link href="~/script/ZHX/Login.css" rel="stylesheet" />
+    <link href="~/Views/Login/lunbo.css" rel="stylesheet" />
     <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            margin: 0px auto;
+            position: relative;
+        }
+
+        .pic {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+        }
+
+            .pic ul li {
+                list-style-type: none;
+                width: 100%;
+                height: 500px;
+                position: relative;
+                overflow: hidden;
+            }
+
+                .pic ul li .img1 {
+                    position: absolute;
+                    left: -760px;
+                    top: 0px;
+                }
+
+        .nav-img {
+            width: 100px;
+            height: 14px;
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+        }
+
+            .nav-img ul li {
+                list-style-type: none;
+                width: 12px;
+                height: 12px;
+                float: left;
+                margin-right: 5px;
+                cursor: pointer;
+                border: 1px solid #fff;
+            }
+
+            .nav-img ul .bg {
+                background: #ff7300;
+                width: 14px;
+                height: 14px;
+                border: none;
+            }
+    </style>
+    <script type="text/javascript">
+        var i = -1;
+        var time = 0;
+        junmper();
+        function junmper() {
+            i++;
+            if (i > 2)
+                i = 0;
+            $(".nav-img ul li").eq(i).addClass("bg").siblings().removeClass("bg");
+            $(".pic ul li").eq(i).fadeIn(100).siblings().fadeOut(100);
+            $(".pic ul li").eq(i).find(".img1").css({ left: "-760px" });
+            $(".pic ul li").eq(i).find(".img2").css({ display: "none", left: "0px" });
+            $(".pic ul li").eq(i).find(".img1").animate({ left: "0px" }, 500, function () {
+                $(".pic ul li").eq(i).find(".img2").css("display", "block");
+                $(".pic ul li").eq(i).find(".img2").animate({ left: "0px" }, 500);
+            });
+
+        }
+        time = setInterval("junmper()", 1500);
+        $(".nav-img ul li").click(function () {
+            i = $(this).index();
+            $(".nav-img ul li").eq(i).addClass("bg").siblings().removeClass("bg");
+            $(".pic ul li").eq(i).fadeIn(100).siblings().fadeOut(100);
+            $(".pic ul li").eq(i).find(".img1").css({ left: "-760px" });
+            $(".pic ul li").eq(i).find(".img2").css({ display: "none", left: "-15px" });
+            $(".pic ul li").eq(i).find(".img1").animate({ left: "0px" }, 500, function () {
+                $(".pic ul li").eq(i).find(".img2").css("display", "block");
+                $(".pic ul li").eq(i).find(".img2").animate({ left: "0px" }, 500);
+            });
+
+        })
+        $(".nav-img ul li").hover(function () {
+            clearInterval(time);
+        }, function () {
+            time = setInterval("junmper()", 3700);
+        })
+    </script>
 </head>
 <body>
     <div class="container-fluid">
         @*头部导航*@
         <div class="row bg-danger navr_img" style="height:15vh">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 ">
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
                     <a style="font-size:8vh;font-family:'AR BERKLEY';text-decoration:none;color:#23527c; margin-left:30px;line-height:15vh;">E速宝</a><span class="navr_span">欢迎您登录</span>
                 </div>
-                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" style="margin-top:20px">
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" style="margin-top:20px">
                     <nav class="nav navbar-form" >
-                        <ul class="nav  navbar-nav" >
-                            <li class="active">
-                                <a href="#">首页 </a></li>
-                            <li><a href="#">文件</a></li>
-                            <li><a href="#">编辑</a></li>
-                            <li><a href="#">视图</a></li>
-                            <li><a href="#">项目</a></li>
-                        </ul>
+                            <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a href="#">首页 </a>
+                                </li>
+                                <li><a href="#">文件</a></li>
+                                <li><a href="#">编辑</a></li>
+                                <li><a href="#">视图</a></li>
+                                <li><a href="#">项目</a></li>
+                            </ul>
                     </nav>
                 </div>
             </div>
         </div>
-        <div class="row"></div>
+        <div class="row" style="height:80vh; background-color:#f3f9fb">
+        <div class="box">
+                <div class="pic col-xs-12 col-sm-12 col-md-12 col-lg-12" style="margin:0 auto">
+                    <ul style="width:100%">
+                        <li style="background:url(image/h-corporate-banner.png) center;width:100%">
+                            <img class="img1" src="~/image/h-corporate-banner.png" style="width:100%" />
+                        </li>
+                        <li style="background:url(image/h-user-banner.jpg) center;width:100%">
+                            <img class="img1" src="~/image/h-user-banner.jpg" style="width:100%" />
+                        </li>
+                    </ul>
+                </div>
+                <div class="" style="width:350px;height:300px; border:2px solid #23527c;position:absolute;top:110px;right:30px;">
+                        <div class="h-loginHead">
+                         <p>用户登录</p>
+                        </div>
+                        <div class="h-loginForm">
+                            <form method="post" id="login_form">
+                                <div class="h-loginInfo"><input type="text" class="form-control h-username" name="account" placeholder="请输入用户名"></div>
+                                <div class="h-loginInfo"><input type="password" autocomplete="off" class="form-control h-password" name="pwd" placeholder="请输入密码"></div>
+                                <div class="h-loginInfo3">
+                                    <input type="text" name="verificationcode" id="verificationcode" placeholder="请输入验证码">
+                                    <span class="h-code"><img id="imgcode" src="/user/verificationcode"></span>
+                                    <a class="h-refresh" id="shuaxin"><img src="/assets/images/shuaxin.png"></a>
+                                </div>
+                            </form>
+                            <div class="h-loginInfo2">
+                                <div class="h-loginCheck">
+                                    <input type="checkbox" id="check1" value="option1" checked="">
+                                    <label for="check1">下次自动登录</label>
+                                </div>
+                                <div class="h-forgot"><a href="/front/huiyzhx/h-member-zhhmm">忘记密码？</a></div>
+                            </div>
+                        </div>
+                        <div class="h-lfBtn">
+                            <!--<a type="button" class="h-mr10 btn btn-login2" href="javascript:;">登录</a>-->
+                            <button type="button" class="h-mr10 btn btn-login2">登录</button>
+                            <a type="button" class="btn btn-regist2" href="/front/register/register1">注册</a>
+                    </div>
+
+
+                </div>
+                <div class="nav-img">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </div>
+        </div>
+            </div>
         <div class="row"></div>
         <div class="row"></div>
         <div class="row"></div>
