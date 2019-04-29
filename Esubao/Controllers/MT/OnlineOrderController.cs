@@ -6,14 +6,18 @@ using System.Web.Mvc;
 
 namespace Esubao.Controllers.MT
 {
-    public class HelpSupportController : Controller
+    public class OnlineOrderController : Controller
     {
-        // GET: HelpSupport
+        // GET: OnlineOrder
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult HelpSupport()
+        public ActionResult OnlineOrder()
+        {
+            return View();
+        }
+        public ActionResult Jin()
         {
             return View();
         }

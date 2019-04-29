@@ -113,6 +113,7 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="script\bootstrap-3.3.7-dist\jquery-3.3.1.js" />
+    <Content Include="script\vue.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

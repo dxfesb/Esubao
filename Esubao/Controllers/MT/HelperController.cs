@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Esubao.Controllers.MT;
+
 namespace Esubao.Controllers.MT
 {
-    public class BatchorderController : Controller
+    public class HelperController : Controller
     {
-        // GET: Batchorder
+        // GET: Helper
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Batchorder()
-        {
+        public ActionResult HelperIndex() {
+            return View();
+        }
+        public ActionResult Jin() {
             return View();
         }
     }
