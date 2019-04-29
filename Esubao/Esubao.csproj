@@ -100,8 +100,11 @@
     <Content Include="image\loginfooter-platform1.png" />
     <Content Include="image\loginfooter-solution1.png" />
     <Content Include="image\logo.jpg" />
+    <Content Include="image\logotm.png" />
+    <Content Include="image\map_v4.png" />
     <Content Include="image\my_order_unselect_ico%401x.png" />
     <Content Include="image\password.png" />
+    <Content Include="image\spider_search_v4.png" />
     <Content Include="image\timg.jpg" />
     <Content Include="image\userName.png" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
@@ -118,8 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DXF\AdminController.cs" />
-    <Compile Include="Controllers\DXF\DefaultController.cs" />
+    <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
     <Compile Include="Controllers\LWJ\MyinforController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
@@ -141,6 +143,7 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Helpe\HelpeIndex.cshtml" />
+    <Content Include="Views\Logisticstracking\Logisticstrakcing.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

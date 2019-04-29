@@ -6,14 +6,14 @@ using System.Web.Mvc;
 
 namespace Esubao.Controllers.DXF
 {
-    public class DefaultController : Controller
+    public class LogisticstrackingController : Controller
     {
-        // GET: Default
+        // GET: Logisticstracking
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Homepage()
+        public ActionResult Logisticstrakcing()
         {
             return View();
         }
