@@ -17,5 +17,12 @@ namespace Esubao.Controllers.MT
         {
             return View();
         }
+        public ActionResult HelpeDaYi() {
+            return View();
+        }
+        public ActionResult HelpZiXun()
+        {
+            return View();
+        }
     }
 }

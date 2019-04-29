@@ -141,6 +141,8 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Helpe\HelpeIndex.cshtml" />
+    <Content Include="Views\Helpe\HelpZiXun.cshtml" />
+    <Content Include="Views\Helpe\HelpeDaYi.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
