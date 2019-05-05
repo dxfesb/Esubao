@@ -6,14 +6,14 @@ using System.Web.Mvc;
 
 namespace Esubao.Controllers.ZHX
 {
-    public class LoginController : Controller
+    public class LoginindexController : Controller
     {
-        // GET: Login
+        // GET: Loginindex
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Login()
+        public ActionResult loginindex()
         {
             return View();
         }
