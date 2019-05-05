@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Esubao.Controllers.ZHX
+namespace Esubao.Controllers.LWJ
 {
-    public class LoginController : Controller
+    public class BootController : Controller
     {
-        // GET: Login
+        // GET: Boot
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult LoginIndex()
+        public ActionResult Wode()
         {
             return View();
         }

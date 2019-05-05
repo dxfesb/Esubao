@@ -4,16 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Esubao.Controllers.ZHX
+namespace Esubao.Controllers.LWJ
 {
-    public class LoginController : Controller
+    public class HomeController : Controller
     {
-        // GET: Login
+        // GET: Home
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult LoginIndex()
+
+        public ActionResult Huayu()
         {
             return View();
         }

@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Esubao.Controllers.LWJ
+namespace Esubao.Controllers.ZHX
 {
-    public class MyinforController : Controller
+    public class LoginindexController : Controller
     {
-        // GET: Myinfor
+        // GET: Loginindex
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult MyInfor()
+        public ActionResult loginindex()
         {
             return View();
         }

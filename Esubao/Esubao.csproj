@@ -94,18 +94,19 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="image\bg.jpg" />
+    <Content Include="image\is2.jpg" />
     <Content Include="image\h-corporate-banner.png" />
     <Content Include="image\h-loginfooter.png" />
     <Content Include="image\h-loginfooter1.png" />
     <Content Include="image\h-user-banner.jpg" />
     <Content Include="image\help_banner .jpg" />
     <Content Include="image\icon_lock.png" />
+    <Content Include="image\is3.jpg" />
     <Content Include="image\loginfooter-jiameng1.png" />
     <Content Include="image\loginfooter-platform1.png" />
     <Content Include="image\loginfooter-solution1.png" />
     <Content Include="image\logo.jpg" />
-    <Content Include="image\logotm.png" />
-    <Content Include="image\map_v4.png" />
+    <Content Include="image\is1.jpg" />
     <Content Include="image\my_order_unselect_ico%401x.png" />
     <Content Include="image\password.png" />
     <Content Include="image\spider_search_v4.png" />
@@ -120,13 +121,15 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="script\bootstrap-3.3.7-dist\jquery-3.3.1.js" />
+    <Content Include="script\luobo\common\style.css" />
+    <Content Include="script\luobo\js\fullplay.js" />
+    <Content Include="script\luobo\js\jquery-1.9.1.min.js" />
     <Content Include="script\vue.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
-    <Compile Include="Controllers\LWJ\MyinforController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -145,9 +148,9 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Helpe\HelpeIndex.cshtml" />
     <Content Include="Views\Logisticstracking\Logisticstrakcing.cshtml" />
+    <Content Include="Views\Login\LoginIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,7 +160,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\LWJ\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\HomePage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
