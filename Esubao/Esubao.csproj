@@ -90,16 +90,19 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="image\bg.jpg" />
+    <Content Include="image\GF%29BDY%28DD%29[MHNXMW`{W~_9.jpg" />
     <Content Include="image\h-corporate-banner.png" />
     <Content Include="image\h-loginfooter.png" />
     <Content Include="image\h-loginfooter1.png" />
     <Content Include="image\h-user-banner.jpg" />
     <Content Include="image\help_banner .jpg" />
     <Content Include="image\icon_lock.png" />
+    <Content Include="image\J%40S4]E~P}QNLSTPMOND7]%244.jpg" />
     <Content Include="image\loginfooter-jiameng1.png" />
     <Content Include="image\loginfooter-platform1.png" />
     <Content Include="image\loginfooter-solution1.png" />
     <Content Include="image\logo.jpg" />
+    <Content Include="image\MI18`[_86YL8O34[%28J%29{%29{C.jpg" />
     <Content Include="image\my_order_unselect_ico%401x.png" />
     <Content Include="image\password.png" />
     <Content Include="image\timg.jpg" />
@@ -114,7 +117,6 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="script\bootstrap-3.3.7-dist\jquery-3.3.1.js" />
     <Content Include="script\vue.min.js" />
-    <Content Include="Views\Login\Esblogin.css" />
     <Content Include="Views\Login\lunbo.css" />
     <Content Include="Web.config" />
   </ItemGroup>
