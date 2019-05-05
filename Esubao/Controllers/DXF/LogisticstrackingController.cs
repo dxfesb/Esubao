@@ -25,6 +25,14 @@ namespace Esubao.Controllers.DXF
         {
             return View();
         }
+        /// <summary>
+        /// 物流查询接口调用
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="certificate"></param>
+        /// <param name="chain"></param>
+        /// <param name="errors"></param>
+        /// <returns></returns>
         public static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
         {
             return true;
@@ -46,7 +54,7 @@ namespace Esubao.Controllers.DXF
                 url = url + "?" + querys;
             }
 
-            if (host.Contains("https://"))
+            if (host.Contains("http://"))
             {
                 ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
                 httpRequest = (HttpWebRequest)WebRequest.CreateDefault(new Uri(url));
@@ -76,11 +84,11 @@ namespace Esubao.Controllers.DXF
             Console.WriteLine(httpResponse.StatusCode);
             Console.WriteLine(httpResponse.Method);
             Console.WriteLine(httpResponse.Headers);
-            Stream st = httpResponse.GetResponseStream();
-            StreamReader reader = new StreamReader(st, Encoding.GetEncoding("utf-8"));
-            Console.WriteLine(reader.ReadToEnd());
-            Console.WriteLine("\n");
-            return Json(reader.ReadToEnd());
+            using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
+            {
+                var respContene = reader.ReadToEnd();
+                return Json( respContene);
+            }  
         }      
 
     }
