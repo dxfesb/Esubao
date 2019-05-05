@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Esubao.Controllers.DXF
+namespace Esubao.Controllers.MT
 {
-    public class DefaultController : Controller
+    public class HelpeController : Controller
     {
-        // GET: Default
+        // GET: Helpe
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Homepage()
+        public ActionResult HelpeIndex()
         {
             return View();
         }
