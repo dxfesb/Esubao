@@ -121,9 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DXF\AdminController.cs" />
-    <Compile Include="Controllers\DXF\DefaultController.cs" />
-    <Compile Include="Controllers\LWJ\MyinforController.cs" />
+    <Compile Include="Controllers\LWJ\BootController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -143,12 +141,11 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Register\Register.cshtml" />
-    <Content Include="Views\HomePage\HomePage.cshtml" />
     <Content Include="Views\Orderonline\Orderonline.cshtml" />
     <Content Include="Views\Batchorder\Batchorder.cshtml" />
     <Content Include="Views\HelpSupport\HelpSupport.cshtml" />
     <Content Include="Views\Admin\Adminpage.cshtml" />
-    <Content Include="Views\Myinfor\MyInfor.cshtml" />
+    <Content Include="Views\Boot\Wode.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -158,7 +155,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\DXF\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\HomePage\" />
+    <Folder Include="Views\Myinfor\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
