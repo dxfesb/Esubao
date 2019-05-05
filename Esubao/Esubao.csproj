@@ -151,6 +151,7 @@
     <Content Include="Views\Helpe\HelpeIndex.cshtml" />
     <Content Include="Views\Logisticstracking\Logisticstrakcing.cshtml" />
     <Content Include="Views\Login\LoginIndex.cshtml" />
+    <Content Include="Views\Shared\Esubaohead.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
