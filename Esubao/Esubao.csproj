@@ -115,7 +115,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DXF\AdminController.cs" />
     <Compile Include="Controllers\DXF\DefaultController.cs" />
-    <Compile Include="Controllers\LWJ\MyinforController.cs" />
+    <Compile Include="Controllers\LWJ\HomeController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -141,6 +141,7 @@
     <Content Include="Views\HelpSupport\HelpSupport.cshtml" />
     <Content Include="Views\Admin\Adminpage.cshtml" />
     <Content Include="Views\Myinfor\MyInfor.cshtml" />
+    <Content Include="Views\Home\Huayu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
