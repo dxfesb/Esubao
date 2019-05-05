@@ -351,6 +351,27 @@
                 margin-left: 5px;
             }
     </style>
+    <script type="text/javascript">
+       
+        $(function () {
+            $("#btn_search").click(function () {
+                var number = $("#number").val();
+                $.ajax({
+                    url: "/Logisticstracking/wLselect",
+                    dataType: "json",
+                    type:"post",
+                    data: { "number": number },
+                    success: function (rs) {
+                        alert(rs);
+
+                    }
+
+                })
+            })
+          
+
+        })
+    </script>
 </head>
 <body>
     <div class="container-fluid">
@@ -387,9 +408,9 @@
                         <span class="input-group-addon">
                             <img src="~/image/logotm.png" style="width:80px;height:60px" />
                         </span>
-                        <input type="text" class="form-control" style="height:76px" />
+                        <input type="text" class="form-control" style="height:76px"  id="number"/>
                         <span class="input-group-addon" style="background-color:#ff7800">
-                            <button class="btn-search"></button>
+                            <button class="btn-search" id="btn_search"></button>
                         </span>
                     </div>
                 </div>
