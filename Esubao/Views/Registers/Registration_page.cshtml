@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registration_page</title>
+    <link href="~/script/touwei.css" rel="stylesheet" />
+    @*bootstrap引用*@
+    <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
+    <script src="/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0px;
+            height: 0px;
+        }
+
+        .rshead {
+            background-image: url('../../image/h-corporateRegist-banner.jpg');
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="padding:0 0 0 0;"> 
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 rshead" style="height:30vh;">
+            <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:15vh;padding:0px;margin:0px;">
+                @Html.Partial("Esubaohead")
+            </div>
+        </div>
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:95vh;background-color:#b6ff00">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                @*div注册步骤*@
+                @*div注册内容*@
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -94,6 +94,9 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="image\bg.jpg" />
+    <Content Include="image\erweima.png" />
+    <Content Include="image\erweimaer.png" />
+    <Content Include="image\h-corporateRegist-banner.jpg" />
     <Content Include="image\is2.jpg" />
     <Content Include="image\h-corporate-banner.png" />
     <Content Include="image\h-loginfooter.png" />
@@ -124,6 +127,7 @@
     <Content Include="script\luobo\common\style.css" />
     <Content Include="script\luobo\js\fullplay.js" />
     <Content Include="script\luobo\js\jquery-1.9.1.min.js" />
+    <Content Include="script\touwei.css" />
     <Content Include="script\vue.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -132,6 +136,7 @@
     <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
+    <Compile Include="Controllers\ZHX\RegistersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -152,6 +157,8 @@
     <Content Include="Views\Logisticstracking\Logisticstrakcing.cshtml" />
     <Content Include="Views\Login\LoginIndex.cshtml" />
     <Content Include="Views\Shared\Esubaohead.cshtml" />
+    <Content Include="Views\Registers\Registration_page.cshtml" />
+    <Content Include="Views\Shared\Esubaofool.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

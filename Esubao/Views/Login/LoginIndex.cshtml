@@ -11,13 +11,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>loginindex</title>
     <script src="/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
+    @*引用头部尾部的样式*@
+    <link href="~/script/touwei.css" rel="stylesheet" />
     @*背景图轮播引用*@
     <link href="~/script/luobo/common/style.css" rel="stylesheet" />
     <script src="~/script/luobo/js/jquery-1.9.1.min.js"></script>
     <script src="~/script/luobo/js/fullplay.js"></script>
     @*bootstrap引用*@
     <script src="/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link href="/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         html {
@@ -240,60 +241,6 @@
             font-family: "microsoft yahei";
             display: block;
         }
-
-        .fbInner {
-            display: table-cell;
-            vertical-align: middle;
-            overflow: hidden;
-            margin: auto;
-        }
-
-        .h-footL {
-            margin-top: 40px;
-        }
-
-        .fbInner .h-footL {
-            display: inline-block;
-            text-align: left;
-            float: left;
-            width: 58%;
-        }
-
-            .fbInner .h-footL span.h-footPhone {
-                font-size: 16px;
-                margin-top: 0;
-            }
-
-            .fbInner .h-footL span {
-                display: block;
-                font-size: 12px;
-                color: #fff;
-                font-family: "microsoft yahei";
-                margin-top: 18px;
-            }
-
-        .h-footIR {
-            float: right;
-        }
-
-            .h-footIR ul {
-                margin-top: 50px;
-            }
-
-                .h-footIR ul li {
-                    float: left;
-                    margin-left: 30px;
-                }
-
-                    .h-footIR ul li > a {
-                        color: #fff;
-                        text-decoration: none;
-                    }
-
-                    .h-footIR ul li > p {
-                        margin-top: 25px;
-                        margin-right: 15px;
-                    }
     </style>
     <script src="/script/luobo/js/fullplay.js"></script>
 </head>
@@ -391,37 +338,9 @@
             </div>
 
         </div>
-        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:35vh;width:1349px; background-color:#333">
-            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
-            <div class="fbInner col-xs-11 col-sm-11 col-md-11 col-lg-11">
-                <div class="h-footL col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                    <span class="h-footPhone">客服服务电话：400-800-9999</span>
-                    <span>Copyright © 2016 海尔集团电子商务有限公司&nbsp;|&nbsp;岳阳E速宝物流有限公司</span>
-                    <span>版权所有 备案证书号：鲁ICP备15028156号-4 &nbsp;|&nbsp; <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37021202000797" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: white">鲁公网安备 37021202000797号</a></span>
-                    <span>地址：岳阳职业技术学院</span>
-                </div>
-                <div class="h-footR col-xs-4 col-sm-4 col-md-4 col-lg-4" style="margin-right:0px;">
-                    <div class="h-footIR">
-                        <div>
-                            <ul>
-                                <li>
-                                    <a>
-                                        <i><img src="http://img-rrs.rrs.com:8080/wl/assets/images/h-float-weibo.png"></i>
-                                        <p>E速宝物流官方微信</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a>
-                                        <i><img src="http://img-rrs.rrs.com:8080/wl/assets/images/h-float-weibo.png"></i>
-                                        <p>E速宝物流官方微博</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div>
+          @Html.Partial("Esubaofool")
+      </div>
     </div>
     <script type="text/javascript">
         $(document).ready(function (e) {
