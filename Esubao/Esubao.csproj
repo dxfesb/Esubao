@@ -308,9 +308,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\DXF\AdminController.cs" />
-    <Compile Include="Controllers\DXF\DefaultController.cs" />
-    <Compile Include="Controllers\LWJ\MyinforController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -352,6 +349,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\DXF\" />
+    <Folder Include="Controllers\LWJ\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
