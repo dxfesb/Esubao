@@ -329,19 +329,8 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Helpe\HelpeIndex.cshtml" />
-    <Content Include="Views\Helpe\HelpZiXun.cshtml" />
-    <Content Include="Views\Helpe\HelpeDaYi.cshtml" />
-    <Content Include="Views\Helpe\Jin.cshtml" />
-    <Content Include="Views\Helpe\HelpZiLiao.cshtml" />
-    <Content Include="script\MT\fonts\icomoon.eot" />
-    <Content Include="script\MT\fonts\icomoon.ttf" />
-    <Content Include="script\MT\fonts\icomoon.woff" />
-    <Content Include="script\MT\vendor\bootstrap\css\bootstrap-theme.css.map" />
-    <Content Include="script\MT\vendor\bootstrap\css\bootstrap.css.map" />
-    <Content Include="script\MT\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="script\MT\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="script\MT\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Views\Order\OnlineOrders.cshtml" />
+    <Content Include="Views\Logisticstracking\Logisticstrakcing.cshtml" />
+    <Content Include="Views\Login\LoginIndex.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
