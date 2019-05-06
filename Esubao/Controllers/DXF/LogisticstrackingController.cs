@@ -30,7 +30,7 @@ namespace Esubao.Controllers.DXF
             return View();
         }
         /// <summary>
-        /// 物流查询接口调用
+        /// 物流查询接口调用及物流查询
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="certificate"></param>
