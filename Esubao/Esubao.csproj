@@ -102,6 +102,7 @@
     <Content Include="image\loginfooter-solution1.png" />
     <Content Include="image\logo.jpg" />
     <Content Include="image\my_order_unselect_ico%401x.png" />
+    <Content Include="image\order_banner.jpg" />
     <Content Include="image\password.png" />
     <Content Include="image\timg.jpg" />
     <Content Include="image\userName.png" />
@@ -331,6 +332,10 @@
     <Content Include="Views\Helpe\HelpeIndex.cshtml" />
     <Content Include="Views\Logisticstracking\Logisticstrakcing.cshtml" />
     <Content Include="Views\Login\LoginIndex.cshtml" />
+    <Content Include="Views\Helpe\HelpZiLiao.cshtml" />
+    <Content Include="Views\Helpe\HelpZiXun.cshtml" />
+    <Content Include="Views\Helpe\Jin.cshtml" />
+    <Content Include="Views\Order\OnlineOrder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
