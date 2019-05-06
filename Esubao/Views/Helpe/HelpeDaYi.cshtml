@@ -7,11 +7,25 @@
 
 <html>
 <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>HelpeDaYi</title>
+    <script src="~/script/vue.min.js"></script>
 </head>
 <body>
-    <div> 
+    <div id="app"> 
+      <input type="button"value="切换"/>
     </div>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: "#app",
+            data: {
+                msg="你好"
+            },
+            methods: {
+
+            }
+        })
+    </script>
 </body>
 </html>

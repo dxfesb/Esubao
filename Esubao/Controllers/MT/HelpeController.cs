@@ -22,6 +22,14 @@ namespace Esubao.Controllers.MT
         }
         public ActionResult HelpZiXun()
         {
+
+            return View();
+        }
+        public ActionResult Jin()
+        {
+            return View();
+        }
+        public ActionResult HelpZiLiao() {
             return View();
         }
     }

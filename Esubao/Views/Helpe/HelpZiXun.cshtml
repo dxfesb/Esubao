@@ -8,15 +8,326 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
+    <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/script/vue.min.js"></script>
+    <link href="~/Controllers/MT/Helper.css" rel="stylesheet" />
+    <link href="~/script/MT/src/css/formValidation.css" rel="stylesheet" />
     <title>咨询/投诉/建议</title>
-</head>
-<body>
-    <div id="dong">
-        <div class="title">
-            <label>咨询/投诉/建议</label>
-           
-        </div>
+    <style type="text/css">
+       /*切换按钮的样式*/
+        .btn-noactive {
+            color: #fff;
+            background-color: #b4b4b4;
+            border: none;
+            margin: 8px;
+            width: 150px;
+            height: 40px;
+        }
+        .btn-active {
+            color: #fff;
+            background-color: #f15a22;
+            border: none;
+            margin: 8px;
+            width: 150px;
+            height: 40px;
+        }
         
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <div id="kuan" style="height:auto;">
+            <div class="container">
+                <div id="img"> <img src="~/image/help_banner .jpg" /> </div>
+                <div id="dong">
+                    <div class="title">
+                        <label>咨询/投诉/建议</label>
+                    </div>
+                    <div class="contraband row">
+                        <p style="margin-left:20px;">将您对华宇的任何疑问或对服务的任何不满告诉我们，也可以直接拨打我们的客户服务热线:400-808-6666.</p>
+
+                        <div>
+                            <input type="button" value="咨询/建议" v-bind:class="[remove]" v-on:click="zixun" />
+                            <input type="button" value="投诉" v-bind:class="[noremove]" v-on:click="tou" />
+                        </div>
+                        <!--投诉或者咨询建议填写表-->
+                        <keep-alive>
+                            <component :is="lei"></component>
+                        </keep-alive>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <template id="zi">
+        <div class="container">
+
+            <!-- form: -->
+            <section>
+                <div class="col-lg-8">
+                    <form id="defaultForm" method="post" action="target.php" class="form-horizontal">
+                        <fieldset>
+
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><span style="color:red">*</span>标题：</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" name="username" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><span style="color:red">*</span>留言类型：</label>
+                                <div class="col-lg-5">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="lei" value="male" checked /> 建议
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="lei" value="female" /> 咨询
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">留言人：</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" name="kong" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">联系电话：</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" name="phoneNumber" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">电子邮箱:</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" name="email" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label">运单号：</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" name="kong" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><span style="color:red">*</span>留言内容：</label>
+                                <div class="col-lg-5">
+                                    <textarea class="form-control" name="liu" rows="10" data-fv-stringlength data-fv-stringlength-max="100" data-fv-stringlength-message="The bio must be less than 100 characters long"></textarea>
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <div class="form-group">
+                            <div class="col-lg-9 col-lg-offset-3">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- :form -->
+
+        </div>
+    </template>
+    <template id="tou">
+        <div class="container">
+
+            <!-- form: -->
+            <section>
+                <div class="col-lg-8">
+                    <form id="defaultForm" method="post" action="target.php" class="form-horizontal">
+                        <fieldset>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><span style="color:red">*</span>标题：</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" name="username" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><span style="color:red">*</span>您的姓名：</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" name="username" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><span style="color:red">*</span>您是：</label>
+                                <div class="col-lg-5">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="lei" value="male" checked /> 发货人
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="lei" value="female" /> 收货人
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="lei" value="female" /> 第三方
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><span style="color:red">*</span>联系电话：</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" name="nokong" />
+                                </div>
+                            </div>  
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><span style="color:red">*</span>运单号：</label>
+                                <div class="col-lg-5">
+                                    <input type="text" class="form-control" name="kong" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-lg-3 control-label"><span style="color:red">*</span>投诉内容：</label>
+                                <div class="col-lg-5">
+                                    <textarea class="form-control" name="liu" rows="10" data-fv-stringlength data-fv-stringlength-max="100" data-fv-stringlength-message="The bio must be less than 100 characters long"></textarea>
+                                </div>
+                            </div>
+
+                        </fieldset>
+
+                        <div class="form-group">
+                            <div class="col-lg-9 col-lg-offset-3">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+            <!-- :form -->
+
+        </div>
+    </template>
+    <script type="text/javascript" src="~/script/MT/dist/js/formValidation.js"></script>
+    <script type="text/javascript" src="~/script/MT/dist/js/framework/bootstrap.js"></script>
+    <script type="text/javascript" src="~/script/MT/dist/js/language/zh_CN.js"></script>
+   
+    <script type="text/javascript">
+       
+        $(document).ready(function () {
+            $('#defaultForm').formValidation({
+                message: 'This value is not valid',
+                icon: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {
+                    //可以为空
+                    kong: {
+                        validators: {
+                            phone: {
+                                phone: /^1([38]\d|5[0-35-9]|7[3678])\d{8}$/,
+                                message: '请输入正确的手机号码'
+                            }
+
+                        }
+                    },
+                    nokong: {
+                        message: 'The username is not valid',
+                        validators: {
+                            notEmpty: {
+                                message: '不能为空'
+                            }
+
+                        }
+                    },
+                    username: {
+                        message: 'The username is not valid',
+                        validators: {
+                            notEmpty: {
+                                message: '请输入标题'
+                            }
+
+                        }
+                    },
+                    lei: {
+                        validators: {
+                            notEmpty: {}
+                        }
+                    },
+
+                    email: {
+                        validators: {
+                            emailAddress: {
+                                message: '请输入正确的邮箱类型'
+                            }
+                        }
+                    },
+                    phoneNumber: {
+                        validators: {
+                            phone: {
+                                message: 'The input is not a valid UK phone number',
+                                country: 'GB'
+
+                            }
+                        }
+                    },
+                    liu: {
+                        message: '留言内容不能为空',
+                        validators: {
+                            notEmpty: {
+                                message: '请输入留言内容'
+                            }
+
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        //全局组件 投诉表
+        Vue.component('zi', {
+            template: "#zi"
+        });
+        Vue.component('tou', {
+            template: "#tou"
+        })
+        var app = new Vue({
+            el: "#app",
+            data: {
+                lei: "zi",
+                remove: 'btn-active',
+                noremove: 'btn-noactive'
+            },
+            methods: {
+                //切换按钮点击事件
+                zixun: function () {
+                    this.remove = 'btn-active';
+                    this.noremove = 'btn-noactive'
+                    this.lei = "zi";
+                },
+                tou: function () {
+                    this.noremove = 'btn-active';
+                    this.remove = 'btn-noactive';
+                    this.lei = "tou";
+                },
+
+
+            },
+            components: {
+                'lei-biao': {
+                    template: "#zi"
+                },
+                'tou-biao': {
+                    template: "#tou"
+                }
+            }
+
+        })
+    </script>
 </body>
 </html>
