@@ -6,14 +6,15 @@ using System.Web.Mvc;
 
 namespace Esubao.Controllers.LWJ
 {
-    public class MyinforController : Controller
+    public class HomeController : Controller
     {
-        // GET: Myinfor
+        // GET: Home
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult MyInfor()
+
+        public ActionResult Huayu()
         {
             return View();
         }

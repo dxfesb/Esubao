@@ -13,7 +13,7 @@ namespace Esubao.Controllers.ZHX
         {
             return View();
         }
-        public ActionResult Login()
+        public ActionResult LoginIndex()
         {
             return View();
         }

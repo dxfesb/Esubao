@@ -1,0 +1,431 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>loginindex</title>
+    <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
+    @*bootstrap引用*@
+    <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        html {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #bodyPage {
+            width: 100%;
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        img.bg {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+            display: none;
+        }
+
+        .navr_img {
+            height: 94px;
+            width: 1349px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .h-loginHead {
+            text-align: center;
+            width: 350px;
+            height: 50px;
+            background-color: #f3f9fb;
+            font-family: "microsoft yahei";
+        }
+
+        .h-loginForm {
+            padding: 0 12px;
+        }
+
+            .h-loginForm .h-loginInfo {
+                margin-top: 10px;
+            }
+
+                .h-loginForm .h-loginInfo .form-control {
+                    border: 1px solid #cfcfcc;
+                    padding-left: 48px;
+                    height: 36px;
+                    background: #fbfcfd;
+                    color: #333;
+                    font-size: 12px;
+                    font-family: "microsoft yahei";
+                    border-radius: 0;
+                }
+
+                    .h-loginForm .h-loginInfo .form-control.h-username {
+                        background: url('../../image/userName.png') no-repeat left center;
+                    }
+
+                    .h-loginForm .h-loginInfo .form-control.h-password {
+                        background: url('../../image/password.png') no-repeat left center;
+                    }
+
+        .h-loginInfo2 {
+            margin-top: 16px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .h-loginCheck {
+            /*float:left;*/
+        }
+
+            .h-loginCheck label {
+                font-size: 12px;
+                color: #7d7d7d;
+                font-family: "microsoft yahei";
+                vertical-align: middle;
+            }
+
+                .h-loginCheck label + input[type="checkbox"] {
+                    vertical-align: middle;
+                }
+
+        .h-forgot {
+            /*float:right;*/
+            position: absolute;
+            top: -2px;
+            right: 0;
+            font-size: 12px;
+            font-family: "microsoft yahei";
+            color: #2b358b;
+            margin-top: 3px;
+        }
+
+        .btn-login2 {
+            height: 30px;
+            width: 90px;
+            font-size: 14px;
+            background-color: #2b358b;
+            line-height: 22px;
+            padding: 4px 0px;
+            color: #fff;
+        }
+
+            .btn-login2:hover {
+                background-color: #29347e;
+            }
+
+        .h-lfBtn {
+            text-align: center;
+        }
+
+        .div-login {
+            width: 350px;
+            height: 300px;
+            position: absolute;
+            top: 120px;
+            background-color: #fff;
+            border: 2px solid #2b358b;
+            opacity: 0.9;
+        }
+
+        .div-loginhead {
+            text-align: center;
+            height: 30px;
+            line-height: 30px;
+            font-family: 'Adobe Garamond Pro';
+            color: #2b358b;
+        }
+        .licor > a {
+            color:#2b358b;
+        }
+        .foolnav {
+            height: 18vh;
+            background-image: url('../../image/h-loginfooter.png');
+            clear: both;
+            width: 1349px;
+        }
+        ul {
+            list-style:none;
+        }
+        .h-loginfooterLabel {
+            padding: 26px 0px;
+            overflow: hidden;
+        }
+            .h-loginfooterLabel ul li div {
+                padding-left: 75px;
+                min-height: 64px;
+            }
+        .h-loginfooterLabel ul li {
+            margin-left: 30px;
+            float: left;
+        }
+            .h-loginfooterLabel ul li div span:first-child {
+                font-size: 18px;
+                font-family: "microsoft yahei";
+                color: #4c4c4c;
+                display: block;
+            }
+            .h-loginfooterLabel ul li div span:first-child + span {
+                display: block;
+                font-size: 14px;
+                font-family: "microsoft yahei";
+                color: #a9a9a9;
+            }
+        .h-lfsolution {
+            background: url(../../image/h-loginfooter1.png) left top no-repeat;
+        }
+        .h-lfproducts {
+            background: url(../../image/loginfooter-platform1.png) left top no-repeat;
+        }
+        .h-lfcapability {
+            background: url(../../image/loginfooter-solution1.png) left top no-repeat;
+        }
+        .h-lfalliance {
+            background: url(../../image/loginfooter-jiameng1.png) left top no-repeat;
+        }
+        .h-footRegist {
+    width: 100%;
+    height: 100%;
+    background-color: #f2f2f2;
+    display: table;
+    text-align: center;
+}
+        .h-registBtn {
+            margin-top: 26px;
+        }
+        .h-fRegistIn span {
+            margin-top:20px;
+            font-size: 18px;
+            color: #525253;
+            font-family: "microsoft yahei";
+            display: block;
+        }
+        .fbInner {
+            display: table-cell;
+            vertical-align: middle;
+            overflow: hidden;
+            margin: auto;
+        }
+        .h-footL {
+            margin-top:40px;
+        }
+        .fbInner .h-footL {
+            display: inline-block;
+            text-align: left;
+            float: left;
+            width: 58%;
+        }
+                .fbInner .h-footL span.h-footPhone {
+                    font-size: 16px;
+                    margin-top: 0;
+                }
+
+                .fbInner .h-footL span {
+                    display: block;
+                    font-size: 12px;
+                    color: #fff;
+                    font-family: "microsoft yahei";
+                    margin-top: 18px;
+                }
+        .h-footIR {
+            float:right;
+        }
+        .h-footIR ul {
+            margin-top:50px;
+        }
+        .h-footIR ul li {
+            float: left;
+            margin-left: 30px;
+        }
+            .h-footIR ul li > a {
+                color: #fff;
+                text-decoration: none;
+            }
+        .h-footIR ul li > p {
+            margin-top:25px;
+            margin-right:15px;
+        }
+    </style>
+    <script src="~/script/luobo/js/fullplay.js"></script>
+</head>
+<body>
+    <div id="bodyBox" class="container-fluid">
+        <div id="bodyPage">
+            <img src="/image/h-corporate-banner.png" class="bg">
+            <img src="/image/h-user-banner.jpg" class="bg">
+        </div>
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:15vh;width:100%">
+            <div class="navr_img" style="height:15vh;opacity:0.8;background-color:#ffffff">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
+                        <a style="font-size:8vh;font-family:'AR BERKLEY';text-decoration:none;color:#23527c; margin-left:30px;line-height:15vh;">E速宝</a><span class="navr_span">欢迎您登录</span>
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" style="margin-top:20px">
+                        <nav class="nav navbar-form">
+                            <ul class="nav  navbar-nav licor">
+                                <li class="active">
+                                    <a href="#">首页 </a>
+                                </li>
+                                <li><a href="#">文件</a></li>
+                                <li><a href="#">编辑</a></li>
+                                <li><a href="#">视图</a></li>
+                                <li><a href="#">项目</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12"  style="height:80vh">
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                <div class="div-login">
+                    <div class="div-loginhead">
+                        <h3>用户登录</h3>
+                    </div>
+                    <div class="h-loginForm">
+                        <form method="post" id="login_form">
+                            <div class="h-loginInfo">
+                                <input type="text" class="form-control h-username" name="account" placeholder="请输入用户名">
+                            </div>
+                            <div class="h-loginInfo"><input type="password" autocomplete="off" class=" form-control h-password" name="pwd" placeholder="请输入密码"></div>
+                            <div class="h-loginInfo3">
+                                <input type="text" style="margin-top:20px" name="verificationcode" id="verificationcode" placeholder="请输入验证码">
+
+                                <a class="h-refresh" id="shuaxin">点击获取验证码</a>
+                            </div>
+                        </form>
+                        <div class="h-loginInfo2">
+                            <div class="h-loginCheck">
+                                <input type="checkbox" id="check1" value="option1" checked="">
+                                <label for="check1">下次自动登录</label>
+                            </div>
+                            <div class="h-forgot"><a href="/front/huiyzhx/h-member-zhhmm">忘记密码？</a></div>
+                        </div>
+                    </div>
+                    <div class="h-lfBtn">
+                        <button type="button" class="h-mr10 btn btn-login2">登录</button>
+                        <a type="button" class="btn btn-regist2" href="/front/register/register1">注册</a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 foolnav">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                
+            </div>
+            <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+                <div class="h-loginfooterLabel">
+                    <ul>
+                        <li>
+                            <div class="h-lfsolution">
+                                
+                                <span>行业方案</span>
+                                <span>Solutions</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="h-lfproducts">
+                                <span>主营产品</span>
+                                <span>Main Products</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="h-lfcapability">
+                                <span>平台能力</span>
+                                <span>Platform Function</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="h-lfalliance">
+                                <span>加盟合作</span>
+                                <span>Cooperation</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:20vh;width:1349px;background-color:#fbfcfd">
+            <div class="h-footRegist">
+                <div class="h-fRegistIn">
+                    <span>要想加盟或者了解更多信息，那就赶快注册吧</span>
+                    <div class="h-registBtn">
+                        <button type="button" class="btn btn-primary">常见问题</button>
+                        <button type="button" class="btn btn-default" style="background-color:#cfcfcc">立即注册</button>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:35vh;width:1349px; background-color:#333">
+            <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1"></div>
+            <div class="fbInner col-xs-11 col-sm-11 col-md-11 col-lg-11">
+                <div class="h-footL col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <span class="h-footPhone">客服服务电话：400-800-9999</span>
+                    <span>Copyright © 2016 海尔集团电子商务有限公司&nbsp;|&nbsp;岳阳E速宝物流有限公司</span>
+                    <span>版权所有 备案证书号：鲁ICP备15028156号-4 &nbsp;|&nbsp; <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=37021202000797" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;color: white">鲁公网安备 37021202000797号</a></span>
+                    <span>地址：岳阳职业技术学院</span>
+                </div>
+                <div class="h-footR col-xs-4 col-sm-4 col-md-4 col-lg-4" style="margin-right:0px;">
+                            <div class="h-footIR">
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a>
+                                                <i><img src="http://img-rrs.rrs.com:8080/wl/assets/images/h-float-weibo.png"></i>
+                                                <p>E速宝物流官方微信</p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a>
+                                                <i><img src="http://img-rrs.rrs.com:8080/wl/assets/images/h-float-weibo.png"></i>
+                                                <p>E速宝物流官方微博</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function (e) {
+            $("#bodyPage").fullImages({
+                ImgWidth: 1920,
+                ImgHeight: 980,
+                autoplay: 3500,
+                fadeTime: 1500
+            });
+        });
+    </script>
+
+
+</body>
+</html>

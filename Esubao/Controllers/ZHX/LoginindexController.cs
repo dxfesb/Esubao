@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Esubao.Controllers.DXF
+namespace Esubao.Controllers.ZHX
 {
-    public class DefaultController : Controller
+    public class LoginindexController : Controller
     {
-        // GET: Default
+        // GET: Loginindex
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Homepage()
+        public ActionResult loginindex()
         {
             return View();
         }

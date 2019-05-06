@@ -4,16 +4,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Esubao.Controllers.DXF
+namespace Esubao.Controllers.LWJ
 {
-    public class AdminController : Controller
+    public class BootController : Controller
     {
-        // GET: Admin
+        // GET: Boot
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Adminpage()
+        public ActionResult Wode()
         {
             return View();
         }

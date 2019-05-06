@@ -1,0 +1,42 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div>
+        <div class="h-loginForm">
+            <form method="post" id="login_form">
+                <div class="h-loginInfo"><input type="text" class="form-control h-username" name="account" placeholder="请输入用户名"></div>
+                <div class="h-loginInfo"><input type="password" autocomplete="off" class="form-control h-password" name="pwd" placeholder="请输入密码"></div>
+                <div class="h-loginInfo3">
+                    <input type="text" name="verificationcode" id="verificationcode" placeholder="请输入验证码">
+                    <span class="h-code"><img id="imgcode" src="/user/verificationcode"></span>
+                    <a class="h-refresh" id="shuaxin"><img src="/assets/images/shuaxin.png"></a>
+                </div>
+            </form>
+            <div class="h-loginInfo2">
+                <div class="h-loginCheck">
+                    <input type="checkbox" id="check1" value="option1" checked="">
+                    <label for="check1">下次自动登录</label>
+                </div>
+                <div class="h-forgot"><a href="/front/huiyzhx/h-member-zhhmm">忘记密码？</a></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
