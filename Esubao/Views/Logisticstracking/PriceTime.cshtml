@@ -18,6 +18,14 @@
 </head>
 <body>
     <div class="container-fluid">
+        @*头部导航分部视图开始*@
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                @Html.Partial("Esubaohead")
+            </div>
+          
+        </div>
+        @*头部导航分部视图结束*@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" style="background-image: url('../../image/dynamic_nav_bar_bg.png');background-repeat:no-repeat;height:50vh">
                 <div class="sf-care-nav">
@@ -85,12 +93,13 @@
                         <div class="detail-date-time-picker toggle-plugins"><ul class="date-time-tabs" role="radiogroup"><li tabindex="0" role="radio" class="date  accessible-click">日期</li><li tabindex="0" role="radio" class="time current accessible-click" aria-checked="true">时间</li></ul><div class="detail-time-picker"><div tabindex="0" class="indicator top disabled accessible-click"><span class="sfi sfi-chevron-up"></span></div><div class="picker-wrapper"><ul class="times" role="radiogroup"><li role="radio" tabindex="0" class=" accessible-click">00: 00</li><li role="radio" tabindex="0" class=" accessible-click">00: 30</li><li role="radio" tabindex="0" class=" accessible-click">01: 00</li><li role="radio" tabindex="0" class=" accessible-click">01: 30</li><li role="radio" tabindex="0" class=" accessible-click">02: 00</li><li role="radio" tabindex="0" class=" accessible-click">02: 30</li><li role="radio" tabindex="0" class=" accessible-click">03: 00</li><li role="radio" tabindex="0" class=" accessible-click">03: 30</li><li role="radio" tabindex="0" class=" accessible-click">04: 00</li><li role="radio" tabindex="0" class=" accessible-click">04: 30</li><li role="radio" tabindex="0" class=" accessible-click">05: 00</li><li role="radio" tabindex="0" class=" accessible-click">05: 30</li><li role="radio" tabindex="0" class=" accessible-click">06: 00</li><li role="radio" tabindex="0" class=" accessible-click">06: 30</li><li role="radio" tabindex="0" class=" accessible-click">07: 00</li><li role="radio" tabindex="0" class=" accessible-click">07: 30</li><li role="radio" tabindex="0" class=" accessible-click">08: 00</li><li role="radio" tabindex="0" class=" accessible-click">08: 30</li><li role="radio" tabindex="0" class=" accessible-click">09: 00</li><li role="radio" tabindex="0" class=" accessible-click">09: 30</li><li role="radio" tabindex="0" class=" accessible-click">10: 00</li><li role="radio" tabindex="0" class=" accessible-click">10: 30</li><li role="radio" tabindex="0" class=" accessible-click">11: 00</li><li role="radio" tabindex="0" class=" accessible-click">11: 30</li><li role="radio" tabindex="0" class=" accessible-click">12: 00</li><li role="radio" tabindex="0" class=" accessible-click">12: 30</li><li role="radio" tabindex="0" class=" accessible-click">13: 00</li><li role="radio" tabindex="0" class=" accessible-click">13: 30</li><li role="radio" tabindex="0" class=" accessible-click">14: 00</li><li role="radio" tabindex="0" class=" accessible-click">14: 30</li><li role="radio" tabindex="0" class=" accessible-click">15: 00</li><li role="radio" tabindex="0" class=" accessible-click">15: 30</li><li role="radio" tabindex="0" class=" accessible-click">16: 00</li><li role="radio" tabindex="0" class=" accessible-click">16: 30</li><li role="radio" tabindex="0" class=" accessible-click">17: 00</li><li role="radio" tabindex="0" class=" accessible-click">17: 30</li><li role="radio" tabindex="0" class=" accessible-click">18: 00</li><li role="radio" tabindex="0" class=" accessible-click">18: 30</li><li role="radio" tabindex="0" class="current accessible-click" aria-checked="true">19: 00</li><li role="radio" tabindex="0" class=" accessible-click">19: 30</li><li role="radio" tabindex="0" class=" accessible-click">20: 00</li><li role="radio" tabindex="0" class=" accessible-click">20: 30</li><li role="radio" tabindex="0" class=" accessible-click">21: 00</li><li role="radio" tabindex="0" class=" accessible-click">21: 30</li><li role="radio" tabindex="0" class=" accessible-click">22: 00</li><li role="radio" tabindex="0" class=" accessible-click">22: 30</li><li role="radio" tabindex="0" class=" accessible-click">23: 00</li><li role="radio" tabindex="0" class=" accessible-click">23: 30</li></ul></div><div tabindex="0" class="indicator bottom accessible-click disabled"><span class="sfi sfi-chevron-down"></span></div></div></div>
                     </dd>
                 </dl>
-                <button id="queryPrice" type="button" class="primary-button disabled maidian" data-md-name="点击查询" data-md-id="117001" data-loading-text="查询中...">
+
+                <button id="queryPrice" type="button" class="primary-button disabled maidian" data-md-name="点击查询" data-md-id="117001" data-loading-text="查询中..." style="margin-top:20px;margin-bottom:20px">
                     查询
                 </button>
             </div>
         </div>
-
+        @*运费计算介绍部分开始*@
         <div class="row">
             <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="border:1px solid #c2bcbc;margin-top:50px;margin-left:200px">
                 <div style="background-color: #FFF;border-radius: 4px;padding: 20px;" class=" main-content-row news-content content-page ">
@@ -140,9 +149,8 @@
             </div>
 
         </div>
-        <div class="row">
-            @Html.Partial("")
-        </div>
+        @*运费计算介绍部分结束*@
+      
     </div>
 
 </body>
