@@ -25,6 +25,10 @@ namespace Esubao.Controllers.DXF
         {
             return View();
         }
+        public ActionResult PriceTime()
+        {
+            return View();
+        }
         /// <summary>
         /// 物流查询接口调用
         /// </summary>
