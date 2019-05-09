@@ -13,7 +13,7 @@ namespace Esubao.Controllers.MT
         {
             return View();
         }
-        public ActionResult OnlineOrders()
+        public ActionResult OnlineOrder()
         {
             return View();
         }

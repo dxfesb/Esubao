@@ -1,6 +1,6 @@
-﻿body {
-  width:100% auto;
-    margin: 0px auto;
+﻿html, body {
+
+    margin: 0px;
     padding: 0px;
     font-family: 微软雅黑;
     font-size: 15px;
@@ -9,8 +9,7 @@
 
 #kuan {
     width: 804px;
-    float: right;
-    margin-right: 125px;
+   
     background-color: white;
 }
 
