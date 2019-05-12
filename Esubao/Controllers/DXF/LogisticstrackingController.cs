@@ -46,7 +46,7 @@ namespace Esubao.Controllers.DXF
         private const String method = "GET";
         private const String appcode = "7bd384351740479f9b35be67763bbc5d";
         [HttpPost]
-        public JsonResult wLselect(string number) {  
+        public JsonResult WLselect(string number) {  
             String querys = "no="+number+"";
             String bodys = "";
             String url = host + path;
