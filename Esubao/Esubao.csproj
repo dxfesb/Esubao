@@ -44,10 +44,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Microsoft Web Tools\Packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -341,8 +337,6 @@
     <Content Include="Views\Helpe\HelpZiXun.cshtml" />
     <Content Include="Views\Helpe\Jin.cshtml" />
     <Content Include="Views\Order\OnlineOrder.cshtml" />
-    <Content Include="Views\Logisticstracking\PriceTime.cshtml" />
-    <Content Include="Views\Shared\Esubaohead.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
