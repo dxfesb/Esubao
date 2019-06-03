@@ -9,12 +9,150 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>网上下单</title>
+    <link href="~/Content/MT/XiaDan.css" rel="stylesheet" />
+
     <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
     <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <link href="~/Controllers/MT/Helper.css" rel="stylesheet" />
 </head>
 <body>
-   
+    <div id="app">
+        <div class="dynamic_content_wrapper">
+            <div class="dynamic_content">
+                <div id="function">
+                    <div class="order-page">
+                        <div class="order-service ui-front">
+                            <div class="receiver-areas" role="radiogroup">
+                                <a href="下单.html" class="normalCargo" role="radio" data-tab="normalCargo" aria-checked="false">批量下单</a>
+                                <a href="javascript:void(0)" class="heavyCargo checked" role="radio" data-tab="heavyCargo" aria-checked="true">网上下单</a>
+                            </div>
+                            <div class="order-wrapper clearfix">
+                                <div class="heavy-cargo-wrapper">
+                                    <a target="_blank" href="/cn/sc/other/banner_details/Choose-SF-for-Logistics-Service/">
+                                        <img class="banner" src="~/image/help_banner .jpg" />
+                                    </a>
+                                    <div class="sender-wrapper">
+                                        <form class="form-horizontal" novalidate="novalidate">
+                                            <div class="intellect-warm-reminder">请检查拆分地址信息是否准确，如有遗漏请及时补充</div>
+                                            <div class="sftitle">
+                                                寄方信息<span class="small">标 * 为必填项</span>
+                                                <a href="javascript:void(0)" class="aicon-intellect-address addIntellectFill">智能地址填写</a>
+                                                <a href="javascript:void(0)" class="aicon-address-book address-book">使用地址簿</a>
+                                                <a href="../../../../sc/dynamic_function/price/" target="_blank" class="aicon-calculator">价格计算</a>
+                                            </div>
+                                            <p class="warm-reminder"></p>
+                                            <div class="form-group">
+                                                <div class="col-xs-5 autoAddPicker">
+                                                    <label class="control-label required" for="contactName">姓名</label>
+                                                    <input type="text" class="form-control ui-autocomplete-input" name="contactName" placeholder="请填写联系人姓名" autocomplete="off">
+                                                </div>
+                                                <div class="col-xs-5 col-xs-offset-2 autoAddPicker">
+                                                    <label class="control-label" for="companyName">公司名称</label>
+                                                    <input type="text" class="form-control ui-autocomplete-input" name="companyName" placeholder="请填写公司名称" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-5 autoAddPicker">
+                                                    <label class="control-label" for="contactTel">手机号码</label>
+                                                    <input type="text" class="form-control ui-autocomplete-input" name="contactTel" placeholder="请填写手机号码" autocomplete="off">
+                                                </div>
+                                                <div class="col-xs-5 col-xs-offset-2">
+                                                    <label class="control-label" for="contactPhone">固话</label>
+                                                    <input type="text" class="form-control" name="contactPhone" placeholder="请填写固话号码">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-10">
+                                                    <label class="control-label required" for="location">省市区</label>
+                                                    <div class="detail-location-input" data-max-level="4" data-hide-globe="true" data-hide-hkmctw="true">
+                                                        <input type="text" class="form-control origins ui-autocomplete-input" name="location" placeholder="请选择所在地区，例如：广东省－深圳市－福田区" autocomplete="off" title="广东省-深圳市-宝安区">
+                                                        <div class="detail-location-picker toggle-plugins" style="display: none;">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="getNearbyAddress aicon-location maidian" data-md-name="点击省市区后地标" data-md-id="OWF010103" href="javascript:void(0)"></a>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-10">
+                                                    <label class="control-label required" for="address">详细地址</label>
+                                                    <input type="text" class="form-control ui-autocomplete-input" name="address" placeholder="请填写所在街道以及详细地址" autocomplete="off">
+                                                </div>
+                                            </div>
+                                           
+                                            
+                                        </form>
+                                    </div><div class="receiver-wrapper">
+                                        <form class="form-horizontal" novalidate="novalidate">
+                                            <div class="intellect-warm-reminder">请检查拆分地址信息是否准确，如有遗漏请及时补充</div>
+                                            <div class="sftitle">
+                                                收方信息
+                                                <span class="small">标 * 为必填项</span>
+                                                <a href="javascript:void(0)" class="aicon-intellect-address addIntellectFill">智能地址填写</a>
+                                                <a href="javascript:void(0)" class="aicon-address-book address-book">使用地址簿</a>
+                                            </div>
+                                            <p class="warm-reminder"></p>
+                                            <div class="form-group">
+                                                <div class="col-xs-5 autoAddPicker">
+                                                    <label class="control-label required" for="contactName">姓名</label>
+                                                    <input type="text" class="form-control ui-autocomplete-input" name="contactName" placeholder="请填写联系人姓名" autocomplete="off">
+                                                </div>
+                                                <div class="col-xs-5 col-xs-offset-2 autoAddPicker">
+                                                    <label class="control-label" for="companyName">公司名称</label>
+                                                    <input type="text" class="form-control ui-autocomplete-input" name="companyName" placeholder="请填写公司名称" autocomplete="off">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-5 autoAddPicker">
+                                                    <label class="control-label" for="contactTel">手机号码</label>
+                                                    <input type="text" class="form-control ui-autocomplete-input" name="contactTel" placeholder="请填写手机号码" autocomplete="off">
+                                                </div>
+                                                <div class="col-xs-5 col-xs-offset-2">
+                                                    <label class="control-label" for="contactPhone">固话</label>
+                                                    <input type="text" class="form-control" name="contactPhone" placeholder="请填写固话号码">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-10">
+                                                    <label class="control-label required" for="location">省市区</label>
+                                                    <div class="detail-location-input" data-max-level="4" data-hide-globe="true" data-hide-hkmctw="true">
+                                                        <input type="text" class="form-control dests ui-autocomplete-input" name="location" placeholder="请选择所在地区，例如：广东省－深圳市－福田区" autocomplete="off">
+                                                        <div class="detail-location-picker toggle-plugins" style="display: none;"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-10">
+                                                    <label class="control-label required" for="address">详细地址</label>
+                                                    <input type="text" class="form-control ui-autocomplete-input" name="address" placeholder="请填写所在街道以及详细地址" autocomplete="off">
+                                                </div>
+                                            </div>
+                                           
+                                        </form>
+                                    </div><div class="form-group">
+                                        <div class="clearfix">
+                                            <a href="javascript:void(0)" class="aicon-circle-check save-address-check checked maidian fr" data-md-name="点击收件人保存到地址簿" data-md-id="111007">保存到地址簿</a>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="text-center">
+                                    <a href="javascript:void(0)" class="aicon-circle-check" id="agree-term-content">我同意</a>
+                                    <a class="term" href="javascript:void(0)">《电子运单契约条款》</a>
+                                        </div>
+                                    <div class="text-center">
+                                    <button type="button" class="primary-btn submit-order big disabled">下单</button></div>
+                                </div>
+                            </div>
+                          </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var app = new Vue({
+
+        })
+    </script>
 </body>
 </html>

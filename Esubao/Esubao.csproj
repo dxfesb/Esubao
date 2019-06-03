@@ -92,6 +92,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\MT\XiaDan.css" />
     <Content Include="Controllers\MT\Helper.css" />
     <Content Include="Global.asax" />
     <Content Include="image\bg.jpg" />
