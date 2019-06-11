@@ -111,6 +111,7 @@
     <Content Include="image\password.png" />
     <Content Include="image\timg.jpg" />
     <Content Include="image\userName.png" />
+    <Content Include="image\search.png" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap.css" />
@@ -315,6 +316,8 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
+    <Compile Include="Controllers\LWJ\BootController.cs" />
+    <Compile Include="Controllers\LWJ\HomeController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\MT\OrderController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
@@ -343,6 +346,10 @@
     <Content Include="Views\Helpe\HelpZiXun.cshtml" />
     <Content Include="Views\Helpe\Jin.cshtml" />
     <Content Include="Views\Order\OnlineOrder.cshtml" />
+    <Content Include="Views\Shared\Esubaohead.cshtml" />
+    <Content Include="Views\Shared\Order_Terms.cshtml" />
+    <Content Include="Views\Order\bulkOrder.cshtml" />
+    <Content Include="Views\Shared\AdressBook.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -352,7 +359,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\LWJ\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

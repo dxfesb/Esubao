@@ -10,10 +10,10 @@
     <meta name="viewport" content="width=device-width" />
     <title>网上下单</title>
     <link href="~/Content/MT/XiaDan.css" rel="stylesheet" />
-
     <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
     <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 </head>
 <body>
     <div id="app">
@@ -23,8 +23,8 @@
                     <div class="order-page">
                         <div class="order-service ui-front">
                             <div class="receiver-areas" role="radiogroup">
-                                <a href="下单.html" class="normalCargo" role="radio" data-tab="normalCargo" aria-checked="false">批量下单</a>
                                 <a href="javascript:void(0)" class="heavyCargo checked" role="radio" data-tab="heavyCargo" aria-checked="true">网上下单</a>
+                                <a href="下单.html" class="normalCargo" role="radio" data-tab="normalCargo" aria-checked="false">批量下单</a>
                             </div>
                             <div class="order-wrapper clearfix">
                                 <div class="heavy-cargo-wrapper">
@@ -37,7 +37,7 @@
                                             <div class="sftitle">
                                                 寄方信息<span class="small">标 * 为必填项</span>
                                                 <a href="javascript:void(0)" class="aicon-intellect-address addIntellectFill">智能地址填写</a>
-                                                <a href="javascript:void(0)" class="aicon-address-book address-book">使用地址簿</a>
+                                                <a href="javascript:void(0)" class="aicon-address-book address-book" data-toggle="modal" data-target="#AdressBu">使用地址簿</a>
                                                 <a href="../../../../sc/dynamic_function/price/" target="_blank" class="aicon-calculator">价格计算</a>
                                             </div>
                                             <p class="warm-reminder"></p>
@@ -78,8 +78,6 @@
                                                     <input type="text" class="form-control ui-autocomplete-input" name="address" placeholder="请填写所在街道以及详细地址" autocomplete="off">
                                                 </div>
                                             </div>
-                                           
-                                            
                                         </form>
                                     </div><div class="receiver-wrapper">
                                         <form class="form-horizontal" novalidate="novalidate">
@@ -88,7 +86,7 @@
                                                 收方信息
                                                 <span class="small">标 * 为必填项</span>
                                                 <a href="javascript:void(0)" class="aicon-intellect-address addIntellectFill">智能地址填写</a>
-                                                <a href="javascript:void(0)" class="aicon-address-book address-book">使用地址簿</a>
+                                                <a href="javascript:void(0)" class="aicon-address-book address-book" data-toggle="modal" data-target="#AdressBu">使用地址簿</a>
                                             </div>
                                             <p class="warm-reminder"></p>
                                             <div class="form-group">
@@ -126,33 +124,42 @@
                                                     <input type="text" class="form-control ui-autocomplete-input" name="address" placeholder="请填写所在街道以及详细地址" autocomplete="off">
                                                 </div>
                                             </div>
-                                           
+
                                         </form>
                                     </div><div class="form-group">
                                         <div class="clearfix">
                                             <a href="javascript:void(0)" class="aicon-circle-check save-address-check checked maidian fr" data-md-name="点击收件人保存到地址簿" data-md-id="111007">保存到地址簿</a>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="text-center">
-                                    <a href="javascript:void(0)" class="aicon-circle-check" id="agree-term-content">我同意</a>
-                                    <a class="term" href="javascript:void(0)">《电子运单契约条款》</a>
-                                        </div>
+                                        <a href="javascript:void(0)" class="aicon-circle-check" id="agree-term-content">我同意</a>
+                                        <a class="term" href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal">《电子运单契约条款》</a>
+                                    </div>
                                     <div class="text-center">
-                                    <button type="button" class="primary-btn submit-order big disabled">下单</button></div>
+                                        <button type="button" class="primary-btn submit-order big disabled">下单</button>
+                                    </div>
                                 </div>
                             </div>
-                          </div>
+                        </div>
+
                     </div>
                 </div>
-
             </div>
         </div>
+        @*电子运单契约条款*@
+        @Html.Partial("Order_Terms");
+        @Html.Partial("AdressBook");
     </div>
+    <script src="~/script/vue.min.js"></script>
     <script type="text/javascript">
         var app = new Vue({
-
+            el: "#app",
+            data: {
+                vv: "Order_Terms"
+            }
         })
     </script>
 </body>
+
 </html>
