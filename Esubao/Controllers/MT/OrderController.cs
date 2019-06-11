@@ -13,7 +13,13 @@ namespace Esubao.Controllers.MT
         {
             return View();
         }
+        //网上下单
         public ActionResult OnlineOrder()
+        {
+            return View();
+        }
+       //批量下单
+       public ActionResult bulkOrder()
         {
             return View();
         }
