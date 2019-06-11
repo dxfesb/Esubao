@@ -109,9 +109,11 @@
     <Content Include="image\my_order_unselect_ico%401x.png" />
     <Content Include="image\order_banner.jpg" />
     <Content Include="image\password.png" />
+    <Content Include="image\sjt.png" />
     <Content Include="image\timg.jpg" />
     <Content Include="image\userName.png" />
     <Content Include="image\search.png" />
+    <Content Include="image\xjt.png" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap.css" />
