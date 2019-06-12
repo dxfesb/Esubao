@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<script src="~/script/MT/City/jquery.min.js"></script>
+<script src="~/script/MT/City/city.json.js"></script>
+<script src="~/script/MT/City/citySet.js"></script>
+<script src="~/script/MT/City/Popt.js"></script>
+<div class="wrap">
+    <input class="input" name="" id="city" type="text" placeholder="请选择" autocomplete="off" readonly="true"><s></s>
+</div>
+
+<script type="text/javascript">
+    $("#city").click(function (e) {
+        SelCity(this, e);
+    });
+    $("s").click(function (e) {
+        SelCity(document.getElementById("city"), e);
+    });
+</script>

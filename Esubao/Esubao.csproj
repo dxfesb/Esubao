@@ -128,6 +128,10 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="script\bootstrap-3.3.7-dist\jquery-3.3.1.js" />
+    <Content Include="script\MT\City\city.json.js" />
+    <Content Include="script\MT\City\citySet.js" />
+    <Content Include="script\MT\City\jquery.min.js" />
+    <Content Include="script\MT\City\Popt.js" />
     <Content Include="script\MT\css\default.css" />
     <Content Include="script\MT\css\normalize.css" />
     <Content Include="script\MT\demo\foundation\horizontalForm.html" />
@@ -358,6 +362,8 @@
     <Content Include="Views\Order\bulkOrder.cshtml" />
     <Content Include="Views\Shared\AdressBook.cshtml" />
     <Content Include="Views\Logisticstracking\PriceTime.cshtml" />
+    <Content Include="Views\Shared\addDress.cshtml" />
+    <Content Include="Views\Shared\City.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
