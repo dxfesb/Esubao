@@ -94,7 +94,7 @@
   <ItemGroup>
     <Content Include="Content\MT\XiaDan.css" />
     <Content Include="Controllers\MT\Helper.css" />
-    <Content Include="Controllers\MT\tubiao.css" />
+    <Content Include="Content\MT\tubiao.css" />
     <Content Include="Global.asax" />
     <Content Include="image\bg.jpg" />
     <Content Include="image\h-corporate-banner.png" />
@@ -107,10 +107,13 @@
     <Content Include="image\loginfooter-platform1.png" />
     <Content Include="image\loginfooter-solution1.png" />
     <Content Include="image\logo.jpg" />
+    <Content Include="image\MT\blackgou.png" />
     <Content Include="image\MT\book.png" />
     <Content Include="image\MT\jsj.png" />
     <Content Include="image\MT\weizhi.png" />
     <Content Include="image\MT\zhineng.png" />
+    <Content Include="image\MT\redgou.png" />
+    <Content Include="image\MT\Rightarrow.png" />
     <Content Include="image\my_order_unselect_ico%401x.png" />
     <Content Include="image\order_banner.jpg" />
     <Content Include="image\password.png" />
@@ -128,6 +131,8 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="script\bootstrap-3.3.7-dist\jquery-3.3.1.js" />
+    <Content Include="script\Logisticstracking.css" />
+    <Content Include="script\Logisticstracking.js" />
     <Content Include="script\MT\City\city.json.js" />
     <Content Include="script\MT\City\citySet.js" />
     <Content Include="script\MT\City\jquery.min.js" />
@@ -363,7 +368,6 @@
     <Content Include="Views\Shared\AdressBook.cshtml" />
     <Content Include="Views\Logisticstracking\PriceTime.cshtml" />
     <Content Include="Views\Shared\addDress.cshtml" />
-    <Content Include="Views\Shared\City.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
