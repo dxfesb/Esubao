@@ -95,6 +95,7 @@
     <Content Include="Controllers\MT\Helper.css" />
     <Content Include="Global.asax" />
     <Content Include="image\bg.jpg" />
+    <Content Include="image\Bob_128px_1211179_easyicon.net.ico" />
     <Content Include="image\dynamic_nav_bar_bg.png" />
     <Content Include="image\dynamic_nav_bar_bg_mask.png" />
     <Content Include="image\h-corporate-banner.png" />
@@ -350,6 +351,8 @@
     <Content Include="Views\Logisticstracking\PriceTime.cshtml" />
     <Content Include="Views\Shared\Esubaohead.cshtml" />
     <Content Include="Views\Helpe\HelpZiXun.cshtml" />
+    <Content Include="Views\Order\bulkOrder.cshtml" />
+    <Content Include="Views\Order\OnlineOrder.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
