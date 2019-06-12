@@ -94,6 +94,7 @@
   <ItemGroup>
     <Content Include="Content\MT\XiaDan.css" />
     <Content Include="Controllers\MT\Helper.css" />
+    <Content Include="Controllers\MT\tubiao.css" />
     <Content Include="Global.asax" />
     <Content Include="image\bg.jpg" />
     <Content Include="image\h-corporate-banner.png" />
@@ -106,6 +107,10 @@
     <Content Include="image\loginfooter-platform1.png" />
     <Content Include="image\loginfooter-solution1.png" />
     <Content Include="image\logo.jpg" />
+    <Content Include="image\MT\book.png" />
+    <Content Include="image\MT\jsj.png" />
+    <Content Include="image\MT\weizhi.png" />
+    <Content Include="image\MT\zhineng.png" />
     <Content Include="image\my_order_unselect_ico%401x.png" />
     <Content Include="image\order_banner.jpg" />
     <Content Include="image\password.png" />
@@ -352,6 +357,7 @@
     <Content Include="Views\Shared\Order_Terms.cshtml" />
     <Content Include="Views\Order\bulkOrder.cshtml" />
     <Content Include="Views\Shared\AdressBook.cshtml" />
+    <Content Include="Views\Logisticstracking\PriceTime.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

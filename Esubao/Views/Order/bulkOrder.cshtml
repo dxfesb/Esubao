@@ -13,6 +13,7 @@
     <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
     <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="~/Controllers/MT/tubiao.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -270,12 +271,12 @@
                                                         </div>
                                                         <div class="btn_nav clearfix">
                                                             <button type="button" class="primary-btn white big prev fl" v-on:click="jkj_ji()">上一步</button>
-                                                            <button type="button" class="primary-btn big next fr">下一步<span class="aicon-to-right"></span></button>
+                                                            <button type="button" class="primary-btn big next fr" v-on:click="cg()">下一步<span class="aicon-to-right"></span></button>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--完成下单-->
-                                                <div class="booking-succ">
+                                                <div class="booking-succ" v-show="jkj=='chenggong'">
                                                     <div class="order-success">
                                                         <h3>下单成功！</h3>
                                                         <button class="primary-btn white small fr cancel">
@@ -387,6 +388,9 @@
                 //寄快件跳转致预约界面
                 jkj_yu() {
                     this.jkj = 'yuyue';
+                },
+                cg() {
+                    this.jkj = 'chenggong';
                 }
             }
         })

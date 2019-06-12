@@ -13,7 +13,8 @@
     <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
     <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-
+    <link href="~/Controllers/MT/tubiao.css" rel="stylesheet" />
+    
 </head>
 <body>
     <div id="app">
@@ -24,13 +25,14 @@
                         <div class="order-service ui-front">
                             <div class="receiver-areas" role="radiogroup">
                                 <a href="javascript:void(0)" class="heavyCargo checked" role="radio" data-tab="heavyCargo" aria-checked="true">网上下单</a>
-                                <a href="下单.html" class="normalCargo" role="radio" data-tab="normalCargo" aria-checked="false">批量下单</a>
+                                <a href="/Order/bulkOrder" class="normalCargo" role="radio" data-tab="normalCargo" aria-checked="false">批量下单</a>
+                             
                             </div>
                             <div class="order-wrapper clearfix">
                                 <div class="heavy-cargo-wrapper">
-                                    <a target="_blank" href="/cn/sc/other/banner_details/Choose-SF-for-Logistics-Service/">
-                                        <img class="banner" src="~/image/help_banner .jpg" />
-                                    </a>
+                                  
+                                        <img class="banner" src="~/image/help_banner .jpg"  style="border-radius:3px;margin-top:6px;"/>
+                                  
                                     <div class="sender-wrapper">
                                         <form class="form-horizontal" novalidate="novalidate">
                                             <div class="intellect-warm-reminder">请检查拆分地址信息是否准确，如有遗漏请及时补充</div>
@@ -38,7 +40,8 @@
                                                 寄方信息<span class="small">标 * 为必填项</span>
                                                 <a href="javascript:void(0)" class="aicon-intellect-address addIntellectFill">智能地址填写</a>
                                                 <a href="javascript:void(0)" class="aicon-address-book address-book" data-toggle="modal" data-target="#AdressBu">使用地址簿</a>
-                                                <a href="../../../../sc/dynamic_function/price/" target="_blank" class="aicon-calculator">价格计算</a>
+                                                <a href="/Logisticstracking/PriceTime" target="_blank" class="aicon-calculator">价格计算</a>
+                                               
                                             </div>
                                             <p class="warm-reminder"></p>
                                             <div class="form-group">
@@ -124,14 +127,12 @@
                                                     <input type="text" class="form-control ui-autocomplete-input" name="address" placeholder="请填写所在街道以及详细地址" autocomplete="off">
                                                 </div>
                                             </div>
-
                                         </form>
                                     </div><div class="form-group">
                                         <div class="clearfix">
                                             <a href="javascript:void(0)" class="aicon-circle-check save-address-check checked maidian fr" data-md-name="点击收件人保存到地址簿" data-md-id="111007">保存到地址簿</a>
                                         </div>
                                     </div>
-
                                     <div class="text-center">
                                         <a href="javascript:void(0)" class="aicon-circle-check" id="agree-term-content">我同意</a>
                                         <a class="term" href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal">《电子运单契约条款》</a>
@@ -142,7 +143,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
