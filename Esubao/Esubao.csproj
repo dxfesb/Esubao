@@ -324,9 +324,16 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
+    <Compile Include="Controllers\LWJ\BootController.cs" />
+    <Compile Include="Controllers\LWJ\HomeController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
+    <Compile Include="Controllers\MT\HelperController.cs" />
+    <Compile Include="Controllers\MT\OnlineOrderController.cs" />
     <Compile Include="Controllers\MT\OrderController.cs" />
+    <Compile Include="Controllers\ZHX\Home_pageController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
+    <Compile Include="Controllers\ZHX\LoginindexController.cs" />
+    <Compile Include="Controllers\ZHX\RegistersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -353,6 +360,10 @@
     <Content Include="Views\Helpe\HelpZiXun.cshtml" />
     <Content Include="Views\Order\bulkOrder.cshtml" />
     <Content Include="Views\Order\OnlineOrder.cshtml" />
+    <Content Include="Views\Home_page\home_page.cshtml" />
+    <Content Include="Views\Shared\AdressBook.cshtml" />
+    <Content Include="Views\Shared\Esubaofool.cshtml" />
+    <Content Include="Views\Shared\Order_Terms.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -362,7 +373,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\LWJ\" />
     <Folder Include="Libs\" />
   </ItemGroup>
   <PropertyGroup>
