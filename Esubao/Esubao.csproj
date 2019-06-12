@@ -95,6 +95,8 @@
     <Content Include="Controllers\MT\Helper.css" />
     <Content Include="Global.asax" />
     <Content Include="image\bg.jpg" />
+    <Content Include="image\dynamic_nav_bar_bg.png" />
+    <Content Include="image\dynamic_nav_bar_bg_mask.png" />
     <Content Include="image\h-corporate-banner.png" />
     <Content Include="image\h-loginfooter.png" />
     <Content Include="image\h-loginfooter1.png" />
@@ -119,6 +121,11 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="script\bootstrap-3.3.7-dist\jquery-3.3.1.js" />
+    <Content Include="script\css\font-awesome.min.css" />
+    <Content Include="script\css\master.css" />
+    <Content Include="script\css\modernforms.css" />
+    <Content Include="script\jquery.carouFredSel-6.0.4-packed.js" />
+    <Content Include="script\modernizr.js" />
     <Content Include="script\MT\css\default.css" />
     <Content Include="script\MT\css\normalize.css" />
     <Content Include="script\MT\demo\foundation\horizontalForm.html" />
@@ -308,6 +315,7 @@
     <Content Include="script\MT\vendor\jquery\jquery.min.js" />
     <Content Include="script\MT\vendor\moment.js" />
     <Content Include="script\MT\vendor\typeahead.jquery.js" />
+    <Content Include="script\require.js" />
     <Content Include="script\vue-resource-1.3.4.js" />
     <Content Include="script\vue.min.js" />
     <Content Include="Web.config" />
