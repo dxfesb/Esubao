@@ -341,6 +341,7 @@
     <Content Include="Views\Login\LoginIndex.cshtml" />
     <Content Include="Views\Logisticstracking\PriceTime.cshtml" />
     <Content Include="Views\Shared\Esubaohead.cshtml" />
+    <Content Include="Views\Helpe\HelpZiXun.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
