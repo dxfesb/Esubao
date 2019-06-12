@@ -90,13 +90,20 @@
   <ItemGroup>
     <Content Include="Controllers\MT\Helper.css" />
     <Content Include="Global.asax" />
+    <Content Include="image\20190430-banner-PC-CN-BANNER副本.jpg" />
+    <Content Include="image\20190430-Heavy-Freight-Banner-PC-CN.jpg" />
+    <Content Include="image\about-usbanner.jpg" />
     <Content Include="image\bg.jpg" />
+    <Content Include="image\business-wl3.jpg" />
+    <Content Include="image\case-shareBg.jpg" />
     <Content Include="image\h-corporate-banner.png" />
     <Content Include="image\h-loginfooter.png" />
     <Content Include="image\h-loginfooter1.png" />
     <Content Include="image\h-user-banner.jpg" />
     <Content Include="image\help_banner .jpg" />
+    <Content Include="image\homebg.jpg" />
     <Content Include="image\icon_lock.png" />
+    <Content Include="image\lengyunbusiness-img2.jpg" />
     <Content Include="image\loginfooter-jiameng1.png" />
     <Content Include="image\loginfooter-platform1.png" />
     <Content Include="image\loginfooter-solution1.png" />
@@ -104,6 +111,7 @@
     <Content Include="image\my_order_unselect_ico%401x.png" />
     <Content Include="image\order_banner.jpg" />
     <Content Include="image\password.png" />
+    <Content Include="image\PCkuaidifuwu-0213.jpg" />
     <Content Include="image\timg.jpg" />
     <Content Include="image\userName.png" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
@@ -125,6 +133,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\MT\OrderController.cs" />
+    <Compile Include="Controllers\ZHX\Home_pageController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
     <Compile Include="Controllers\ZHX\RegistersController.cs" />
     <Compile Include="Global.asax.cs">
@@ -148,6 +157,9 @@
     <Content Include="Views\Logisticstracking\Logisticstrakcing.cshtml" />
     <Content Include="Views\Login\LoginIndex.cshtml" />
     <Content Include="Views\Shared\Esubaohead.cshtml" />
+    <Content Include="Views\Registers\Registration_page.cshtml" />
+    <Content Include="Views\Shared\Esubaofool.cshtml" />
+    <Content Include="Views\Home_page\home_page.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
