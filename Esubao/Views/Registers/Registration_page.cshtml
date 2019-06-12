@@ -1,0 +1,250 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registration_page</title>
+    <link href="~/script/touwei.css" rel="stylesheet" />
+    @*bootstrap引用*@
+    <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
+    <script src="/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0px;
+            height: 0px;
+        }
+
+        .rshead {
+            background-image: url('../../image/h-corporateRegist-banner.jpg');
+        }
+
+        .h-registTree ul li.h-rtreeActive {
+            border-bottom: 3px solid #2b358c;
+            line-height:30px;
+        }
+
+        .h-registTree ul li {
+            display: inline-block;
+            padding: 36px 0px 20px 0px;
+            width: 33.3%;
+            border-bottom: 3px solid #b6b6b6;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        li {
+            list-style: none;
+        }
+        .h-registTree a {
+            text-decoration: none;
+        }
+        .span_num {
+            width:32px;
+            height:32px;
+            background-color: rgb(43, 53, 140);
+            border-bottom-left-radius:32px;
+            border-bottom-right-radius:32px;
+            border-top-left-radius: 32px;
+            border-top-right-radius: 32px;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-family: "microsoft yahei";
+            font-size: 26px;
+            color:white;
+        }
+        .h-registForm {
+            padding: 30px 0px;
+            margin: auto;
+        }
+            .h-registForm .h-formWrap {
+                font-size: 0;
+                margin-top: 13px;
+            }
+              
+        h-registForm .h-formWrap .control-label {
+            width: 18%;
+            vertical-align: middle;
+            text-align: right;
+        }
+
+        .h-formWrap label, .h-formWrap .h-formStyle {
+            font-size: 14px;
+            font-size: 14px;
+            font-family: "microsoft yahei";
+            color: #787878;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+
+        label {
+            max-width: none;
+        }
+        .form-control {
+            border-radius: 0;
+        }
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 34px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        button, input, optgroup, option, select, textarea {
+            font-family: inherit;
+            font-size: inherit;
+            font-style: inherit;
+            font-weight: inherit;
+            outline: 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="padding:0 0 0 0;">
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 rshead" style="height:30vh;">
+            <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:15vh;padding:0px;margin:0px;">
+                @Html.Partial("Esubaohead")
+            </div>
+        </div>
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:126vh;">
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"></div>
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                @*div注册步骤*@
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:16vh;">
+                    <div class="h-registTree">
+                        <ul>
+                            <li class="h-rtreeActive">
+                                <a>
+                                    <span class="span_num">1</span>
+                                    <span style="font-size:20px;color:#2b358c">填写注册信息</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a>
+                                    <span  class="span_num">2</span>
+                                    <span style="font-size:20px;color:#2b358c">注册完成</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                @*div注册内容*@
+                <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:110vh">
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"></div>
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" style="height:90vh">
+                            <form method="post" id="submit_form">
+                                <input type="hidden" name="type" value="2">
+                                <div class="h-formWrap" id="sm3">
+                                    <label class="control-label iconred">手机号码(登录账号)：</label>
+                                    <div class="h-formStyle">
+                                        <input type="text" name="account" id="txtMobileCode" class="form-control" placeholder="常用手机号码">
+                                    </div>
+                                </div>
+
+
+                                <div class="h-formWrap" id="sm8">
+                                    <label class="control-label iconred">姓名：</label>
+                                    <div class="h-formStyle">
+                                        <input type="text" name="name" class="form-control" placeholder="姓名">
+                                    </div>
+                                </div>
+
+                                <div class="h-formWrap" id="sm5">
+                                    <label class="control-label iconred">密码：</label>
+                                    <div class="h-formStyle">
+                                        <input type="password" autocomplete="off" name="mima" class="form-control" placeholder="请输入账号密码">
+                                    </div>
+                                </div>
+                                <div class="h-formWrap" id="sm6">
+                                    <label class="control-label iconred">确认密码：</label>
+                                    <div class="h-formStyle">
+                                        <input type="password" autocomplete="off" name="retyemima" class="form-control" placeholder="再次确认密码">
+                                    </div>
+                                </div>
+
+                                <div class="h-formWrap" id="sm7">
+                                    <label class="control-label iconred">邮箱：</label>
+                                    <div class="h-formStyle">
+                                        <input type="text" name="email" id="email" class="form-control" placeholder="常用电子邮箱">
+                                    </div>
+                                </div>
+                                <div class="h-formWrap" id="sm71">
+                                    <label class="control-label iconred">邮箱验证码：</label>
+                                    <div class="h-formStyle  ">
+                                        <input type="text" name="emailCheckNum" id="emailCheckNum" class="form-control">
+                                        <button class="btn" type="button" id="btnEmailCheck" onclick="SetEmailCode(true);">获取邮箱验证码</button>
+                                    </div>
+                                </div>
+
+                                <div class="h-formWrap" id="sm11">
+                                    <label class="control-label iconred">密保：</label>
+                                    <div class="h-formStyle">
+                                        <select class="form-control" name="mbid">
+                                            <option value="">请选择</option>
+                                            <option value="1">你的小学叫什么名字？</option>
+                                            <option value="2">你最崇拜的人物是谁？</option>
+                                            <option value="3">你最喜欢的花名字叫什么？</option>
+                                            <option value="4">你父亲的职业是？</option>
+                                            <option value="5">你父亲的姓名？</option>
+                                            <option value="6">你高中班主任的名字？</option>
+                                            <option value="7">你的生日是？</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="h-formWrap" id="sm12">
+                                    <label class="control-label"></label>
+                                    <div class="h-formStyle">
+                                        <input type="text" name="mbval" class="form-control" placeholder="密保答案，用于密码重置或找回密码">
+                                    </div>
+                                </div>
+                                <div class="h-formWrap" id="sm13">
+                                    <label class="control-label iconred">手机验证码：</label>
+                                    <div class="h-formStyle  ">
+                                        <input type="text" name="checkPhoneNum" id="phoneinput" class="form-control">
+                                        <button class="btn" type="button" id="codeBtn" onclick="SetCode(true);">获取短信验证码</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"></div>
+                    </div>
+                    <div class="row" style="height:10vh">
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
+                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <button class="btn btn-primary" style="width:120px;height:6vh;background-color:#2b358c">提交</button>
+                        </div>
+                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div> 
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+            </div>
+        </div>
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12 rshead" style="height:30vh;">
+            <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:15vh;padding:0px;margin:0px;">
+                @Html.Partial("Esubaofool")
+            </div>
+        </div>
+    </div>
+</body>
+</html>
