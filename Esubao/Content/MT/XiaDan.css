@@ -27650,7 +27650,7 @@ html #layuicss-layer {
             left: 0
         }
 
-        .new-order-page #agree-term-content.active, .order-page #agree-term-content.active {
+        .new-order-page #agree-term-content.active, .order-page #agree-term-content:active {
             color: #dc1e32
         }
 

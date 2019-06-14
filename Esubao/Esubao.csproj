@@ -107,12 +107,12 @@
     <Content Include="image\loginfooter-platform1.png" />
     <Content Include="image\loginfooter-solution1.png" />
     <Content Include="image\logo.jpg" />
-    <Content Include="image\MT\blackgou.png" />
+    <Content Include="image\MT\black.png" />
     <Content Include="image\MT\book.png" />
     <Content Include="image\MT\jsj.png" />
-    <Content Include="image\MT\weizhi.png" />
+    <Content Include="image\MT\location.png" />
+    <Content Include="image\MT\red.png" />
     <Content Include="image\MT\zhineng.png" />
-    <Content Include="image\MT\redgou.png" />
     <Content Include="image\MT\Rightarrow.png" />
     <Content Include="image\my_order_unselect_ico%401x.png" />
     <Content Include="image\order_banner.jpg" />
@@ -340,6 +340,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Infor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -377,7 +378,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

@@ -19,10 +19,14 @@
 
     <link href="~/Content/MT/tubiao.css" rel="stylesheet" />
    <style type="text/css">
-       
        .aicon-circle-check:before {
-    content: url("../../image/MT/blackgou.png")
-}
+           content: url("../../image/MT/black.png")
+       }
+
+       .aicon-circle-check1:before {
+           content: url("../../image/MT/red.png");
+       }
+     
    </style>
     <script type="text/javascript">
         $(function () {
@@ -103,7 +107,8 @@
                                                 </div>
                                             </div>
                                         </form>
-                                    </div><div class="receiver-wrapper">
+                                    </div>
+                                    <div class="receiver-wrapper">
                                         <form class="form-horizontal" novalidate="novalidate">
                                             <div class="intellect-warm-reminder">请检查拆分地址信息是否准确，如有遗漏请及时补充</div>
                                             <div class="sftitle">
@@ -156,7 +161,7 @@
                                     </div>
                                     <div class="text-center">
                              
-                                        <a href="javascript:void(0)" class="aicon-circle-check" id="agree-term-content">我同意</a>
+                                        <a href="javascript:void(0)" :class="aicon_circle_check" id="agree-term-content" @@click="aiconCircleCheck()">我同意</a>
                                         <a class="term" href="javascript:void(0)" data-toggle="modal" data-target="#exampleModal">《电子运单契约条款》</a>
                                     </div>
                                     <div class="text-center">
@@ -181,14 +186,17 @@
         var app = new Vue({
             el: "#app",
             data: {
+                aicon_circle_check: "aicon-circle-check",//我同意之前和保存到地址簿的图标样式
                 fa_name: "",//发货人姓名
                 fa_company: "", //发货人公司
                 fa_Mobilephone: "",//发货人手机号
-                fa_Fixednumber:"",//收货人固定号码
+                fa_Fixednumber: "",//收货人固定号码
 
             },
             methods: {
-               
+                aiconCircleCheck(){
+                    this.aicon_circle_check == 'aicon-circle-check' ? this.aicon_circle_check = 'aicon-circle-check1' : this.aicon_circle_check = 'aicon-circle-check';
+            }
             }
 
         })

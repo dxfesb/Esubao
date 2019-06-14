@@ -11,9 +11,8 @@
 }
 
 .aicon-location:before {
-    content: url("../../image/MT/weizhi.png")
+    content: url("../../image/MT/location.png");
 }
-
 /*城市选择插件的样式*/
 * {
     -ms-word-wrap: break-word;
@@ -136,4 +135,3 @@ s {
     background-color: #05920a !important;
     color: #fff !important;
 }
-
