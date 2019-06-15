@@ -100,7 +100,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controllers\MT\Helper.css" />
+    <Content Include="script\css\Helper.css" />
     <Content Include="Global.asax" />
     <Content Include="image\20190430-banner-PC-CN-BANNER副本.jpg" />
     <Content Include="image\20190430-Heavy-Freight-Banner-PC-CN.jpg" />
@@ -382,6 +382,7 @@
     <Content Include="script\css\master.css" />
     <Content Include="script\css\modernforms.css" />
     <Content Include="script\css\shutter.css" />
+    <Content Include="script\css\Zixun.css" />
     <Content Include="script\jquery.carouFredSel-6.0.4-packed.js" />
     <Content Include="script\modernizr.js" />
     <Content Include="script\MT\css\default.css" />
