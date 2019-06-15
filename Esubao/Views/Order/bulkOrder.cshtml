@@ -13,6 +13,11 @@
     <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
     <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+   
+    <script src="~/script/MT/City/citySet.js"></script>
+    <script src="~/script/MT/City/city.json.js"></script>
+    <script src="~/script/MT/City/Popt.js"></script>
+    <link href="~/Content/MT/tubiao.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -31,10 +36,10 @@
                                 <!--寄快件-->
                                 <div class="bulkShipping">
                                     <ul class="step clearfix">
-                                        <li class="active"><strong>01</strong><i></i><p>寄件人信息</p></li>
-                                        <li><strong>02</strong><i></i><p>收件人信息</p></li>
-                                        <li><strong>03</strong><i></i><p>预约信息</p></li>
-                                        <li><strong>04</strong><i></i><p>完成下单</p></li>
+                                        <li :class="active"><strong>01</strong><i></i><p>寄件人信息</p></li>
+                                        <li :class="active2"><strong>02</strong><i></i><p>收件人信息</p></li>
+                                        <li :class="active3"><strong>03</strong><i></i><p>预约信息</p></li>
+                                        <li :class="active4"><strong>04</strong><i></i><p>完成下单</p></li>
                                     </ul>
                                     <div class="items clearfix">
                                         <div class="page active">
@@ -76,9 +81,8 @@
                                                                 <div class="col-xs-10">
                                                                     <label class="control-label required" for="location">省市区</label>
                                                                     <div class="detail-location-input" data-max-level="4" data-hide-globe="true">
-                                                                        <input type="text" class="form-control origins ui-autocomplete-input" name="location" placeholder="请选择所在地区，例如：广东省－深圳市－福田区" autocomplete="off">
-                                                                        <div class="detail-location-picker toggle-plugins" style="display: none;">
-                                                                        </div>
+                                                                        <input type="text" class="form-control origins ui-autocomplete-input city" name="location" placeholder="请选择所在地区，例如：广东省－深圳市－福田区" autocomplete="off">
+                                                                       
                                                                     </div>
                                                                 </div>
                                                                 <a class="getNearbyAddress aicon-location maidian" data-md-name="点击省市区后地标" data-md-id="OWF010103" href="javascript:void(0)"></a>
@@ -92,7 +96,7 @@
                                                         </form>
                                                     </div>
                                                     <div class="btn_nav clearfix">
-                                                        <button type="button" class="primary-btn big next fr" v-on:click="jkj_ji()">下一步<span class=".glyphicon .glyphicon-arrow-right"></span></button>
+                                                        <button type="button" class="primary-btn big next fr" v-on:click="jkj = 'shou';active='';active2='active'">下一步<span class="aicon-to-right"></span></button>
                                                     </div>
                                                 </div>
                                                 <!--收件人信息-->
@@ -134,8 +138,8 @@
                                                                         <div class="col-xs-10">
                                                                             <label class="control-label required" for="location">省市区</label>
                                                                             <div class="detail-location-input" data-max-level="4" data-hide-globe="true">
-                                                                                <input type="text" class="form-control dests ui-autocomplete-input" name="location" placeholder="请选择所在地区，例如：广东省－深圳市－福田区" autocomplete="off" title="深圳市-大鹏新区">
-                                                                                <div class="detail-location-picker toggle-plugins" style="display: none;"> </div>
+                                                                                <input type="text" class="form-control dests ui-autocomplete-input city" name="location" placeholder="请选择所在地区，例如：广东省－深圳市－福田区" autocomplete="off">
+                                                                               
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -163,8 +167,8 @@
                                                                 <li><a href="javascript:void(0)" class="add-from-excel">从Excel表格添加</a></li>
                                                             </ul>
                                                         </div>
-                                                        <button type="button" class="primary-btn white big prev fl">上一步</button>
-                                                        <button type="button" class="primary-btn big next fr" v-on:click="jkj_yu()">下一步<span class="aicon-to-right"></span></button>
+                                                        <button type="button" class="primary-btn white big prev fl" v-on:click="jkj = 'ji';active='active';active2=''">上一步</button>
+                                                        <button type="button" class="primary-btn big next fr" v-on:click="jkj = 'yuyue';active2='';active3='active'">下一步<span class="aicon-to-right"></span></button>
                                                     </div>
                                                 </div>
                                                 <!--预约信息-->
@@ -210,8 +214,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="show-by-self warm-reminder">下单后可打印电子运单二维码，向收派员或到顺丰服务点出示二维码，扫码后快速寄件</div>
-                                                            <div class="warm-reminder shipper-warm-reminder"></div>
-                                                            <div class="warm-reminder consignee-warm-reminder"></div>
+                                                           
                                                             <div class="warm-reminder-wrapper"></div>
                                                             <!-- 快递产品 --><label class="control-label required">快递产品</label>
                                                             <div class="product-wrapper">
@@ -236,7 +239,19 @@
                                                                     <li>
                                                                         <a href="javascript:void(0)" data-index="1">
                                                                             <span class="aicon-right"></span>
-                                                                            <span class="angle"></span><dl><dt><span class="currency">￥</span><span class="rate">23</span><span class="up">起</span></dt><dd><p>预计 周三 12:00 前</p></dd><dd><p>截单时间：21:00</p></dd></dl>
+                                                                            <span class="angle"></span>
+                                                                            <dl>
+                                                                            <dt>
+                                                                                <span class="currency">￥</span>
+                                                                                <span class="rate">23</span>
+                                                                                <span class="up">起</span>
+                                                                                </dt>
+                                                                            <dd><p>预计 周三 12:00 前</p>
+                                                                                </dd>
+                                                                            <dd>
+                                                                                <p>截单时间：21:00</p>
+                                                                                </dd>
+                                                                            </dl>
                                                                         </a>
                                                                     </li>
                                                                     <li>
@@ -269,13 +284,13 @@
                                                             </div>
                                                         </div>
                                                         <div class="btn_nav clearfix">
-                                                            <button type="button" class="primary-btn white big prev fl" v-on:click="jkj_ji()">上一步</button>
-                                                            <button type="button" class="primary-btn big next fr">下一步<span class="aicon-to-right"></span></button>
+                                                            <button type="button" class="primary-btn white big prev fl" v-on:click="jkj='shou';active3='';active2='active'">上一步</button>
+                                                            <button type="button" class="primary-btn big next fr" v-on:click="jkj='chenggong';active3='';active4='active'">下一步<span class="aicon-to-right"></span></button>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!--完成下单-->
-                                                <div class="booking-succ">
+                                                <div class="booking-succ" v-show="jkj=='chenggong'">
                                                     <div class="order-success">
                                                         <h3>下单成功！</h3>
                                                         <button class="primary-btn white small fr cancel">
@@ -357,7 +372,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -367,27 +381,20 @@
             </div>
         </div>
     </div>
-
     <script src="~/script/vue.min.js"></script>
     <script type="text/javascript">
         var app = new Vue({
             el: "#app",
             data: {
-                jkj: 'ji'
+                jkj: 'ji',
+                //批量下单步骤页面跳转
+                active: "active",
+                active2: "",
+                active3: "",
+                active4: ""
             },
             methods: {
-                //点击寄件类型的标题类样式转换函数
-
-                //寄快件内的操作函数
-                //寄快件跳转致收件人界面
-                jkj_ji() {
-
-                    this.jkj = 'shou';
-                },
-                //寄快件跳转致预约界面
-                jkj_yu() {
-                    this.jkj = 'yuyue';
-                }
+               
             }
         })
     </script>

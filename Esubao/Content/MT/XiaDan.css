@@ -8979,9 +8979,7 @@ input[name=monthAccount]::-ms-clear {
     content: "\ea07"
 }
 
-.aicon-address-book:before {
-    content: "\ea08"
-}
+
 
 .aicon-agree:before {
     content: "\ea09"
@@ -9283,9 +9281,7 @@ input[name=monthAccount]::-ms-clear {
     content: "\ea53"
 }
 
-.aicon-intellect-address:before {
-    content: "\ea54"
-}
+
 
 .aicon-jinggao01:before {
     content: "\ea55"
@@ -9303,9 +9299,7 @@ input[name=monthAccount]::-ms-clear {
     content: "\ea58"
 }
 
-.aicon-location:before {
-    content: "\ea59"
-}
+
 
 .aicon-logout:before {
     content: "\ea5a"
@@ -27656,7 +27650,7 @@ html #layuicss-layer {
             left: 0
         }
 
-        .new-order-page #agree-term-content.active, .order-page #agree-term-content.active {
+        .new-order-page #agree-term-content.active, .order-page #agree-term-content:active {
             color: #dc1e32
         }
 
