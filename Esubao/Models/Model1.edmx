@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="EsuBaoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="EsuBaoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Company">
           <Key>
             <PropertyRef Name="Company_ID" />
@@ -129,6 +129,7 @@
           <Property Name="Mail_box" Type="varchar" MaxLength="50" />
           <Property Name="Waybill_No" Type="varchar" MaxLength="50" />
           <Property Name="Message" Type="varchar(max)" />
+          <Property Name="MessDate" Type="date" Nullable="false" />
         </EntityType>
         <Association Name="FK_PiLiangXiaDan_transportation">
           <End Role="transportation" Type="Self.transportation" Multiplicity="0..1" />
@@ -206,8 +207,7 @@
             <End Role="T_Refund" EntitySet="T_Refund" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="EsuBaoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -333,6 +333,7 @@
           <Property Name="Mail_box" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Waybill_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MessDate" Type="DateTime" Precision="0" Nullable="false" />
         </EntityType>
         <Association Name="FK_quick_order_Table_2">
           <End Role="transportation" Type="Self.transportation" Multiplicity="0..1" />
@@ -530,6 +531,7 @@
           <EntitySetMapping Name="ZiXunJianYis">
             <EntityTypeMapping TypeName="EsuBaoModel.ZiXunJianYi">
               <MappingFragment StoreEntitySet="ZiXunJianYi">
+                <ScalarProperty Name="MessDate" ColumnName="MessDate" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="title" ColumnName="title" />
                 <ScalarProperty Name="Message_type" ColumnName="Message_type" />

@@ -22,5 +22,6 @@ namespace Esubao.Models
         public string Mail_box { get; set; }
         public string Waybill_No { get; set; }
         public string Message { get; set; }
+        public System.DateTime MessDate { get; set; }
     }
 }
