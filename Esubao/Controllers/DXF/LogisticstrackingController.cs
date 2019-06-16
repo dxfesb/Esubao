@@ -10,7 +10,7 @@ using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using static Esubao.Models.Infor;
 
 namespace Esubao.Controllers.DXF
 {
@@ -25,6 +25,19 @@ namespace Esubao.Controllers.DXF
         {
             return View();
         }
+
+        public ActionResult PriceTime()
+        {
+            return View();
+        }
+        /// <summary>
+        /// 物流查询接口调用及物流查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="certificate"></param>
+        /// <param name="chain"></param>
+        /// <param name="errors"></param>
+        /// <returns></returns>
         public static bool CheckValidationResult(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors errors)
         {
             return true;
@@ -34,8 +47,9 @@ namespace Esubao.Controllers.DXF
         private const String method = "GET";
         private const String appcode = "7bd384351740479f9b35be67763bbc5d";
         [HttpPost]
-        public JsonResult wLselect(string number) {  
-            String querys = "no="+number+"";
+        public JsonResult WLselect(string number)
+        {
+            String querys = "no=" + number + "";
             String bodys = "";
             String url = host + path;
             HttpWebRequest httpRequest = null;
@@ -46,7 +60,7 @@ namespace Esubao.Controllers.DXF
                 url = url + "?" + querys;
             }
 
-            if (host.Contains("https://"))
+            if (host.Contains("http://"))
             {
                 ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckValidationResult);
                 httpRequest = (HttpWebRequest)WebRequest.CreateDefault(new Uri(url));
@@ -76,12 +90,13 @@ namespace Esubao.Controllers.DXF
             Console.WriteLine(httpResponse.StatusCode);
             Console.WriteLine(httpResponse.Method);
             Console.WriteLine(httpResponse.Headers);
-            Stream st = httpResponse.GetResponseStream();
-            StreamReader reader = new StreamReader(st, Encoding.GetEncoding("utf-8"));
-            Console.WriteLine(reader.ReadToEnd());
-            Console.WriteLine("\n");
-            return Json(reader.ReadToEnd());
-        }      
+            using (StreamReader reader = new StreamReader(httpResponse.GetResponseStream(), Encoding.UTF8))
+            {
+                var respContene = reader.ReadToEnd();
+                var list = JsonConvert.DeserializeObject<Root>(respContene);
+                return Json(list);
+            }
+        }
 
     }
-    }
+}

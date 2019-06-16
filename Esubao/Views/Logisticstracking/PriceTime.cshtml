@@ -1,0 +1,159 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PriceTime</title>
+    <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
+    <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="~/script/Logisticstracking.css" rel="stylesheet" />
+    <script src="~/script/Logisticstracking.js"></script>
+    <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="~/image/Bob_128px_1211179_easyicon.net.ico" />
+</head>
+<body>
+    <div class="container-fluid">
+        @*头部导航分部视图开始*@
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                @Html.Partial("Esubaohead")
+            </div>
+          
+        </div>
+        @*头部导航分部视图结束*@
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center" style="background-image: url('../../image/dynamic_nav_bar_bg.png');background-repeat:no-repeat;height:50vh">
+                <div class="sf-care-nav">
+                    <ul class="main-nav-menu">
+                        <li><a href="javascript:void(0);" onclick="jumpOrder()">我要寄件</a></li>
+                        <li><a href="javascript:void(0);">运单追踪</a></li>
+                        <li><a href="javascript:void(0);" class='active'>服务支持</a></li>
+                        <li><a href="/Helpe/HelpZiXun">资讯/投诉</a></li>
+                    </ul>
+                    <div class="care-tips">
+                        <p class="tips-title">速宝支持，你要的这里都有</p>
+                        <p class="tips-content">我们期待为您带来更加优质的线上服务体验</p>
+                    </div>
+                    <div class="service-inside-nav">
+                        <div class="all-support-container"><ul class="clearfix"><li class="fl all-support-item"><a href="../../../sc/dynamic_function/price/" class="wrapper"><span class="aicon aicon-freight-time"></span><span class="desc-text">运费时效</span></a></li><li class="fl all-support-item"><a href="../../../sc/dynamic_function/range/" class="wrapper"><span class="aicon aicon-service-area"></span><span class="desc-text">服务范围</span></a></li><li class="fl all-support-item"><a href="../../../sc/dynamic_function/store/" class="wrapper"><span class="aicon aicon-net-point"></span><span class="desc-text">网点查询</span></a></li><li class="fl all-support-item"><a href="../../../sc/dynamic_function/accept/" class="wrapper"><span class="aicon aicon-post-standard"></span><span class="desc-text">收寄标准</span></a></li><li class="fl all-support-item"><a href="../../../sc/dynamic_function/more/exchange/" class="wrapper"><span class="aicon aicon-exchange"></span><span class="desc-text">汇率查询</span></a></li><li class="fl all-support-item"><a href="../../../sc/dynamic_function/more/agency-ebill/" class="wrapper"><span class="aicon aicon-cod-bills"></span><span class="desc-text">代收货款账单</span></a></li><li class="fl all-support-item"><a href="../../../sc/dynamic_function/more/COD_Ebilling_System/" class="wrapper"><span class="aicon aicon-cod-checking"></span><span class="desc-text">代收货款对账</span></a></li><li class="fl all-support-item"><a href="../../../sc/dynamic_function/more/formdownload/" class="wrapper"><span class="aicon aicon-useful-forms"></span><span class="desc-text">常用表格</span></a></li><li class="fl all-support-item"><a href="../../../sc/dynamic_function/more/payment/" class="wrapper"><span class="aicon aicon-claim"></span><span class="desc-text">理赔</span></a></li><li class="fl all-support-item has-dropdown"><a href="javascript:void(0)" class="wrapper"><span class="aicon aicon-customs-clear"></span><span class="desc-text">清关服务<span class="chevron-down-outlined"></span></span></a><ul class="dropdown-menu"><li><a href="../../../sc/dynamic_function/clearance/clearance_pictureUpload/">清关证件图片上传</a></li><li><a href="../../../sc/dynamic_function/clearance/clearance_tax/">税金信息查询(中国)</a></li><li><a href="../../../sc/dynamic_function/clearance/restricted_delivery/">进出口规则</a></li></ul></li><li class="fl all-support-item"><a href="../../../sc/dynamic_function/more/lost/" class="wrapper"><span class="aicon aicon-miss"></span><span class="desc-text">无着件公示</span></a></li></ul></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="border:1px solid #c2bcbc;margin-left:200px">
+            <div class="main-content-row no-header location-inputs payFee-location-inputs ui-front">
+                <div class="promoted-link">
+                    <span class="sfi sfi-globe"></span>
+                    <a href="time_internal.html">查看中国内地出口时效表</a>
+                </div>
+                <h5>运费时效查询</h5>
+                <dl>
+                    <dt>原寄地</dt>
+                    <dd class="detail-location-input origin-price" data-do-save-state="true" data-do-restore-state="true" data-max-level="4">
+                        <div class="input-group form-inline">
+                            <input type="text" class="form-control origins no-right-border autocomplete ui-autocomplete-input" placeholder="请选择原寄地地区，例如：北京市" autocomplete="off">
+                            <span class="input-group-addon no-left-border"><span class="sfi sfi-dot"></span></span>
+                        </div>
+                        <div class="detail-location-picker toggle-plugins"></div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>目的地<!--testtest111--></dt>
+                    <dd class="detail-location-input dest-price" data-max-level="4">
+                        <div class="input-group">
+                            <input type="text" class="form-control readonly dests no-right-border autocomplete ui-autocomplete-input" placeholder="请选择目的地地区，例如：北京市" disabled="disabled" autocomplete="off">
+                            <span class="input-group-addon no-left-border"><span class="sfi sfi-dot"></span></span>
+                        </div>
+                        <div class="detail-location-picker toggle-plugins"></div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="time-query-title">重量</dt>
+                    <dd>
+                        <div class="col-sm-6 input-container input-group" style="padding-right: 1px;padding-left: 1px;">
+                            <input type="number" id="weight" class="form-control weight" value="1" step="0.5" min="0.5" onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')">
+                            <span id="weightUnit" class="input-group-addon no-left-border">kg</span>
+                        </div>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt class="time-query-title">寄件时间</dt>
+                    <dd class="detail-date-time-input time-query">
+                        <div class="input-group">
+                            <input type="text" class="form-control date readonly no-right-border" value="现在" readonly="readonly">
+                            <span class="input-group-addon no-left-border"><span class="sfi sfi-time"></span></span>
+                        </div>
+                        <div class="detail-date-time-picker toggle-plugins"><ul class="date-time-tabs" role="radiogroup"><li tabindex="0" role="radio" class="date  accessible-click">日期</li><li tabindex="0" role="radio" class="time current accessible-click" aria-checked="true">时间</li></ul><div class="detail-time-picker"><div tabindex="0" class="indicator top disabled accessible-click"><span class="sfi sfi-chevron-up"></span></div><div class="picker-wrapper"><ul class="times" role="radiogroup"><li role="radio" tabindex="0" class=" accessible-click">00: 00</li><li role="radio" tabindex="0" class=" accessible-click">00: 30</li><li role="radio" tabindex="0" class=" accessible-click">01: 00</li><li role="radio" tabindex="0" class=" accessible-click">01: 30</li><li role="radio" tabindex="0" class=" accessible-click">02: 00</li><li role="radio" tabindex="0" class=" accessible-click">02: 30</li><li role="radio" tabindex="0" class=" accessible-click">03: 00</li><li role="radio" tabindex="0" class=" accessible-click">03: 30</li><li role="radio" tabindex="0" class=" accessible-click">04: 00</li><li role="radio" tabindex="0" class=" accessible-click">04: 30</li><li role="radio" tabindex="0" class=" accessible-click">05: 00</li><li role="radio" tabindex="0" class=" accessible-click">05: 30</li><li role="radio" tabindex="0" class=" accessible-click">06: 00</li><li role="radio" tabindex="0" class=" accessible-click">06: 30</li><li role="radio" tabindex="0" class=" accessible-click">07: 00</li><li role="radio" tabindex="0" class=" accessible-click">07: 30</li><li role="radio" tabindex="0" class=" accessible-click">08: 00</li><li role="radio" tabindex="0" class=" accessible-click">08: 30</li><li role="radio" tabindex="0" class=" accessible-click">09: 00</li><li role="radio" tabindex="0" class=" accessible-click">09: 30</li><li role="radio" tabindex="0" class=" accessible-click">10: 00</li><li role="radio" tabindex="0" class=" accessible-click">10: 30</li><li role="radio" tabindex="0" class=" accessible-click">11: 00</li><li role="radio" tabindex="0" class=" accessible-click">11: 30</li><li role="radio" tabindex="0" class=" accessible-click">12: 00</li><li role="radio" tabindex="0" class=" accessible-click">12: 30</li><li role="radio" tabindex="0" class=" accessible-click">13: 00</li><li role="radio" tabindex="0" class=" accessible-click">13: 30</li><li role="radio" tabindex="0" class=" accessible-click">14: 00</li><li role="radio" tabindex="0" class=" accessible-click">14: 30</li><li role="radio" tabindex="0" class=" accessible-click">15: 00</li><li role="radio" tabindex="0" class=" accessible-click">15: 30</li><li role="radio" tabindex="0" class=" accessible-click">16: 00</li><li role="radio" tabindex="0" class=" accessible-click">16: 30</li><li role="radio" tabindex="0" class=" accessible-click">17: 00</li><li role="radio" tabindex="0" class=" accessible-click">17: 30</li><li role="radio" tabindex="0" class=" accessible-click">18: 00</li><li role="radio" tabindex="0" class=" accessible-click">18: 30</li><li role="radio" tabindex="0" class="current accessible-click" aria-checked="true">19: 00</li><li role="radio" tabindex="0" class=" accessible-click">19: 30</li><li role="radio" tabindex="0" class=" accessible-click">20: 00</li><li role="radio" tabindex="0" class=" accessible-click">20: 30</li><li role="radio" tabindex="0" class=" accessible-click">21: 00</li><li role="radio" tabindex="0" class=" accessible-click">21: 30</li><li role="radio" tabindex="0" class=" accessible-click">22: 00</li><li role="radio" tabindex="0" class=" accessible-click">22: 30</li><li role="radio" tabindex="0" class=" accessible-click">23: 00</li><li role="radio" tabindex="0" class=" accessible-click">23: 30</li></ul></div><div tabindex="0" class="indicator bottom accessible-click disabled"><span class="sfi sfi-chevron-down"></span></div></div></div>
+                    </dd>
+                </dl>
+
+                <button id="queryPrice" type="button" class="primary-button disabled maidian" data-md-name="点击查询" data-md-id="117001" data-loading-text="查询中..." style="margin-top:20px;margin-bottom:20px">
+                    查询
+                </button>
+            </div>
+        </div>
+        @*运费计算介绍部分开始*@
+        <div class="row">
+            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9" style="border:1px solid #c2bcbc;margin-top:50px;margin-left:200px">
+                <div style="background-color: #FFF;border-radius: 4px;padding: 20px;" class=" main-content-row news-content content-page ">
+                    <p><strong>运费计算基于以下计费规则：</strong></p>
+                    <p><strong>一、 体积重量计算方法</strong></p>
+                    <p>托寄物的计费重量取体积重量与实际重量两者之间的较大值，体积重量的计算方法为：</p>
+                    <p>1、【<strong>顺丰即日/次晨/标快</strong>】</p>
+                    <p>同城、省内件以及经济区域内互寄，体积重量=长(CM)×宽(CM)×高(CM)÷12000；</p>
+                    <p>省外跨经济区域互寄，体积重量=长(CM)×宽(CM)×高(CM)÷6000；</p>
+                    <p>(经济区域包含：京津冀区域，江浙沪皖区域,，川渝区域，黑吉辽区域)</p>
+                    <p>2、【<strong>顺丰特惠</strong>】 体积重量=长(CM)×宽(CM)×高(CM)÷12000；</p>
+                    <p>3、【<strong>重货包裹/小票零担/冷运到家</strong>】 体积重量=长(CM)×宽(CM)×高(CM)÷6000；</p>
+                    <p>4、【<strong>冷运零担</strong>】 体积重量=长(CM)×宽(CM)×高(CM)÷3000；</p>
+                    <p><strong>5</strong><strong>、【港澳台（服务）】 </strong>体积重量=长(CM)×宽(CM)×高(CM)÷6000</p>
+                    <p><strong>6</strong><strong>、【国际快递（服务）】</strong>体积重量=长(CM)×宽(CM)×高(CM) ÷5000</p>
+                    <p>其他产品计算方法请致电95338或咨询当地收派员。</p>
+                    <p><strong>二. 计费重量小数点进位处理方式</strong></p>
+                    <p>1、【<strong>中国大陆互寄业务</strong>】</p>
+                    <p>100KG以下，续重以0.5KG为计重单位，不足0.5kg，按0.5kg计；100KG及以上，四舍五入取整数。</p>
+                    <p>2、【<strong>港澳本地业务</strong>】</p>
+                    <p>续重以0.5KG为计重单位，不足0.5kg，按0.5kg计。</p>
+                    <p>3、【<strong>跨境业务</strong>】</p>
+                    <p>【中国内地始发至港澳台业务】100KG以下, 续重以0.5KG为计重单位，不足0.5kg，按0.5kg计；100KG及以上，以1KG为计重单位，小数点后尾数大于零的，向上进位至下一个1KG。</p>
+                    <p>除以上流向的其他跨境业务，按以下方式处理：</p>
+                    <p>20KG以下, 续重以0.5KG为计重单位，不足0.5kg，按0.5kg计；20KG及以上，以1KG为计重单位，小数点后尾数大于零的，向上进位至下一个1KG</p>
+                    <p><strong>三. 运费计算结果处理方式</strong></p>
+                    <p>1、运费计算结果按四舍五入取整数值；</p>
+                    <p>2、不同产品起始重量各有差异，不足起重的快件将按起重计费并显示。</p>
+                    <p>以上计费规则可能因服务（产品）或所在地区不同而有所差异，详情致电95338或与当地收派员进行咨询。</p>
+                    <p>&nbsp;</p>
+                    <p><strong>温馨提示：</strong></p>
+                    <p><strong>始发地或目的地任一方为港澳台地区</strong><strong>：</strong></p>
+                    <p style="padding-left: 30px;">1、此价格供参考。更多收费和服务详情，详情请致电中国内地客户服务热线&nbsp;<strong>95338</strong>。</p>
+                    <p style="padding-left: 30px;">2、中国台湾地区寄往中国内地的特殊包裹品项及价格请<a href="http://www.sf-express.com/cn/sc/download/20181211-Dynamic_function-pric-TW-C-type.pdf">按此</a>查询，参考时效在顺丰标快产品基础上加时<span lang="EN-US">3-5</span>天；。</p>
+                    <p style="padding-left: 30px;">3、对于约定由收件人或第三方付费（含运费及增值服务费）的快件，在快件签收之前，可提出对费用付款方式变更为寄方付。对于需要更改付款方式的快件，寄件人除需要支付运费外，每票需另外支付更改付款方式服务费。详见具体<a href="http://www.sf-express.com/cn/sc/express/express_service/added_service/change_payment_method/">收费标准</a>。</p>
+                    <p style="padding-left: 30px;">4、如收派件地址为<a href="http://www.sf-express.com/cn/sc/download/20190305-HongKongResidentialSurcharge_SC.pdf">香港地区住宅地址</a>或<a href="http://www.sf-express.com/cn/sc/download/20190306-HK_RemoteArea_SC.pdf">香港地区偏远地区</a>，上门收派每票另收港币住宅附加费$20，香港偏远件$30，附加费可寄付或到付，收派件时效需加0.5-1个工作日。</p>
+                    <p style="padding-left: 30px;">5、中国台湾地区部分地区收派时效需加0.5-1工作日，可<a href="http://www.sf-express.com/cn/sc/download/TW_Remote_area_TC01.PDF">按此</a>查阅详情。</p>
+                    <p style="padding-left: 30px;">6、以上由中国香港、中国澳门及中国台湾地区寄件至中国内地，以及中国港澳台地区之间互寄,运费已包含燃油附加费。燃油附加费说明请<a href="http://www.sf-express.com/cn/sc/download/201905-Fuel-Surcharge-CN-SC.pdf">按此</a>了解。</p>
+                    <p><strong>始发地或目的地任一方为海外国家</strong><strong>:</strong></p>
+                    <p>&nbsp;</p>
+                    <p style="padding-left: 30px;">1、以上查询的流向价格与时效仅供参考。更多服务及其收费详情，请致电国际业务客服专线9533883.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</p>
+                    <p style="padding-left: 30px;">2、以上查询的流向运费未包含清关税费、偏远地区附加费、住宅派送附加费、特殊处理费等可能产生的其他费用。</p>
+                    <p style="padding-left: 30px;">3、时效标准天数是指工作日，不包含收件日，不包括周末和节假日。具体派送时效以目的地邮编为准。如遇偏远地区或郊区、航班延误、清关异常等情形，时效会额外增加。时效为参考时效，非承诺时效。&nbsp;</p>
+                    <p>&nbsp; &nbsp; &nbsp; &nbsp;4、以上由中国内地寄件至海外地区（不含港澳台）的运费已包含燃油附加费，请<a href="http://www.sf-express.com/cn/sc/download/Fuel-Surcharge-CNOB.pdf">按此</a>了解更多燃油附加费的资料。</p>
+                    <p>&nbsp;</p>
+                </div>
+            </div>
+
+        </div>
+        @*运费计算介绍部分结束*@
+      
+    </div>
+
+</body>
+</html>

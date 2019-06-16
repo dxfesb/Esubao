@@ -1,0 +1,259 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>home_page</title>
+    @*引用头部尾部的样式*@
+    <link href="~/script/touwei.css" rel="stylesheet" />
+    @*背景图轮播引用*@
+    <link href="~/script/luobo/common/style.css" rel="stylesheet" />
+    <script src="~/script/luobo/js/jquery-1.9.1.min.js"></script>
+    <script src="~/script/luobo/js/fullplay.js"></script>
+    <link href="~/script/css/shutter.css" rel="stylesheet" />
+    @*bootstrap引用*@
+    <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link href="/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        #bodyPage {
+            width: 100%;
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .homepage_ul {
+            color: #ffffff;
+            width: 100%;
+            height: 100%;
+            font-size: 22px;
+            font-weight: 400;
+            list-style: none;
+        }
+
+            .homepage_ul > li {
+                font-size: 16px;
+                width: 230px;
+                height: 100%;
+                line-height: 16vh;
+                float: left;
+                margin-left: 10px;
+            }
+
+                .homepage_ul > li i {
+                    margin-right: 5px;
+                }
+
+                .homepage_ul > li a {
+                    color: #ffffff;
+                    text-decoration: none;
+                }
+
+        .div_selete {
+            width: 310px;
+            height: 180px;
+            background-color: #ffffff;
+            margin-top: 195px;
+            margin-left: 30px;
+            box-shadow: #ffffff 0px 5px 13px 10px;
+        }
+        /*.div_of {
+            height:40vh;
+            background-color:#fff;
+        }*/
+        .operation {
+            height: 100%;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .div_fool {
+            height: 40vh;
+            background-image: url('../../image/case-shareBg.jpg');
+        }
+
+        .text_fool {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+            .text_fool h4 {
+                font: bold 19px arial 600;
+            }
+
+                .text_fool h4 > p {
+                    font-size: 12px;
+                    margin-top: 5px;
+                }
+
+        .yuan {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px; /*倒角半径*/
+            background-color: #ffffff;
+            float: left;
+            margin-left: 85px;
+            text-align: center;
+            color: red;
+            font-size: 13px;
+        }
+
+            .yuan i {
+                width: 50px;
+                height: 48px;
+                font-size: 30px;
+                margin-top: 10px;
+            }
+    </style>
+</head>
+<body>
+    <div id="bodyPage">
+        <img src="~/image/20190430-banner-PC-CN-BANNER副本.jpg" />
+        @*<div class="shutter">
+            <div class="shutter-img">
+                <a href="#" data-shutter-title="Iron Man"><img src="~/image/20190430-banner-PC-CN-BANNER副本.jpg" /></a>
+                <a href="#" data-shutter-title="Iron Man"> <img src="~/image/20190430-Heavy-Freight-Banner-PC-CN.jpg" alt="#"  /></a>
+            </div>
+            <ul class="shutter-btn">
+                <li class="prev"></li>
+                <li class="next"></li>
+            </ul>
+        </div>*@
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color:#ffffff">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                    <a style="font-size:8vh;font-family:'AR BERKLEY';text-decoration:none;color:#23527c; margin-left:30px;line-height:15vh;">E速宝</a>
+                </div>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-top:18px">
+                    <ul class="nav  navbar-nav licor" style="float:left;">
+                        <li class="active">
+                            <a href="#">首页 </a>
+                        </li>
+                        <li><a href="#">文件</a></li>
+                        <li><a href="#">编辑</a></li>
+                        <li><a href="#">视图</a></li>
+                        <li><a href="#">项目</a></li>
+                        <li><a href="#">文件</a></li>
+                        <li><a href="#">编辑</a></li>
+                        <li><a href="#">视图</a></li>
+                        <li><a href="#">项目</a></li>
+                    </ul>
+                    <div style="float:right">
+                        <a href="#" style="color:#000000">快速登录</a>/
+                        <a href="#" style="color:#000000">注册</a>
+                    </div>
+                </div>
+            </div>
+        </div> @*导航*@
+        <div class="row">
+            <div class="row col-lg-12" style="height:400px;">
+                <div class="div_selete">
+                    <br />
+                    <textarea class="form-control" rows="4" placeholder="请输入您要查询的订单号"></textarea>
+                    <br />
+                    <button type="button" class="btn" style="width:100%;background-color:#141e51;color:#fff;">马上查单</button>
+                </div>
+            </div>
+        </div> @*查询*@
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color:#7c74c1;height:16vh;">
+                <ul class="homepage_ul">
+                    <li><i class="glyphicon glyphicon-zoom-in"></i><a href="#">运单追踪</a></li>
+                    <li><i class="glyphicon glyphicon-envelope"></i><a href="#">我要寄件</a></li>
+                    <li><i class="glyphicon glyphicon-usd"></i><a href="#">运费时效查询</a></li>
+                    <li><i class="glyphicon glyphicon-globe"></i><a href="#">服务网点查询</a></li>
+                    <li><i class="glyphicon glyphicon-globe"></i><a href="#">服务网点查询</a></li>
+                </ul>
+            </div>
+        </div>@*功能导航*@
+        <div class="row" style="height:50vh">
+            <div class="col-lg-4 operation"></div>
+            <div class="col-lg-4 operation">
+                <h3>E速宝业务流程</h3>
+                <p>基于物流   融通金融  流通商业</p>
+                <hr style="height:1px;border:none;border-top:2px dashed #000000" />
+                <div class="col-lg-6">
+                    <img class="col-lg-12" src="~/image/lengyunbusiness-img2.jpg" />
+                    <div class="div_p">
+                        <span class="ly">
+                            冷运服务
+                        </span>
+                        <p></p><p>E速宝依托强大的冷链运输网和温控管理系统，为食品&amp;医药冷链客户提供专业的冷运服务。</p><p></p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img class="col-lg-12" src="~/image/business-wl3.jpg" />
+                    <div class="div_p">
+                        <span>
+                            仓储服务
+                        </span>
+                        <p></p><p>E速宝依托自身强大的仓储和运输网络资源，为电商客户打造的一站式物流服务。</p><p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 operation"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 div_fool">
+                <div class="col-lg-2"></div>
+                <div class="container col-lg-8">
+                    <div class="text_fool">
+                        <h4>
+                            成功案例
+                            <p>每一时刻，都有无数的客户托付与期待被成功交付，顺丰与前瞻者同行，与成就者共成就</p>
+                        </h4>
+                    </div>
+                    <div>
+                        <div class="yuan">
+                            <i class="glyphicon glyphicon glyphicon-phone"></i>
+                            <p>3C电子行业</p>
+                        </div>
+                        <div class="yuan">
+                            <i class="glyphicon glyphicon-modal-window"></i>
+                            <p>医疗行业</p>
+                        </div>
+                        <div class="yuan">
+                            <i class="glyphicon glyphicon-apple"></i>
+                            <p>生鲜行业</p>
+                        </div>
+                        <div class="yuan">
+                            <i class="glyphicon glyphicon-blackboard"></i>
+                            <p>快消行业</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12"> @Html.Partial("Esubaofool");</div>
+        </div>
+    </div>
+    @*<script src="~/script/PicLb/jquery.min.js"></script>
+    <script src="~/script/PicLb/shutter.js"></script>
+    <script src="~/script/PicLb/velocity.js"></script>
+    <script>
+        $(function () {
+            $('.shutter').shutter({
+                shutterW: 1300, // 容器宽度
+                shutterH: 608, // 容器高度
+                isAutoPlay: true, // 是否自动播放
+                playInterval: 3000, // 自动播放时间
+                curDisplay: 3, // 当前显示页
+                fullPage: false // 是否全屏展示
+            });
+        });
+    </script>*@
+</body>
+</html>
+

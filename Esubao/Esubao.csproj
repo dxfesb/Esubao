@@ -43,11 +43,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\lenom\Downloads\aip-csharp-sdk-3.6.6\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -92,26 +100,286 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MT\tubiao.css" />
+    <Content Include="Content\MT\XiaDan.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="script\css\Helper.css" />
     <Content Include="Global.asax" />
+    <Content Include="image\20190430-banner-PC-CN-BANNER副本.jpg" />
+    <Content Include="image\20190430-Heavy-Freight-Banner-PC-CN.jpg" />
     <Content Include="image\bg.jpg" />
-    <Content Include="image\is2.jpg" />
+    <Content Include="image\Bob_128px_1211179_easyicon.net.ico" />
+    <Content Include="image\dynamic_nav_bar_bg.png" />
+    <Content Include="image\dynamic_nav_bar_bg_mask.png" />
     <Content Include="image\h-corporate-banner.png" />
     <Content Include="image\h-loginfooter.png" />
     <Content Include="image\h-loginfooter1.png" />
     <Content Include="image\h-user-banner.jpg" />
     <Content Include="image\help_banner .jpg" />
     <Content Include="image\icon_lock.png" />
-    <Content Include="image\is3.jpg" />
     <Content Include="image\loginfooter-jiameng1.png" />
     <Content Include="image\loginfooter-platform1.png" />
     <Content Include="image\loginfooter-solution1.png" />
     <Content Include="image\logo.jpg" />
-    <Content Include="image\is1.jpg" />
     <Content Include="image\my_order_unselect_ico%401x.png" />
+    <Content Include="image\order_banner.jpg" />
     <Content Include="image\password.png" />
-    <Content Include="image\spider_search_v4.png" />
     <Content Include="image\timg.jpg" />
     <Content Include="image\userName.png" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="script\Admin\Content\ace\ace.js" />
+    <Content Include="script\Admin\Content\ace\ext-searchbox.js" />
+    <Content Include="script\Admin\Content\ace\mode-html.js" />
+    <Content Include="script\Admin\Content\ace\snippets\html.js" />
+    <Content Include="script\Admin\Content\ace\theme-tomorrow.js" />
+    <Content Include="script\Admin\Content\ace\worker-html.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\layui.css" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\layui.mobile.css" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\code.css" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\laydate\default\laydate.css" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\icon-ext.png" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\icon.png" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\layer.css" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\loading-0.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\loading-1.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\loading-2.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\font\iconfont.svg" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\0.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\1.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\10.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\11.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\12.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\13.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\14.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\15.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\16.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\17.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\18.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\19.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\2.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\20.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\21.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\22.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\23.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\24.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\25.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\26.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\27.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\28.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\29.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\3.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\30.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\31.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\32.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\33.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\34.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\35.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\36.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\37.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\38.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\39.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\4.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\40.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\41.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\42.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\43.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\44.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\45.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\46.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\47.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\48.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\49.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\5.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\50.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\51.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\52.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\53.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\54.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\55.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\56.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\57.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\58.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\59.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\6.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\60.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\61.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\62.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\63.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\64.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\65.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\66.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\67.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\68.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\69.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\7.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\70.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\71.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\8.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\9.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\layui.all.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\layui.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\carousel.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\code.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\colorpicker.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\element.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\flow.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\form.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\jquery.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\laydate.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\layedit.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\layer.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\laypage.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\laytpl.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\mobile.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\rate.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\slider.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\table.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\tree.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\upload.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\util.js" />
+    <Content Include="script\Admin\css\font.css" />
+    <Content Include="script\Admin\css\login.css" />
+    <Content Include="script\Admin\css\theme1.css" />
+    <Content Include="script\Admin\css\theme2.css" />
+    <Content Include="script\Admin\css\theme3.css" />
+    <Content Include="script\Admin\css\theme4.css" />
+    <Content Include="script\Admin\css\theme5.css" />
+    <Content Include="script\Admin\css\xadmin.css" />
+    <Content Include="script\Admin\fontAlibaba\demo.css" />
+    <Content Include="script\Admin\fontAlibaba\demo_index.html" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.css" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.js" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.svg" />
+    <Content Include="script\Admin\fonts\iconfont.svg" />
+    <Content Include="script\Admin\images\adminlogo.png" />
+    <Content Include="script\Admin\images\aiwrap.png" />
+    <Content Include="script\Admin\images\bg.png" />
+    <Content Include="script\Admin\images\demo.jpg" />
+    <Content Include="script\Admin\images\head_logo.png" />
+    <Content Include="script\Admin\js\jquery.min.js" />
+    <Content Include="script\Admin\js\xadmin.js" />
+    <Content Include="script\Admin\js\xcity.js" />
+    <Content Include="script\Admin\lib\layui\css\layui.css" />
+    <Content Include="script\Admin\lib\layui\css\layui.mobile.css" />
+    <Content Include="script\Admin\lib\layui\css\modules\code.css" />
+    <Content Include="script\Admin\lib\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\icon.png" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\layer.css" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="script\Admin\lib\layui\font\iconfont.svg" />
+    <Content Include="script\Admin\lib\layui\images\face\0.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\1.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\10.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\11.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\12.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\13.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\14.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\15.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\16.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\17.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\18.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\19.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\2.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\20.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\21.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\22.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\23.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\24.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\25.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\26.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\27.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\28.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\29.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\3.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\30.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\31.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\32.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\33.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\34.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\35.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\36.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\37.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\38.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\39.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\4.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\40.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\41.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\42.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\43.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\44.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\45.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\46.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\47.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\48.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\49.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\5.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\50.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\51.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\52.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\53.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\54.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\55.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\56.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\57.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\58.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\59.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\6.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\60.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\61.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\62.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\63.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\64.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\65.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\66.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\67.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\68.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\69.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\7.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\70.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\71.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\8.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\9.gif" />
+    <Content Include="script\Admin\lib\layui\layui.all.js" />
+    <Content Include="script\Admin\lib\layui\layui.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\carousel.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\code.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\colorpicker.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\element.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\flow.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\form.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\jquery.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\laydate.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\layedit.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\layer.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\laypage.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\laytpl.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\mobile.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\rate.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\slider.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\table.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\tree.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\upload.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\util.js" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap.css" />
@@ -121,25 +389,290 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\bootstrap.min.js" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\js\npm.js" />
     <Content Include="script\bootstrap-3.3.7-dist\jquery-3.3.1.js" />
-    <Content Include="script\luobo\common\style.css" />
-    <Content Include="script\luobo\js\fullplay.js" />
-    <Content Include="script\luobo\js\jquery-1.9.1.min.js" />
+    <Content Include="script\css\font-awesome.min.css" />
+    <Content Include="script\css\master.css" />
+    <Content Include="script\css\modernforms.css" />
+    <Content Include="script\css\shutter.css" />
+    <Content Include="script\css\Zixun.css" />
+    <Content Include="script\jquery.carouFredSel-6.0.4-packed.js" />
+    <Content Include="script\modernizr.js" />
+    <Content Include="script\MT\css\default.css" />
+    <Content Include="script\MT\css\normalize.css" />
+    <Content Include="script\MT\demo\foundation\horizontalForm.html" />
+    <Content Include="script\MT\demo\foundation\horizontalFormTooltip.html" />
+    <Content Include="script\MT\demo\pure\horizontalForm.html" />
+    <Content Include="script\MT\demo\pure\stackedForm.html" />
+    <Content Include="script\MT\demo\semantic\horizontalForm.html" />
+    <Content Include="script\MT\demo\semantic\horizontalFormTooltip.html" />
+    <Content Include="script\MT\demo\semantic\stackedForm.html" />
+    <Content Include="script\MT\demo\semantic\stackedFormTooltip.html" />
+    <Content Include="script\MT\demo\uikit\horizontalForm.html" />
+    <Content Include="script\MT\demo\uikit\horizontalFormTooltip.html" />
+    <Content Include="script\MT\demo\uikit\stackedForm.html" />
+    <Content Include="script\MT\demo\uikit\stackedFormTooltip.html" />
+    <Content Include="script\MT\dist\css\formValidation.css" />
+    <Content Include="script\MT\dist\css\formValidation.min.css" />
+    <Content Include="script\MT\dist\js\formValidation.js" />
+    <Content Include="script\MT\dist\js\formValidation.min.js" />
+    <Content Include="script\MT\dist\js\framework\bootstrap.js" />
+    <Content Include="script\MT\dist\js\framework\bootstrap.min.js" />
+    <Content Include="script\MT\dist\js\framework\foundation.js" />
+    <Content Include="script\MT\dist\js\framework\foundation.min.js" />
+    <Content Include="script\MT\dist\js\framework\pure.js" />
+    <Content Include="script\MT\dist\js\framework\pure.min.js" />
+    <Content Include="script\MT\dist\js\framework\semantic.js" />
+    <Content Include="script\MT\dist\js\framework\semantic.min.js" />
+    <Content Include="script\MT\dist\js\framework\uikit.js" />
+    <Content Include="script\MT\dist\js\framework\uikit.min.js" />
+    <Content Include="script\MT\dist\js\language\ar_MA.js" />
+    <Content Include="script\MT\dist\js\language\be_FR.js" />
+    <Content Include="script\MT\dist\js\language\be_NL.js" />
+    <Content Include="script\MT\dist\js\language\bg_BG.js" />
+    <Content Include="script\MT\dist\js\language\ca_ES.js" />
+    <Content Include="script\MT\dist\js\language\cs_CZ.js" />
+    <Content Include="script\MT\dist\js\language\da_DK.js" />
+    <Content Include="script\MT\dist\js\language\de_DE.js" />
+    <Content Include="script\MT\dist\js\language\en_US.js" />
+    <Content Include="script\MT\dist\js\language\es_CL.js" />
+    <Content Include="script\MT\dist\js\language\es_ES.js" />
+    <Content Include="script\MT\dist\js\language\eu_ES.js" />
+    <Content Include="script\MT\dist\js\language\fa_IR.js" />
+    <Content Include="script\MT\dist\js\language\fi_FI.js" />
+    <Content Include="script\MT\dist\js\language\fr_FR.js" />
+    <Content Include="script\MT\dist\js\language\gr_EL.js" />
+    <Content Include="script\MT\dist\js\language\he_IL.js" />
+    <Content Include="script\MT\dist\js\language\hi_IN.js" />
+    <Content Include="script\MT\dist\js\language\hu_HU.js" />
+    <Content Include="script\MT\dist\js\language\id_ID.js" />
+    <Content Include="script\MT\dist\js\language\it_IT.js" />
+    <Content Include="script\MT\dist\js\language\ja_JP.js" />
+    <Content Include="script\MT\dist\js\language\nl_NL.js" />
+    <Content Include="script\MT\dist\js\language\no_NO.js" />
+    <Content Include="script\MT\dist\js\language\pl_PL.js" />
+    <Content Include="script\MT\dist\js\language\pt_BR.js" />
+    <Content Include="script\MT\dist\js\language\pt_PT.js" />
+    <Content Include="script\MT\dist\js\language\ro_RO.js" />
+    <Content Include="script\MT\dist\js\language\ru_RU.js" />
+    <Content Include="script\MT\dist\js\language\sk_SK.js" />
+    <Content Include="script\MT\dist\js\language\sq_AL.js" />
+    <Content Include="script\MT\dist\js\language\sr_RS.js" />
+    <Content Include="script\MT\dist\js\language\sv_SE.js" />
+    <Content Include="script\MT\dist\js\language\th_TH.js" />
+    <Content Include="script\MT\dist\js\language\tr_TR.js" />
+    <Content Include="script\MT\dist\js\language\ua_UA.js" />
+    <Content Include="script\MT\dist\js\language\vi_VN.js" />
+    <Content Include="script\MT\dist\js\language\zh_CN.js" />
+    <Content Include="script\MT\dist\js\language\zh_TW.js" />
+    <Content Include="script\MT\fonts\icomoon.svg" />
+    <Content Include="script\MT\related\1.jpg" />
+    <Content Include="script\MT\related\2.jpg" />
+    <Content Include="script\MT\src\css\formValidation.css" />
+    <Content Include="script\MT\src\js\base.js" />
+    <Content Include="script\MT\src\js\framework\bootstrap.js" />
+    <Content Include="script\MT\src\js\framework\foundation.js" />
+    <Content Include="script\MT\src\js\framework\pure.js" />
+    <Content Include="script\MT\src\js\framework\semantic.js" />
+    <Content Include="script\MT\src\js\framework\uikit.js" />
+    <Content Include="script\MT\src\js\helper.js" />
+    <Content Include="script\MT\src\js\language\ar_MA.js" />
+    <Content Include="script\MT\src\js\language\be_FR.js" />
+    <Content Include="script\MT\src\js\language\be_NL.js" />
+    <Content Include="script\MT\src\js\language\bg_BG.js" />
+    <Content Include="script\MT\src\js\language\ca_ES.js" />
+    <Content Include="script\MT\src\js\language\cs_CZ.js" />
+    <Content Include="script\MT\src\js\language\da_DK.js" />
+    <Content Include="script\MT\src\js\language\de_DE.js" />
+    <Content Include="script\MT\src\js\language\en_US.js" />
+    <Content Include="script\MT\src\js\language\es_CL.js" />
+    <Content Include="script\MT\src\js\language\es_ES.js" />
+    <Content Include="script\MT\src\js\language\eu_ES.js" />
+    <Content Include="script\MT\src\js\language\fa_IR.js" />
+    <Content Include="script\MT\src\js\language\fi_FI.js" />
+    <Content Include="script\MT\src\js\language\fr_FR.js" />
+    <Content Include="script\MT\src\js\language\gr_EL.js" />
+    <Content Include="script\MT\src\js\language\he_IL.js" />
+    <Content Include="script\MT\src\js\language\hi_IN.js" />
+    <Content Include="script\MT\src\js\language\hu_HU.js" />
+    <Content Include="script\MT\src\js\language\id_ID.js" />
+    <Content Include="script\MT\src\js\language\it_IT.js" />
+    <Content Include="script\MT\src\js\language\ja_JP.js" />
+    <Content Include="script\MT\src\js\language\nl_NL.js" />
+    <Content Include="script\MT\src\js\language\no_NO.js" />
+    <Content Include="script\MT\src\js\language\pl_PL.js" />
+    <Content Include="script\MT\src\js\language\pt_BR.js" />
+    <Content Include="script\MT\src\js\language\pt_PT.js" />
+    <Content Include="script\MT\src\js\language\ro_RO.js" />
+    <Content Include="script\MT\src\js\language\ru_RU.js" />
+    <Content Include="script\MT\src\js\language\sk_SK.js" />
+    <Content Include="script\MT\src\js\language\sq_AL.js" />
+    <Content Include="script\MT\src\js\language\sr_RS.js" />
+    <Content Include="script\MT\src\js\language\sv_SE.js" />
+    <Content Include="script\MT\src\js\language\th_TH.js" />
+    <Content Include="script\MT\src\js\language\tr_TR.js" />
+    <Content Include="script\MT\src\js\language\ua_UA.js" />
+    <Content Include="script\MT\src\js\language\vi_VN.js" />
+    <Content Include="script\MT\src\js\language\zh_CN.js" />
+    <Content Include="script\MT\src\js\language\zh_TW.js" />
+    <Content Include="script\MT\src\js\validator\base64.js" />
+    <Content Include="script\MT\src\js\validator\between.js" />
+    <Content Include="script\MT\src\js\validator\bic.js" />
+    <Content Include="script\MT\src\js\validator\blank.js" />
+    <Content Include="script\MT\src\js\validator\callback.js" />
+    <Content Include="script\MT\src\js\validator\choice.js" />
+    <Content Include="script\MT\src\js\validator\color.js" />
+    <Content Include="script\MT\src\js\validator\creditCard.js" />
+    <Content Include="script\MT\src\js\validator\cusip.js" />
+    <Content Include="script\MT\src\js\validator\cvv.js" />
+    <Content Include="script\MT\src\js\validator\date.js" />
+    <Content Include="script\MT\src\js\validator\different.js" />
+    <Content Include="script\MT\src\js\validator\digits.js" />
+    <Content Include="script\MT\src\js\validator\ean.js" />
+    <Content Include="script\MT\src\js\validator\ein.js" />
+    <Content Include="script\MT\src\js\validator\emailAddress.js" />
+    <Content Include="script\MT\src\js\validator\file.js" />
+    <Content Include="script\MT\src\js\validator\greaterThan.js" />
+    <Content Include="script\MT\src\js\validator\grid.js" />
+    <Content Include="script\MT\src\js\validator\hex.js" />
+    <Content Include="script\MT\src\js\validator\iban.js" />
+    <Content Include="script\MT\src\js\validator\id.js" />
+    <Content Include="script\MT\src\js\validator\identical.js" />
+    <Content Include="script\MT\src\js\validator\imei.js" />
+    <Content Include="script\MT\src\js\validator\imo.js" />
+    <Content Include="script\MT\src\js\validator\integer.js" />
+    <Content Include="script\MT\src\js\validator\ip.js" />
+    <Content Include="script\MT\src\js\validator\isbn.js" />
+    <Content Include="script\MT\src\js\validator\isin.js" />
+    <Content Include="script\MT\src\js\validator\ismn.js" />
+    <Content Include="script\MT\src\js\validator\issn.js" />
+    <Content Include="script\MT\src\js\validator\lessThan.js" />
+    <Content Include="script\MT\src\js\validator\mac.js" />
+    <Content Include="script\MT\src\js\validator\meid.js" />
+    <Content Include="script\MT\src\js\validator\notEmpty.js" />
+    <Content Include="script\MT\src\js\validator\numeric.js" />
+    <Content Include="script\MT\src\js\validator\phone.js" />
+    <Content Include="script\MT\src\js\validator\regexp.js" />
+    <Content Include="script\MT\src\js\validator\remote.js" />
+    <Content Include="script\MT\src\js\validator\rtn.js" />
+    <Content Include="script\MT\src\js\validator\sedol.js" />
+    <Content Include="script\MT\src\js\validator\siren.js" />
+    <Content Include="script\MT\src\js\validator\siret.js" />
+    <Content Include="script\MT\src\js\validator\step.js" />
+    <Content Include="script\MT\src\js\validator\stringCase.js" />
+    <Content Include="script\MT\src\js\validator\stringLength.js" />
+    <Content Include="script\MT\src\js\validator\uri.js" />
+    <Content Include="script\MT\src\js\validator\uuid.js" />
+    <Content Include="script\MT\src\js\validator\vat.js" />
+    <Content Include="script\MT\src\js\validator\vin.js" />
+    <Content Include="script\MT\src\js\validator\zipCode.js" />
+    <Content Include="script\MT\vendor\bootstrap-datetimepicker.css" />
+    <Content Include="script\MT\vendor\bootstrap-datetimepicker.js" />
+    <Content Include="script\MT\vendor\bootstrap-datetimepicker.min.css" />
+    <Content Include="script\MT\vendor\bootstrap-datetimepicker.min.js" />
+    <Content Include="script\MT\vendor\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="script\MT\vendor\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="script\MT\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="script\MT\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="script\MT\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="script\MT\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="script\MT\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="script\MT\vendor\bootstrap\js\npm.js" />
+    <Content Include="script\MT\vendor\jasmine\boot.js" />
+    <Content Include="script\MT\vendor\jasmine\console.js" />
+    <Content Include="script\MT\vendor\jasmine\jasmine-html.js" />
+    <Content Include="script\MT\vendor\jasmine\jasmine.css" />
+    <Content Include="script\MT\vendor\jasmine\jasmine.js" />
+    <Content Include="script\MT\vendor\jasmine\jasmine_favicon.png" />
+    <Content Include="script\MT\vendor\jquery\jquery.min.js" />
+    <Content Include="script\MT\vendor\moment.js" />
+    <Content Include="script\MT\vendor\typeahead.jquery.js" />
+    <Content Include="script\require.js" />
+    <Content Include="script\vue-resource-1.3.4.js" />
     <Content Include="script\vue.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
-    <Compile Include="Controllers\LWJ\MyforController.cs" />
+    <Compile Include="Controllers\LWJ\BootController.cs" />
+    <Compile Include="Controllers\LWJ\HomeController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
+    <Compile Include="Controllers\MT\HelperController.cs" />
+    <Compile Include="Controllers\MT\OnlineOrderController.cs" />
+    <Compile Include="Controllers\MT\OrderController.cs" />
+    <Compile Include="Controllers\ZHX\Home_pageController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
+    <Compile Include="Controllers\ZHX\LoginindexController.cs" />
+    <Compile Include="Controllers\ZHX\RegistersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Company.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Fahuo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Infor.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shouhuo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tousu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\transportation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_AdminUser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_expreMiss.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_Refund.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_replay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ZiXunJianYi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
@@ -149,10 +682,39 @@
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Helpe\HelpeIndex.cshtml" />
     <Content Include="Views\Logisticstracking\Logisticstrakcing.cshtml" />
     <Content Include="Views\Login\LoginIndex.cshtml" />
-    <Content Include="Views\Myfor\MyInfor.cshtml" />
+    <Content Include="Views\Logisticstracking\PriceTime.cshtml" />
+    <Content Include="Views\Shared\Esubaohead.cshtml" />
+    <Content Include="Views\Helpe\HelpZiXun.cshtml" />
+    <Content Include="Views\Order\bulkOrder.cshtml" />
+    <Content Include="Views\Order\OnlineOrder.cshtml" />
+    <Content Include="Views\Home_page\home_page.cshtml" />
+    <Content Include="Views\Shared\AdressBook.cshtml" />
+    <Content Include="Views\Shared\Esubaofool.cshtml" />
+    <Content Include="Views\Shared\Order_Terms.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\AdminIndex.cshtml" />
+    <Content Include="Views\Shared\authstr.cshtml" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\font\iconfont.eot" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\font\iconfont.ttf" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\font\iconfont.woff" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.eot" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.ttf" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.woff" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.woff2" />
+    <Content Include="script\Admin\fonts\iconfont.eot" />
+    <Content Include="script\Admin\fonts\iconfont.ttf" />
+    <Content Include="script\Admin\fonts\iconfont.woff" />
+    <Content Include="script\Admin\lib\layui\font\iconfont.eot" />
+    <Content Include="script\Admin\lib\layui\font\iconfont.ttf" />
+    <Content Include="script\Admin\lib\layui\font\iconfont.woff" />
+    <Content Include="Views\Admin\AdviceLaunch.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Admin\Adviceinfor.cshtml" />
+    <Content Include="Views\Admin\UserAdmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -162,8 +724,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
-    <Folder Include="Views\HomePage\" />
+    <Folder Include="Libs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

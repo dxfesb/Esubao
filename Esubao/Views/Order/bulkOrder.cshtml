@@ -1,0 +1,403 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>批量下单</title>
+    <link href="~/Content/MT/XiaDan.css" rel="stylesheet" />
+    <script src="~/script/bootstrap-3.3.7-dist/jquery-3.3.1.js"></script>
+    <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+   
+    <script src="~/script/MT/City/citySet.js"></script>
+    <script src="~/script/MT/City/city.json.js"></script>
+    <script src="~/script/MT/City/Popt.js"></script>
+    <link href="~/Content/MT/tubiao.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div id="app">
+        <div class="dynamic_content_wrapper">
+            <div class="dynamic_content">
+                <div id="function">
+                    <div class="order-page" style="min-height: 0px;">
+                        <div class="order-service ui-front">
+                            <!--页面跳转连接-->
+                            <div class="receiver-areas" role="radiogroup">
+                                <a href="/Order/OnlineOrder" class="heavyCargo" role="radio" data-tab="heavyCargo" aria-checked="false">网上下单</a>
+                                <a href="javascript:void(0)" class="normalCargo checked" role="radio" data-tab="normalCargo" aria-checked="true">批量下单</a>
+                            </div>
+                            <div class="order-wrapper clearfix">
+                                <!--寄快件-->
+                                <div class="bulkShipping">
+                                    <ul class="step clearfix">
+                                        <li :class="active"><strong>01</strong><i></i><p>寄件人信息</p></li>
+                                        <li :class="active2"><strong>02</strong><i></i><p>收件人信息</p></li>
+                                        <li :class="active3"><strong>03</strong><i></i><p>预约信息</p></li>
+                                        <li :class="active4"><strong>04</strong><i></i><p>完成下单</p></li>
+                                    </ul>
+                                    <div class="items clearfix">
+                                        <div class="page active">
+                                            <div class="page-wrapper">
+                                                <!--寄件人信息-->
+                                                <div class="sender-info" v-show="jkj=='ji'">
+                                                    <div class="sender">
+                                                        <form class="form-horizontal" novalidate="novalidate">
+                                                            <!-- 温馨提示 --><!-- 智能地址拆分提示 -->
+                                                            <p class="intellect-reminder">请检查拆分地址信息是否准确，如有遗漏请及时补充</p>
+                                                            <!--  -->
+                                                            <div class="sftitle">
+                                                                寄方信息<span class="small">标 * 为必填项</span>
+                                                                <!-- 智能地址填写 --><a href="javascript:void(0)" class="aicon-intellect-address addIntellectFill">智能地址填写</a><!-- 地址簿 -->
+                                                                <a href="javascript:void(0)" class="aicon-address-book address-book">使用地址簿</a>
+                                                                <!-- 价格计算 -->
+                                                            </div><p class="warm-reminder"></p>
+                                                            <div class="form-group">
+                                                                <div class="col-xs-5 autoAddPicker">
+                                                                    <label class="control-label required" for="contactName">姓名</label>
+                                                                    <input type="text" class="form-control ui-autocomplete-input" name="contactName" placeholder="请填写联系人姓名" autocomplete="off">
+                                                                </div>
+                                                                <div class="col-xs-5 col-xs-offset-2 autoAddPicker">
+                                                                    <label class="control-label" for="companyName">公司名称</label>
+                                                                    <input type="text" class="form-control ui-autocomplete-input" name="companyName" placeholder="请填写公司名称" autocomplete="off">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-xs-5 autoAddPicker">
+                                                                    <label class="control-label" for="contactTel">手机号码</label>
+                                                                    <input type="text" class="form-control ui-autocomplete-input" name="contactTel" placeholder="请填写手机号码" autocomplete="off">
+                                                                </div>
+                                                                <div class="col-xs-5 col-xs-offset-2">
+                                                                    <label class="control-label" for="contactPhone">固话</label>
+                                                                    <input type="text" class="form-control" name="contactPhone" placeholder="请填写固话号码">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-xs-10">
+                                                                    <label class="control-label required" for="location">省市区</label>
+                                                                    <div class="detail-location-input" data-max-level="4" data-hide-globe="true">
+                                                                        <input type="text" class="form-control origins ui-autocomplete-input city" name="location" placeholder="请选择所在地区，例如：广东省－深圳市－福田区" autocomplete="off">
+                                                                       
+                                                                    </div>
+                                                                </div>
+                                                                <a class="getNearbyAddress aicon-location maidian" data-md-name="点击省市区后地标" data-md-id="OWF010103" href="javascript:void(0)"></a>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <div class="col-xs-10">
+                                                                    <label class="control-label required" for="address">详细地址</label>
+                                                                    <input type="text" class="form-control ui-autocomplete-input" name="address" placeholder="请填写所在街道以及详细地址" autocomplete="off">
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="btn_nav clearfix">
+                                                        <button type="button" class="primary-btn big next fr" v-on:click="jkj = 'shou';active='';active2='active'">下一步<span class="aicon-to-right"></span></button>
+                                                    </div>
+                                                </div>
+                                                <!--收件人信息-->
+                                                <div class="receiver-info" v-show="jkj=='shou'">
+                                                    <div class="receiver-container">
+                                                        <div class="receiver-wrap" style="">
+                                                            <div class="receiver" style="display: block;">
+                                                                <form class="form-horizontal" novalidate="novalidate">
+                                                                    <!-- 温馨提示 --><!-- 智能地址拆分提示 --><p class="intellect-reminder">请检查拆分地址信息是否准确，如有遗漏请及时补充</p>
+                                                                    <!--  -->
+                                                                    <div class="sftitle">
+                                                                        收方信息<span class="r-index"></span><span class="small">标 * 为必填项</span>
+                                                                        <!-- 智能地址填写 --><a href="javascript:void(0)" class="aicon-intellect-address addIntellectFill">智能地址填写</a>
+                                                                        <!-- 地址簿 --><a href="javascript:void(0)" class="aicon-address-book address-book">使用地址簿</a>
+
+                                                                        <!-- 价格计算 -->
+                                                                    </div>
+                                                                    <p class="warm-reminder"></p>
+                                                                    <div class="form-group">
+                                                                        <div class="col-xs-5 autoAddPicker">
+                                                                            <label class="control-label required" for="contactName">姓名</label>
+                                                                            <input type="text" class="form-control ui-autocomplete-input" name="contactName" placeholder="请填写联系人姓名" autocomplete="off">
+                                                                        </div>
+                                                                        <div class="col-xs-5 col-xs-offset-2 autoAddPicker">
+                                                                            <label class="control-label" for="companyName">公司名称</label>
+                                                                            <input type="text" class="form-control ui-autocomplete-input" name="companyName" placeholder="请填写公司名称" autocomplete="off">
+                                                                        </div>
+                                                                    </div><div class="form-group">
+                                                                        <div class="col-xs-5 autoAddPicker">
+                                                                            <label class="control-label" for="contactTel">手机号码</label>
+                                                                            <input type="text" class="form-control ui-autocomplete-input" name="contactTel" placeholder="请填写手机号码" autocomplete="off">
+                                                                        </div>
+                                                                        <div class="col-xs-5 col-xs-offset-2">
+                                                                            <label class="control-label" for="contactPhone">固话</label>
+                                                                            <input type="text" class="form-control" name="contactPhone" placeholder="请填写固话号码">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-xs-10">
+                                                                            <label class="control-label required" for="location">省市区</label>
+                                                                            <div class="detail-location-input" data-max-level="4" data-hide-globe="true">
+                                                                                <input type="text" class="form-control dests ui-autocomplete-input city" name="location" placeholder="请选择所在地区，例如：广东省－深圳市－福田区" autocomplete="off">
+                                                                               
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <div class="col-xs-10">
+                                                                            <label class="control-label required" for="address">详细地址</label>
+                                                                            <input type="text" class="form-control ui-autocomplete-input ui-autocomplete-loading" name="address" placeholder="请填写所在街道以及详细地址" autocomplete="off">
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="clearfix">
+                                                            <a href="javascript:void(0)" class="aicon-circle-check save-address-check checked fr maidian" data-id="OWF010203" data-name="点击保存到地址簿单选按钮">保存到地址簿</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="btn_nav clearfix">
+                                                        <div class="dropdown">
+                                                            <button class="primary-btn small square white aicon-zengjia-01 add-more maidian" data-id="OWF010204" data-name="点击+多个收件人" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">多个收件人</button>
+                                                            <ul class="dropdown-menu" aria-labelledby="dLabel">
+                                                                <li><a href="javascript:void(0)" class="add-one">添加一个收件人</a></li>
+                                                                <li><a href="javascript:void(0)" class="add-from-addressBook">从地址簿添加</a></li>
+                                                                <li><a href="javascript:void(0)" class="add-from-excel">从Excel表格添加</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <button type="button" class="primary-btn white big prev fl" v-on:click="jkj = 'ji';active='active';active2=''">上一步</button>
+                                                        <button type="button" class="primary-btn big next fr" v-on:click="jkj = 'yuyue';active2='';active3='active'">下一步<span class="aicon-to-right"></span></button>
+                                                    </div>
+                                                </div>
+                                                <!--预约信息-->
+                                                <div class="booking-info" v-show="jkj=='yuyue'">
+                                                    <div class="booking-info-wrapper">
+                                                        <div class="top clearfix">
+                                                            <h3 class="fl">预约信息</h3>
+                                                            <!-- 上门方式：上门、自寄 -->
+                                                            <p class="fl pick-type">
+                                                                <a href="javascript:void(0)" class="on-door">
+                                                                    <span class="icon aicon-radio-active"></span>
+                                                                    <span>快递员上门取件</span>
+                                                                </a>
+                                                                <a href="javascript:void(0)" class="by-self">
+                                                                    <span class="icon aicon-radio"></span>
+                                                                    <span>自行联系快递员或自寄</span>
+                                                                </a>
+                                                            </p>
+                                                        </div>
+                                                        <div class="form-horizontal">
+                                                            <div class="show-on-door">
+                                                                <label class="control-label required">上门时间：</label>
+                                                                <div class="pickup-time aicon-time time-picker-pk">
+                                                                    <input type="text" class="form-control readonly sing-vote" placeholder="请选择您适合的时间" readonly="" id="date" name="date">
+                                                                    <div class="pickup-time-picker" style="display:none">
+                                                                        <ul class="date-wrapper" role="radiogroup">
+                                                                            <li tabindex="0" role="radio" data-value="2019-05-13" class="accessible-click ">
+                                                                                <p>今天</p>
+                                                                                <p class="date">2019-05-13</p>
+                                                                                <span class="aicon-right"></span>
+                                                                            </li>
+                                                                            <li tabindex="0" role="radio" data-value="2019-05-14" class="accessible-click current" aria-checked="true">
+                                                                                <p>明天</p>
+                                                                                <p class="date">2019-05-14</p>
+                                                                                <span class="aicon-right"></span>
+                                                                            </li>
+                                                                            <li tabindex="0" role="radio" data-value="2019-05-15" class="accessible-click ">
+                                                                                <p>本周三</p><p class="date">2019-05-15</p>
+                                                                                <span class="aicon-right"></span>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="show-by-self warm-reminder">下单后可打印电子运单二维码，向收派员或到顺丰服务点出示二维码，扫码后快速寄件</div>
+                                                           
+                                                            <div class="warm-reminder-wrapper"></div>
+                                                            <!-- 快递产品 --><label class="control-label required">快递产品</label>
+                                                            <div class="product-wrapper">
+                                                                <ul class="product-cards">
+                                                                    <li>
+                                                                        <a href="javascript:void(0)" data-index="0" class="active">
+                                                                            <span class="aicon-right"></span>
+                                                                            <span class="angle"></span>
+                                                                            <dl>
+                                                                                <dt>
+                                                                                    <span class="currency">￥</span>
+                                                                                    <span class="rate">25</span>
+                                                                                    <span class="up">起</span>
+                                                                                </dt>
+                                                                                <dd>
+                                                                                    <p>预计 周二 12:00 前</p>
+                                                                                </dd>
+                                                                                <dd><p>截单时间：12:40</p></dd>
+                                                                            </dl>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="javascript:void(0)" data-index="1">
+                                                                            <span class="aicon-right"></span>
+                                                                            <span class="angle"></span>
+                                                                            <dl>
+                                                                            <dt>
+                                                                                <span class="currency">￥</span>
+                                                                                <span class="rate">23</span>
+                                                                                <span class="up">起</span>
+                                                                                </dt>
+                                                                            <dd><p>预计 周三 12:00 前</p>
+                                                                                </dd>
+                                                                            <dd>
+                                                                                <p>截单时间：21:00</p>
+                                                                                </dd>
+                                                                            </dl>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li>
+                                                                        <a href="javascript:void(0)" data-index="2">
+                                                                            <span class="aicon-right"></span>
+                                                                            <span class="angle"></span><dl>
+                                                                                <dt>
+                                                                                    <span class="currency">￥</span><span class="rate">18</span><span class="up">起</span>
+                                                                                </dt>
+                                                                                <dd>
+                                                                                    <p>预计 周三 23:59 前</p>
+                                                                                </dd>
+                                                                                <dd><p>截单时间：21:00</p></dd>
+                                                                            </dl>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <!-- 捎话 --><div class="form-group show-on-door">
+                                                                <div class="col-xs-12">
+                                                                    <label class="control-label">捎话给快递员</label>
+                                                                    <a href="javascript:void(0)" class="aicon-msg cargo-msg maidian" data-md-id="OWF010304" data-md-name="点击捎话给快递员">无</a>
+                                                                </div>
+                                                            </div>
+                                                            <div class="information"></div>
+                                                            <div class="form-group text-center">
+                                                                <a href="javascript:void(0)" class="aicon-circle-check" id="agree-term-content"></a>
+                                                                我同意
+                                                                <a class="term" href="javascript:void(0)" data-url="other/modal/order_terms.html">《电子运单契约条款》</a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="btn_nav clearfix">
+                                                            <button type="button" class="primary-btn white big prev fl" v-on:click="jkj='shou';active3='';active2='active'">上一步</button>
+                                                            <button type="button" class="primary-btn big next fr" v-on:click="jkj='chenggong';active3='';active4='active'">下一步<span class="aicon-to-right"></span></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--完成下单-->
+                                                <div class="booking-succ" v-show="jkj=='chenggong'">
+                                                    <div class="order-success">
+                                                        <h3>下单成功！</h3>
+                                                        <button class="primary-btn white small fr cancel">
+                                                            <span class="aicon-bs-refused"></span>取消寄件
+                                                        </button>
+                                                        <p class="certificate-prompt">下单后可打印电子运单二维码，向收派员或到顺丰服务点出示二维码，扫码后快速寄件</p>
+                                                        <p class="certificate-prompt">温馨提示：根据《中华人民共和国反恐怖主义法》《邮件快件实名收寄管理办法》相关要求，寄件时需出示身份证等有效身份证件进行实名登记，请勿寄递禁寄物品，谢谢配合；</p>
+                                                        <div class="sfcard pad">
+                                                            <table class="sender-table">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td class="send-badge">
+                                                                            <span class="sfbadge black">寄</span>
+                                                                            <span class="aicon-v-dot"></span>
+                                                                        </td>
+                                                                        <td class="express-info">
+                                                                            <p class="bold">a</p>
+                                                                            <p>17875662586</p>
+                                                                        </td>
+                                                                        <td colspan="2">
+                                                                            <p>广东省深圳市宝安区</p>
+                                                                            <p>aa</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <p class="line"></p>
+                                                            <table>
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <span class="sfbadge red">收</span>
+                                                                        </td>
+                                                                        <td class="express-info">
+                                                                            <p class="bold">ee</p>
+                                                                            <p>17879665689</p>
+                                                                        </td>
+                                                                        <td colspan="2">
+                                                                            <p>广东省深圳市龙华区</p>
+                                                                            <p>779路(海上田园-东环路口)</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td></td>
+                                                                        <td colspan="3">
+                                                                            <p>预约号： CX1588967569039368</p>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                            <ul class="bill-other-info">
+                                                                <li>
+                                                                    <p class="gray">托寄物品信息</p>
+                                                                    <p>文件</p>
+                                                                </li>
+                                                                <li>
+                                                                    <p class="gray">付款方式</p><p>寄付现结</p>
+                                                                </li>
+                                                                <li>
+                                                                    <p class="gray">保价</p>
+                                                                    <p>未选择保价</p>
+                                                                </li>
+                                                                <li>
+                                                                    <p class="gray">增值服务</p>
+                                                                    <p>无</p>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="clearfix options">
+                                                            <a href="../../../../sc/dynamic_function/waybill/" class="primary-btn white square fl go-waybill maidian" data-md-id="OWF010402" data-md-name="点击查看订单列表">
+                                                                <span class="aicon-intellect-address"></span>查看订单列表
+                                                            </a>
+                                                            <button class="primary-btn white square fl download maidian" data-md-id="OWF010403" data-md-name="点击下载电子运单">
+                                                                <span class="aicon-i-down"></span>下载电子运单
+                                                            </button>
+                                                            <button class="primary-btn big fill-bill fr maidian" data-md-id="OWF010405" data-md-name="点击收件人后完善快件信息按钮">完善快件信息</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/script/vue.min.js"></script>
+    <script type="text/javascript">
+        var app = new Vue({
+            el: "#app",
+            data: {
+                jkj: 'ji',
+                //批量下单步骤页面跳转
+                active: "active",
+                active2: "",
+                active3: "",
+                active4: ""
+            },
+            methods: {
+               
+            }
+        })
+    </script>
+</body>
+
+</html>

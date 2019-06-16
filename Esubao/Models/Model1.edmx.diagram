@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="a9671b1a5b9c49d892a7f419d03d7104" Name="Diagram1">
+        <EntityTypeShape EntityType="EsuBaoModel.Company" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EsuBaoModel.Fahuo" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EsuBaoModel.order" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EsuBaoModel.Shouhuo" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EsuBaoModel.T_AdminUser" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EsuBaoModel.T_expreMiss" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EsuBaoModel.T_Refund" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EsuBaoModel.transportation" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EsuBaoModel.User" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EsuBaoModel.ZiXunJianYi" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="EsuBaoModel.FK_quick_order_Table_2" ManuallyRouted="false" />
+        <AssociationConnector Association="EsuBaoModel.FK_PiLiangXiaDan_transportation" ManuallyRouted="false" />
+        <AssociationConnector Association="EsuBaoModel.FK_T_expreMiss_PiLiangXiaDan" ManuallyRouted="false" />
+        <AssociationConnector Association="EsuBaoModel.FK_T_Refund_PiLiangXiaDan" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EsuBaoModel.Tousu" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EsuBaoModel.T_replay" Width="1.5" PointX="12" PointY="1.25" />
+        <AssociationConnector Association="EsuBaoModel.FK_T_replay_ZiXunJianYi" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

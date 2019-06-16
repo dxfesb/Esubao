@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EsuBaoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Company_ID" />
+          </Key>
+          <Property Name="Company_ID" Type="int" Nullable="false" />
+          <Property Name="Company_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Contact_information" Type="nvarchar" MaxLength="50" />
+          <Property Name="Range" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Fahuo">
+          <Key>
+            <PropertyRef Name="Express_number" />
+          </Key>
+          <Property Name="Express_number" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="OOnsignor" Type="varchar" MaxLength="50" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Shipping_outlets" Type="varchar" MaxLength="50" />
+          <Property Name="Dot_information" Type="varchar" MaxLength="50" />
+          <Property Name="Corporate_name" Type="varchar" MaxLength="50" />
+          <Property Name="Delivery_Express" Type="int" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="Express_number" />
+          </Key>
+          <Property Name="Express_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OOnsignor" Type="varchar" MaxLength="50" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="Shipping_outtlets" Type="varchar" MaxLength="50" />
+          <Property Name="Dot_information" Type="varchar" MaxLength="50" />
+          <Property Name="Corporate_name" Type="varchar" MaxLength="50" />
+          <Property Name="Delivery_Express" Type="int" />
+        </EntityType>
+        <EntityType Name="Shouhuo">
+          <Key>
+            <PropertyRef Name="Express_number" />
+          </Key>
+          <Property Name="Express_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Consignoee" Type="varchar" MaxLength="50" />
+          <Property Name="mobile" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="Corporate_name" Type="varchar" MaxLength="50" />
+          <Property Name="Receiving_address" Type="varchar" MaxLength="50" />
+          <Property Name="city_adddress" Type="varchar" MaxLength="50" />
+          <Property Name="xian_address" Type="varchar" MaxLength="50" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_AdminUser">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdminName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdminPwd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_expreMiss">
+          <Key>
+            <PropertyRef Name="ExpreMissID" />
+          </Key>
+          <Property Name="ExpreMissID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Express_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Express_status" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_Refund">
+          <Key>
+            <PropertyRef Name="Refund_id" />
+          </Key>
+          <Property Name="Refund_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Express_number" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Refund_status" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_replay">
+          <Key>
+            <PropertyRef Name="Replay_id" />
+          </Key>
+          <Property Name="Replay_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Replay_mess" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="advice_id" Type="int" Nullable="false" />
+          <Property Name="Replay_date" Type="date" Nullable="false" />
+          <Property Name="Replay_zt" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tousu">
+          <Key>
+            <PropertyRef Name="Tousu_id" />
+          </Key>
+          <Property Name="Tousu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tousu_title" Type="varchar" MaxLength="50" />
+          <Property Name="Tousu_name" Type="varchar" MaxLength="50" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+          <Property Name="Contact_number" Type="varchar" MaxLength="50" />
+          <Property Name="Waybill_No" Type="varchar" MaxLength="50" />
+          <Property Name="Tousu_Message" Type="varchar(max)" />
+          <Property Name="Tousu_Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="transportation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Type_shipping" Type="varchar" MaxLength="50" />
+          <Property Name="Durationf_transportation" Type="varchar" MaxLength="50" />
+          <Property Name="Starting_price" Type="varchar" MaxLength="50" />
+          <Property Name="Heavy_cargo" Type="varchar" MaxLength="50" />
+          <Property Name="Light _goods" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_uaername" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_password" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Sex" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Company" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_fixedphone" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_city" Type="nvarchar" MaxLength="50" />
+          <Property Name="User_note" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ZiXunJianYi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="title" Type="varchar" MaxLength="50" />
+          <Property Name="Message_type" Type="varchar" MaxLength="50" />
+          <Property Name="Message_person" Type="varchar" MaxLength="50" />
+          <Property Name="Contact_number" Type="varchar" MaxLength="50" />
+          <Property Name="Mail_box" Type="varchar" MaxLength="50" />
+          <Property Name="Waybill_No" Type="varchar" MaxLength="50" />
+          <Property Name="Message" Type="varchar(max)" />
+          <Property Name="MessDate" Type="date" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_PiLiangXiaDan_transportation">
+          <End Role="transportation" Type="Self.transportation" Multiplicity="0..1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transportation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="Delivery_Express" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_quick_order_Table_2">
+          <End Role="transportation" Type="Self.transportation" Multiplicity="0..1" />
+          <End Role="Fahuo" Type="Self.Fahuo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transportation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Fahuo">
+              <PropertyRef Name="Delivery_Express" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_expreMiss_PiLiangXiaDan">
+          <End Role="order" Type="Self.order" Multiplicity="1" />
+          <End Role="T_expreMiss" Type="Self.T_expreMiss" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="Express_number" />
+            </Principal>
+            <Dependent Role="T_expreMiss">
+              <PropertyRef Name="Express_number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Refund_PiLiangXiaDan">
+          <End Role="order" Type="Self.order" Multiplicity="1" />
+          <End Role="T_Refund" Type="Self.T_Refund" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="Express_number" />
+            </Principal>
+            <Dependent Role="T_Refund">
+              <PropertyRef Name="Express_number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_replay_ZiXunJianYi">
+          <End Role="ZiXunJianYi" Type="Self.ZiXunJianYi" Multiplicity="1" />
+          <End Role="T_replay" Type="Self.T_replay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZiXunJianYi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="T_replay">
+              <PropertyRef Name="advice_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EsuBaoModelStoreContainer">
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fahuo" EntityType="Self.Fahuo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shouhuo" EntityType="Self.Shouhuo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_AdminUser" EntityType="Self.T_AdminUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_expreMiss" EntityType="Self.T_expreMiss" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_Refund" EntityType="Self.T_Refund" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_replay" EntityType="Self.T_replay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tousu" EntityType="Self.Tousu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="transportation" EntityType="Self.transportation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ZiXunJianYi" EntityType="Self.ZiXunJianYi" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_PiLiangXiaDan_transportation" Association="Self.FK_PiLiangXiaDan_transportation">
+            <End Role="transportation" EntitySet="transportation" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_quick_order_Table_2" Association="Self.FK_quick_order_Table_2">
+            <End Role="transportation" EntitySet="transportation" />
+            <End Role="Fahuo" EntitySet="Fahuo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_expreMiss_PiLiangXiaDan" Association="Self.FK_T_expreMiss_PiLiangXiaDan">
+            <End Role="order" EntitySet="order" />
+            <End Role="T_expreMiss" EntitySet="T_expreMiss" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Refund_PiLiangXiaDan" Association="Self.FK_T_Refund_PiLiangXiaDan">
+            <End Role="order" EntitySet="order" />
+            <End Role="T_Refund" EntitySet="T_Refund" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_replay_ZiXunJianYi" Association="Self.FK_T_replay_ZiXunJianYi">
+            <End Role="ZiXunJianYi" EntitySet="ZiXunJianYi" />
+            <End Role="T_replay" EntitySet="T_replay" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EsuBaoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="Company_ID" />
+          </Key>
+          <Property Name="Company_ID" Type="Int32" Nullable="false" />
+          <Property Name="Company_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Contact_information" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Range" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Fahuo">
+          <Key>
+            <PropertyRef Name="Express_number" />
+          </Key>
+          <Property Name="Express_number" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OOnsignor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Shipping_outlets" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dot_information" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Corporate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Delivery_Express" Type="Int32" />
+          <NavigationProperty Name="transportation" Relationship="Self.FK_quick_order_Table_2" FromRole="Fahuo" ToRole="transportation" />
+        </EntityType>
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="Express_number" />
+          </Key>
+          <Property Name="Express_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OOnsignor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Shipping_outtlets" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Dot_information" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Corporate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Delivery_Express" Type="Int32" />
+          <NavigationProperty Name="transportation" Relationship="Self.FK_PiLiangXiaDan_transportation" FromRole="order" ToRole="transportation" />
+          <NavigationProperty Name="T_expreMiss" Relationship="Self.FK_T_expreMiss_PiLiangXiaDan" FromRole="order" ToRole="T_expreMiss" />
+          <NavigationProperty Name="T_Refund" Relationship="Self.FK_T_Refund_PiLiangXiaDan" FromRole="order" ToRole="T_Refund" />
+        </EntityType>
+        <EntityType Name="Shouhuo">
+          <Key>
+            <PropertyRef Name="Express_number" />
+          </Key>
+          <Property Name="Express_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Consignoee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Corporate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Receiving_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="city_adddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="xian_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_AdminUser">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdminName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdminPwd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_expreMiss">
+          <Key>
+            <PropertyRef Name="ExpreMissID" />
+          </Key>
+          <Property Name="ExpreMissID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Express_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Express_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="order" Relationship="Self.FK_T_expreMiss_PiLiangXiaDan" FromRole="T_expreMiss" ToRole="order" />
+        </EntityType>
+        <EntityType Name="T_Refund">
+          <Key>
+            <PropertyRef Name="Refund_id" />
+          </Key>
+          <Property Name="Refund_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Express_number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Refund_status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="order" Relationship="Self.FK_T_Refund_PiLiangXiaDan" FromRole="T_Refund" ToRole="order" />
+        </EntityType>
+        <EntityType Name="transportation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Type_shipping" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Durationf_transportation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Starting_price" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Heavy_cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Light__goods" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Fahuos" Relationship="Self.FK_quick_order_Table_2" FromRole="transportation" ToRole="Fahuo" />
+          <NavigationProperty Name="orders" Relationship="Self.FK_PiLiangXiaDan_transportation" FromRole="transportation" ToRole="order" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_Id" />
+          </Key>
+          <Property Name="User_Id" Type="Int32" Nullable="false" />
+          <Property Name="User_uaername" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Company" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_fixedphone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="User_note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ZiXunJianYi">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Message_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Message_person" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mail_box" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Waybill_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MessDate" Type="DateTime" Precision="0" Nullable="false" />
+          <NavigationProperty Name="T_replay" Relationship="EsuBaoModel.FK_T_replay_ZiXunJianYi" FromRole="ZiXunJianYi" ToRole="T_replay" />
+        </EntityType>
+        <Association Name="FK_quick_order_Table_2">
+          <End Role="transportation" Type="Self.transportation" Multiplicity="0..1" />
+          <End Role="Fahuo" Type="Self.Fahuo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transportation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Fahuo">
+              <PropertyRef Name="Delivery_Express" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PiLiangXiaDan_transportation">
+          <End Role="transportation" Type="Self.transportation" Multiplicity="0..1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="transportation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="Delivery_Express" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_expreMiss_PiLiangXiaDan">
+          <End Role="order" Type="Self.order" Multiplicity="1" />
+          <End Role="T_expreMiss" Type="Self.T_expreMiss" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="Express_number" />
+            </Principal>
+            <Dependent Role="T_expreMiss">
+              <PropertyRef Name="Express_number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_T_Refund_PiLiangXiaDan">
+          <End Role="order" Type="Self.order" Multiplicity="1" />
+          <End Role="T_Refund" Type="Self.T_Refund" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="order">
+              <PropertyRef Name="Express_number" />
+            </Principal>
+            <Dependent Role="T_Refund">
+              <PropertyRef Name="Express_number" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EsuBaoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="Fahuos" EntityType="Self.Fahuo" />
+          <EntitySet Name="orders" EntityType="Self.order" />
+          <EntitySet Name="Shouhuos" EntityType="Self.Shouhuo" />
+          <EntitySet Name="T_AdminUser" EntityType="Self.T_AdminUser" />
+          <EntitySet Name="T_expreMiss" EntityType="Self.T_expreMiss" />
+          <EntitySet Name="T_Refund" EntityType="Self.T_Refund" />
+          <EntitySet Name="transportations" EntityType="Self.transportation" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="ZiXunJianYis" EntityType="Self.ZiXunJianYi" />
+          <AssociationSet Name="FK_quick_order_Table_2" Association="Self.FK_quick_order_Table_2">
+            <End Role="transportation" EntitySet="transportations" />
+            <End Role="Fahuo" EntitySet="Fahuos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PiLiangXiaDan_transportation" Association="Self.FK_PiLiangXiaDan_transportation">
+            <End Role="transportation" EntitySet="transportations" />
+            <End Role="order" EntitySet="orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_expreMiss_PiLiangXiaDan" Association="Self.FK_T_expreMiss_PiLiangXiaDan">
+            <End Role="order" EntitySet="orders" />
+            <End Role="T_expreMiss" EntitySet="T_expreMiss" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_Refund_PiLiangXiaDan" Association="Self.FK_T_Refund_PiLiangXiaDan">
+            <End Role="order" EntitySet="orders" />
+            <End Role="T_Refund" EntitySet="T_Refund" />
+          </AssociationSet>
+          <EntitySet Name="Tousus" EntityType="EsuBaoModel.Tousu" />
+          <EntitySet Name="T_replay" EntityType="EsuBaoModel.T_replay" />
+          <AssociationSet Name="FK_T_replay_ZiXunJianYi" Association="EsuBaoModel.FK_T_replay_ZiXunJianYi">
+            <End Role="ZiXunJianYi" EntitySet="ZiXunJianYis" />
+            <End Role="T_replay" EntitySet="T_replay" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Tousu">
+          <Key>
+            <PropertyRef Name="Tousu_id" />
+          </Key>
+          <Property Name="Tousu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tousu_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tousu_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Waybill_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tousu_Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tousu_Date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="T_replay">
+          <Key>
+            <PropertyRef Name="Replay_id" />
+          </Key>
+          <Property Name="Replay_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Replay_mess" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="advice_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ZiXunJianYi" Relationship="EsuBaoModel.FK_T_replay_ZiXunJianYi" FromRole="T_replay" ToRole="ZiXunJianYi" />
+          <Property Name="Replay_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Replay_zt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_T_replay_ZiXunJianYi">
+          <End Type="EsuBaoModel.ZiXunJianYi" Role="ZiXunJianYi" Multiplicity="1" />
+          <End Type="EsuBaoModel.T_replay" Role="T_replay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZiXunJianYi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="T_replay">
+              <PropertyRef Name="advice_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EsuBaoModelStoreContainer" CdmEntityContainer="EsuBaoEntities">
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="EsuBaoModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="Company_ID" ColumnName="Company_ID" />
+                <ScalarProperty Name="Company_Name" ColumnName="Company_Name" />
+                <ScalarProperty Name="Contact_information" ColumnName="Contact_information" />
+                <ScalarProperty Name="Range" ColumnName="Range" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fahuos">
+            <EntityTypeMapping TypeName="EsuBaoModel.Fahuo">
+              <MappingFragment StoreEntitySet="Fahuo">
+                <ScalarProperty Name="Express_number" ColumnName="Express_number" />
+                <ScalarProperty Name="OOnsignor" ColumnName="OOnsignor" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Shipping_outlets" ColumnName="Shipping_outlets" />
+                <ScalarProperty Name="Dot_information" ColumnName="Dot_information" />
+                <ScalarProperty Name="Corporate_name" ColumnName="Corporate_name" />
+                <ScalarProperty Name="Delivery_Express" ColumnName="Delivery_Express" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="orders">
+            <EntityTypeMapping TypeName="EsuBaoModel.order">
+              <MappingFragment StoreEntitySet="order">
+                <ScalarProperty Name="Express_number" ColumnName="Express_number" />
+                <ScalarProperty Name="OOnsignor" ColumnName="OOnsignor" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Shipping_outtlets" ColumnName="Shipping_outtlets" />
+                <ScalarProperty Name="Dot_information" ColumnName="Dot_information" />
+                <ScalarProperty Name="Corporate_name" ColumnName="Corporate_name" />
+                <ScalarProperty Name="Delivery_Express" ColumnName="Delivery_Express" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shouhuos">
+            <EntityTypeMapping TypeName="EsuBaoModel.Shouhuo">
+              <MappingFragment StoreEntitySet="Shouhuo">
+                <ScalarProperty Name="Express_number" ColumnName="Express_number" />
+                <ScalarProperty Name="Consignoee" ColumnName="Consignoee" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="Corporate_name" ColumnName="Corporate_name" />
+                <ScalarProperty Name="Receiving_address" ColumnName="Receiving_address" />
+                <ScalarProperty Name="city_adddress" ColumnName="city_adddress" />
+                <ScalarProperty Name="xian_address" ColumnName="xian_address" />
+                <ScalarProperty Name="address" ColumnName="address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_AdminUser">
+            <EntityTypeMapping TypeName="EsuBaoModel.T_AdminUser">
+              <MappingFragment StoreEntitySet="T_AdminUser">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="AdminName" ColumnName="AdminName" />
+                <ScalarProperty Name="AdminPwd" ColumnName="AdminPwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_expreMiss">
+            <EntityTypeMapping TypeName="EsuBaoModel.T_expreMiss">
+              <MappingFragment StoreEntitySet="T_expreMiss">
+                <ScalarProperty Name="ExpreMissID" ColumnName="ExpreMissID" />
+                <ScalarProperty Name="Express_number" ColumnName="Express_number" />
+                <ScalarProperty Name="Express_status" ColumnName="Express_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Refund">
+            <EntityTypeMapping TypeName="EsuBaoModel.T_Refund">
+              <MappingFragment StoreEntitySet="T_Refund">
+                <ScalarProperty Name="Refund_id" ColumnName="Refund_id" />
+                <ScalarProperty Name="Express_number" ColumnName="Express_number" />
+                <ScalarProperty Name="Refund_status" ColumnName="Refund_status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="transportations">
+            <EntityTypeMapping TypeName="EsuBaoModel.transportation">
+              <MappingFragment StoreEntitySet="transportation">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Type_shipping" ColumnName="Type_shipping" />
+                <ScalarProperty Name="Durationf_transportation" ColumnName="Durationf_transportation" />
+                <ScalarProperty Name="Starting_price" ColumnName="Starting_price" />
+                <ScalarProperty Name="Heavy_cargo" ColumnName="Heavy_cargo" />
+                <ScalarProperty Name="Light__goods" ColumnName="Light _goods" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="EsuBaoModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="User_Id" ColumnName="User_Id" />
+                <ScalarProperty Name="User_uaername" ColumnName="User_uaername" />
+                <ScalarProperty Name="User_password" ColumnName="User_password" />
+                <ScalarProperty Name="User_Name" ColumnName="User_Name" />
+                <ScalarProperty Name="User_Sex" ColumnName="User_Sex" />
+                <ScalarProperty Name="User_Company" ColumnName="User_Company" />
+                <ScalarProperty Name="User_fixedphone" ColumnName="User_fixedphone" />
+                <ScalarProperty Name="User_Phone" ColumnName="User_Phone" />
+                <ScalarProperty Name="User_Email" ColumnName="User_Email" />
+                <ScalarProperty Name="User_city" ColumnName="User_city" />
+                <ScalarProperty Name="User_note" ColumnName="User_note" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ZiXunJianYis">
+            <EntityTypeMapping TypeName="EsuBaoModel.ZiXunJianYi">
+              <MappingFragment StoreEntitySet="ZiXunJianYi">
+                <ScalarProperty Name="MessDate" ColumnName="MessDate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="title" ColumnName="title" />
+                <ScalarProperty Name="Message_type" ColumnName="Message_type" />
+                <ScalarProperty Name="Message_person" ColumnName="Message_person" />
+                <ScalarProperty Name="Contact_number" ColumnName="Contact_number" />
+                <ScalarProperty Name="Mail_box" ColumnName="Mail_box" />
+                <ScalarProperty Name="Waybill_No" ColumnName="Waybill_No" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tousus">
+            <EntityTypeMapping TypeName="EsuBaoModel.Tousu">
+              <MappingFragment StoreEntitySet="Tousu">
+                <ScalarProperty Name="Tousu_Date" ColumnName="Tousu_Date" />
+                <ScalarProperty Name="Tousu_Message" ColumnName="Tousu_Message" />
+                <ScalarProperty Name="Waybill_No" ColumnName="Waybill_No" />
+                <ScalarProperty Name="Contact_number" ColumnName="Contact_number" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="Tousu_name" ColumnName="Tousu_name" />
+                <ScalarProperty Name="Tousu_title" ColumnName="Tousu_title" />
+                <ScalarProperty Name="Tousu_id" ColumnName="Tousu_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_replay">
+            <EntityTypeMapping TypeName="EsuBaoModel.T_replay">
+              <MappingFragment StoreEntitySet="T_replay">
+                <ScalarProperty Name="Replay_zt" ColumnName="Replay_zt" />
+                <ScalarProperty Name="Replay_date" ColumnName="Replay_date" />
+                <ScalarProperty Name="advice_id" ColumnName="advice_id" />
+                <ScalarProperty Name="Replay_mess" ColumnName="Replay_mess" />
+                <ScalarProperty Name="Replay_id" ColumnName="Replay_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
