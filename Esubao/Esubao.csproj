@@ -104,6 +104,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\MT\tubiao.css" />
     <Content Include="Content\MT\XiaDan.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="image\MT\black.png" />
     <Content Include="image\MT\book.png" />
@@ -724,6 +725,9 @@
     <Content Include="Views\Admin\UserAdmin.cshtml" />
     <Content Include="Views\Helpe\Jin.cshtml" />
     <Content Include="Views\Helpe\HelpZiLiao.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\Quequ.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
