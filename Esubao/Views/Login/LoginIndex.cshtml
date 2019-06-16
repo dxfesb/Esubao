@@ -250,7 +250,7 @@
             <img src="/image/h-user-banner.jpg" class="bg">
         </div>
         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:15vh;width:100%">
-          @Html.Partial("Esubaohead")
+            @Html.Partial("Esubaohead")
         </div>
         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="height:80vh">
             <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
@@ -261,31 +261,32 @@
                         <h3>用户登录</h3>
                     </div>
                     <div class="h-loginForm">
-                        <form method="post" id="login_form">
+                        <form method="post" id="login_form" action="/Loginindex/UserLogin">
                             <div class="h-loginInfo">
-                                <input type="text" class="form-control h-username" name="account" placeholder="请输入用户名">
+                                <input type="text" class="form-control h-username" name="User_uaername" placeholder="请输入用户名">
                             </div>
-                            <div class="h-loginInfo"><input type="password" autocomplete="off" class=" form-control h-password" name="pwd" placeholder="请输入密码"></div>
+                            <div class="h-loginInfo"><input type="password" autocomplete="off" class=" form-control h-password" name="User_password" placeholder="请输入密码"></div>
                             <div class="h-loginInfo3">
                                 <input type="text" style="margin-top:20px" name="verificationcode" id="verificationcode" placeholder="请输入验证码">
-                                <span><img /></span>
-                                <a class="h-refresh" id="shuaxin">点击获取验证码</a>
+                                <span>
+                                    <img src="~/image/yzm.jpg"  style="width:90px;height :40px;margin-left:5px;"/>
+                                </span>
+                            </div>
+
+                            <div class="h-loginInfo2">
+                                <div class="h-loginCheck">
+                                    <input type="checkbox" id="check1" value="option1" checked="">
+                                    <label for="check1">下次自动登录</label>
+                                </div>
+                                <div class="h-forgot"><a href="/front/huiyzhx/h-member-zhhmm">忘记密码？</a></div>
+                            </div>
+
+                            <div class="h-lfBtn">
+                                <button type="submit" class="h-mr10 btn btn-login2">登录</button>
+                                <a type="button" class="btn btn-regist2" href="/Registers/Registration_page">立即注册</a>
                             </div>
                         </form>
-                        <div class="h-loginInfo2">
-                            <div class="h-loginCheck">
-                                <input type="checkbox" id="check1" value="option1" checked="">
-                                <label for="check1">下次自动登录</label>
-                            </div>
-                            <div class="h-forgot"><a href="/front/huiyzhx/h-member-zhhmm">忘记密码？</a></div>
-                        </div>
                     </div>
-                    <div class="h-lfBtn">
-                        <button type="button" class="h-mr10 btn btn-login2">登录</button>
-                        <a type="button" class="btn btn-regist2" href="/front/register/register1">注册</a>
-                    </div>
-
-
                 </div>
             </div>
         </div>
@@ -337,9 +338,9 @@
             </div>
 
         </div>
-      <div>
-          @Html.Partial("Esubaofool")
-      </div>
+        <div>
+            @Html.Partial("Esubaofool")
+        </div>
     </div>
     <script type="text/javascript">
         $(document).ready(function (e) {
