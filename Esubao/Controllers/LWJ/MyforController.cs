@@ -4,17 +4,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Esubao.Controllers.ZHX
+namespace Esubao.Controllers.LWJ
 {
-    public class Home_pageController : Controller
+    public class MyforController : Controller
     {
-        // GET: Home_page
+        // GET: Myfor
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult home_page()
-        { return View(); }
-        
+        public ActionResult MyInfor()
+        {
+            return View();
+        }
     }
 }
