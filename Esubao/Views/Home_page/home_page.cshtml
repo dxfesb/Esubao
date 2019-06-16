@@ -112,6 +112,26 @@
                 font-size: 30px;
                 margin-top: 10px;
             }
+        .yiji {
+        
+        position:relative;
+        
+        }
+        .lis > li {
+        text-align:center;
+        font-size:15px;
+        height:50px
+        }
+        .lis {
+            display: none;
+            width: 100px;
+            height: 150px;
+            position:absolute;
+            background-color:white;
+        }
+        .lis > li a{
+           text-decoration:none;
+        }
     </style>
 </head>
 <body>
@@ -135,22 +155,48 @@
                     <a style="font-size:8vh;font-family:'AR BERKLEY';text-decoration:none;color:#23527c; margin-left:30px;line-height:15vh;">E速宝</a>
                 </div>
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-top:18px">
-                    <ul class="nav  navbar-nav licor" style="float:left;">
-                        <li class="active">
-                            <a href="#">首页 </a>
-                        </li>
-                        <li><a href="#">文件</a></li>
-                        <li><a href="#">编辑</a></li>
-                        <li><a href="#">视图</a></li>
-                        <li><a href="#">项目</a></li>
-                        <li><a href="#">文件</a></li>
-                        <li><a href="#">编辑</a></li>
-                        <li><a href="#">视图</a></li>
-                        <li><a href="#">项目</a></li>
-                    </ul>
-                    <div style="float:right">
-                        <a href="#" style="color:#000000">快速登录</a>/
-                        <a href="#" style="color:#000000">注册</a>
+                    <nav class="nav navbar-form">
+                        <ul class="nav  navbar-nav licor">
+                            <li>
+                                <a href="/Home_page/home_page">首页</a>
+                            </li>
+                            <li onmouseover="onOver(this)" onmouseout="onOut(this)" class="yiji">
+                                <a>我的速宝</a>
+                                <ul class="lis">
+                                    <li><a href="/Order/OnlineOrder">网上下单</a></li>
+                                    <li><a href="/Order/bulkOrder">批量下单</a></li>
+                                    <li><a href="/Sheji/Ziliao">我的资料管理</a></li>
+                                </ul>
+                            </li>
+                            <li onmouseover="onOver(this)" onmouseout="onOut(this)" class="yiji">
+                                <a>自助服务</a>
+                                <ul class="lis">
+                                    <li><a href="/Logisticstracking/Logisticstrakcing">货物跟踪</a></li>
+                                    <li><a href="">网点查询</a></li>
+                                    <li><a href="/Logisticstracking/PriceTime">价格时效查询</a></li>
+                                    <li><a href="">订单查询</a></li>
+                                </ul>
+                            </li>
+                            <li onmouseover="onOver(this)" onmouseout="onOut(this)" class="yiji">
+                                <a>帮助与支持</a>
+                                <ul class="lis">
+                                    <li><a href="/Helpe/HelpeIndex">禁运品</a></li>
+                                    <li><a href="">常见答疑</a></li>
+                                    <li><a href="/Helpe/HelpZiXun">咨询与建议</a></li>
+                                </ul>
+                            </li>
+                            <li onmouseover="onOver(this)" onmouseout="onOut(this)">
+                                <a href="#">关于速宝</a>
+                                <ul class="lis">
+                                    <li><a href="/Sheji/Guanyu">速宝概述</a></li>
+                                    <li><a href="">速宝新闻</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div style="float:right;position:absolute; top:25px;right:0px;">
+                        <a href="/Login/LoginIndex" style="color:#000000">快速登录</a>/
+                        <a href="/Registers/Registration_page" style="color:#000000">注册</a>
                     </div>
                 </div>
             </div>
@@ -239,6 +285,7 @@
             <div class="col-lg-12"> @Html.Partial("Esubaofool");</div>
         </div>
     </div>
+
     @*<script src="~/script/PicLb/jquery.min.js"></script>
     <script src="~/script/PicLb/shutter.js"></script>
     <script src="~/script/PicLb/velocity.js"></script>
@@ -254,6 +301,17 @@
             });
         });
     </script>*@
+
+<script>
+      function onOver(obj){
+            var sub_url=obj.getElementsByTagName("ul")
+            sub_url[0].style.display="block";
+        }
+        function onOut(obj){
+            var sub_url=obj.getElementsByTagName("ul")
+            sub_url[0].style.display="none";
+        }
+</script>
 </body>
 </html>
 

@@ -3,24 +3,72 @@
     Layout = null;
 }
 
-    <div class="navr_img" style="height:15vh;opacity:0.8;background-color:#ffffff">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
-                <a style="font-size:8vh;font-family:'AR BERKLEY';text-decoration:none;color:#23527c; margin-left:30px;line-height:15vh;">E速宝</a><span class="navr_span">欢迎您登录</span>
-            </div>
-            <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" style="margin-top:20px">
-                <nav class="nav navbar-form">
-                    <ul class="nav  navbar-nav licor">
-                        <li class="active">
-                            <a href="#">首页 </a>
-                        </li>
-                        <li><a href="#">文件</a></li>
-                        <li><a href="#">编辑</a></li>
-                        <li><a href="#">视图</a></li>
-                        <li><a href="#">项目</a></li>
-                    </ul>
-                </nav>
-            </div>
+<style>
+    .lis {
+        display:none;
+    }
+        .lis > li a{
+           text-decoration:none;
+        }
+</style>
+<div class="navr_img" style="height:15vh;opacity:0.8;background-color:#ffffff">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 ">
+            <a style="font-size:8vh;font-family:'AR BERKLEY';text-decoration:none;color:#23527c; margin-left:30px;line-height:15vh;">E速宝</a><span class="navr_span">欢迎您登录</span>
+        </div>
+        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8" style="margin-top:20px">
+            <nav class="nav navbar-form">
+                <ul class="nav  navbar-nav licor" id="menu">
+                    <li>
+                        <a href="/Home_page/home_page">首页</a>
+                    </li>
+                    <li onmouseover="onOver(this)" onmouseout="onOut(this)">
+                        <a>我的速宝</a>
+                        <ul class="lis">
+                            <li><a href="/Order/OnlineOrder">网上下单</a></li>
+                            <li><a href="/Order/bulkOrder">批量下单</a></li>
+                            <li><a href="/Sheji/Ziliao">我的资料管理</a></li>
+                        </ul>
+                    </li>
+                    <li onmouseover="onOver(this)" onmouseout="onOut(this)">
+                        <a>自助服务</a>
+                        <ul class="lis">
+                            <li><a href="/Logisticstracking/Logisticstrakcing">货物跟踪</a></li>
+                            <li><a href="">网点查询</a></li>
+                            <li><a href="/Logisticstracking/PriceTime">价格时效查询</a></li>
+                            <li><a href="">订单查询</a></li>
+                        </ul>
+                    </li>
+                    <li onmouseover="onOver(this)" onmouseout="onOut(this)">
+                        <a>帮助与支持</a>
+                        <ul class="lis">
+                            <li><a href="/Helpe/HelpeIndex">禁运品</a></li>
+                            <li><a href="">常见答疑</a></li>
+                            <li><a href="/Helpe/HelpZiXun">咨询与建议</a></li>
+                        </ul>
+                    </li>
+                    <li onmouseover="onOver(this)" onmouseout="onOut(this)">
+                        <a href="#">关于速宝</a>
+                        <ul class="lis">
+                            <li><a href="/Sheji/Guanyu">速宝概述</a></li>
+                            <li><a href="">速宝新闻</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
+    <div>
+</div>
+
+<script>
+    function onOver(obj){
+            var sub_url=obj.getElementsByTagName("ul")
+            sub_url[0].style.display="block";
+        }
+        function onOut(obj){
+            var sub_url=obj.getElementsByTagName("ul")
+            sub_url[0].style.display="none";
+        }
+</script>
 
