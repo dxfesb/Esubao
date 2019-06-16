@@ -109,6 +109,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\headpage.css" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -718,6 +719,7 @@
     <Content Include="Views\Admin\Adviceinfor.cshtml" />
     <Content Include="Views\Admin\UserAdmin.cshtml" />
     <Content Include="Views\Registers\Registration_page.cshtml" />
+    <Content Include="Views\Shared\SUHead.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
