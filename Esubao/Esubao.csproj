@@ -105,8 +105,28 @@
     <Content Include="Content\MT\tubiao.css" />
     <Content Include="Content\MT\XiaDan.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Libs\css\bootstrap-theme.css" />
+    <Content Include="Libs\css\bootstrap-theme.min.css" />
+    <Content Include="Libs\css\bootstrap.css" />
+    <Content Include="Libs\css\bootstrap.min.css" />
+    <Content Include="Libs\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Libs\img\455.jpg" />
+    <Content Include="Libs\img\about-usbanner.jpg" />
+    <Content Include="Libs\img\help_banner[1].jpg" />
+    <Content Include="Libs\js\bootstrap.js" />
+    <Content Include="Libs\js\bootstrap.min.js" />
+    <Content Include="Libs\js\jquery-3.3.1.min.js" />
+    <Content Include="Libs\js\npm.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Libs\css\bootstrap-theme.css.map" />
+    <Content Include="Libs\css\bootstrap-theme.min.css.map" />
+    <Content Include="Libs\css\bootstrap.css.map" />
+    <Content Include="Libs\css\bootstrap.min.css.map" />
+    <Content Include="Libs\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Libs\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Libs\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Libs\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -596,6 +616,7 @@
     <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
     <Compile Include="Controllers\LWJ\BootController.cs" />
     <Compile Include="Controllers\LWJ\HomeController.cs" />
+    <Compile Include="Controllers\LWJ\ShejiController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\MT\HelperController.cs" />
     <Compile Include="Controllers\MT\OnlineOrderController.cs" />
@@ -715,6 +736,10 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Admin\Adviceinfor.cshtml" />
     <Content Include="Views\Admin\UserAdmin.cshtml" />
+    <Content Include="Views\Sheji\Ziliao.cshtml" />
+    <Content Include="Views\Sheji\Guanyu.cshtml" />
+    <Content Include="Views\Sheji\Jieshao.cshtml" />
+    <Content Include="Views\Sheji\Jingyun.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -724,7 +749,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Libs\" />
+    <Folder Include="Views\Esb\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

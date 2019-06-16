@@ -1,0 +1,315 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ziliao</title>
+    <link href="~/Libs/css/bootstrap.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .navbar-default .navbar-nav {
+            text-align: center;
+            float: none;
+        }
+
+            .navbar-default .navbar-nav li {
+                display: inline-block;
+                float: none;
+            }
+
+        .nav > li {
+            height: 45px;
+        }
+
+        .User_if {
+            width: 100%;
+            height: 85%;
+        }
+
+        .tb_input {
+            width: 350px;
+        }
+
+        .text_right {
+            text-align: right;
+        }
+
+            .text_right > span {
+                color: red;
+                margin-right: 5px;
+            }
+
+        .profile_login {
+            width: 100%;
+            height: 15%;
+        }
+
+        .profile_tit {
+            font-weight: 400;
+        }
+
+        tr {
+            height: 30px;
+        }
+
+        input {
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-inverse class" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse"
+                        data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">首页&nbsp; &nbsp; &nbsp;</a></li>
+                    <li><a href="#">我的华宇&nbsp; &nbsp; &nbsp;</a></li>
+                    <li><a href="#">自助服务 &nbsp; &nbsp; &nbsp;</a></li>
+                    <li><a href="#">产品与服务&nbsp; &nbsp; &nbsp;</a></li>
+                    <li><a href="#">企业服务&nbsp; &nbsp; &nbsp;</a></li>
+                    <li><a href="#">特许经营&nbsp; &nbsp; &nbsp;</a></li>
+                    <li class="active"><a href="#">帮助与支持&nbsp; &nbsp; &nbsp;</a></li>
+                    <li><a href="#">关于华宇&nbsp; &nbsp; &nbsp;</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="col-md-12 col-xs-12" style="padding: 3% 15% 3% 15%">
+        <div class="col-md-3 col-xs-10" style="background: beige;height:1000px;">
+            <ul class="nav">
+                <li class="active">
+                    <h3><a href="#">我的速宝</a></h3>
+                </li>
+                <li><a href="#">网上下单</a></li>
+                <li>
+                    <h6>................................................................</h6>
+                </li>
+                <li><a href="#">批量下单</a></li>
+                <li>
+                    <h6>................................................................</h6>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        我的订单<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">所有订单</a></li>
+                        <li><a href="#">我的运单</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h6>................................................................</h6>
+                </li>
+                <li><a href="#">我的理赔</a></li>
+                <li>
+                    <h6>................................................................</h6>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        我的资料管理<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">个人资料管理</a></li>
+                        <li><a href="#">发货人管理</a></li>
+                        <li><a href="#">收货人管理</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <h6>................................................................</h6>
+                </li>
+            </ul>
+
+        </div>
+        <div class="col-md-8 col-xs-10" style="margin-left: 120px;">
+            <img src="~/Libs/img/help_banner[1].jpg"  style="width: 100%; height: 250px; display: block;" class="img-responsive"  />
+        </div>
+        <br />
+        <br />
+        <br />
+        <div class="col-md-8 col-xs-8" style="float: right; height: 40px; background: beige; line-height: 40px; margin-top: 15px;">
+            <span style="font-family: inherit; font-size: 20px">个人资料管理</span>
+            <div class="col-lg-12" style="height:80VH;">
+                <div class="row">
+                    <div class="profile_login">
+                        <div class="profile_tit"><i class="profile_tit_icon01"></i>账户信息</div>
+                        <p>
+                            登录用户：温柔
+                        </p>
+                        <p>上次登录时间：Wed Jun 12 10:25:40 CST 2019 　　　若您的登录信息与实际不符，建议您及时<a class="f_f15a22" href="#">修改密码</a></p>
+                    </div>
+                </div>
+                <hr style="height:1px;border:none;border-top:1px dashed #050505;" />
+                <div class="row">
+                    <form action="Sheji/Updata" method="post" id="ff">
+                        <table class="User_if">
+                            <thead>
+                                <tr>
+                                    <th><i class="glyphicon glyphicon-user"></i>基本信息</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tb">
+                                <tr>
+                                    <td class="text_right"><span>*</span>用户名：</td>
+                                    <td>
+                                        <input name="entity.ebccNetLogin" class="tb_input" id="entity.ebccNetLogin" type="text" placeholder="请输入用户名" />
+                                    </td>
+                                    <td>
+                                        <div class="tips" id="loginName_tips">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text_right"><span>*</span>姓名：</td>
+                                    <td>
+                                        <input name="entity.ebccContactName" class="tb_input" id="entity.ebccContactName" type="text" placeholder="请输入姓名" />
+                                    </td>
+                                    <td>
+                                        <div class="tips" id="contactName_tips">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text_right">性别：</td>
+                                    <td>
+                                        <label class="mr10">
+                                            <input name="entity.ebccSex" class="mr5" type="radio" value="男" />男
+                                        </label>
+                                        <label>
+                                            <input name="entity.ebccSex" class="mr5" type="radio" value="女" />女
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <div class="tips" id="sex_tips">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text_right">公司：</td>
+                                    <td>
+                                        <input name="entity.ebccCompany" class="tb_input" id="entity.ebccCompany" type="text" placeholder="请输入公司全称" />
+                                    </td>
+                                    <td>
+                                        <div class="tips" id="company_tips">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text_right">固定电话：</td>
+                                    <td>
+                                        <input name="entity.ebccTel" class="tb_input" id="entity.ebccTel" type="text" placeholder="固话格式为：xxx-xxxxxxx-xxx" />
+                                    </td>
+                                    <td>
+                                        <div class="tips" id="tel_tips">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text_right"><span>*</span>手机号：</td>
+                                    <td>
+                                        <div id="modify_mobile_div" style="display: none;">
+                                            <input name="entity.ebccMobile" class="input w250 inputFocus" id="entity.ebccMobile" style="width: 100px;" type="text" value="18390004007" "    />
+                                            <input name="phoneVerCode" class="input w95 inputFocus grays" id="phoneVerCode" type="text" value="请输入验证码" "    />
+                                            <input class="xz1" id="getPhoneVerCodeBtn" style="padding: 0 10px;" onclick="sendPhoneVerCode()" type="button" value="获取验证码" />
+                                        </div>
+                                        <div id="show_mobile_div">
+                                            <span class="mr10">18390004007</span><a class="f_f15a22" href="javascript:$('#show_mobile_div').hide();$('#modify_mobile_div').show()">修改</a>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tips" id="mobile_tips">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text_right">邮箱地址：</td>
+                                    <td>
+                                        <input name="entity.ebccEmail" class="tb_input" id="entity.ebccEmail" type="text" placeholder="建议填写，便于找回密码时使用" />
+                                    </td>
+                                    <td>
+                                        <div class="tips" id="email_tips">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text_right"><span>*</span>所在省市：</td>
+                                    <td>
+                                        <p class="mb10">
+                                            <input name="entity.ebccDistrict" class="tb_input" id="entity.ebccDistrict" type="text" placeholder="请选择所在省市" autocomplete="off" />—<input name="entity.ebccAddress" class="w135 input inputFocus" id="entity.ebccAddress" type="text" />
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <div class="tips" id="district_tips">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text_right">发货备注：</td>
+                                    <td>
+                                        <input name="entity.ebccRemark" class="tb_input" id="entity.ebccRemark" type="text" placeholder="地址备注（比如xx路口，附近），非必填" />
+                                    </td>
+                                    <td>
+                                        <div class="tips" id="remark_tips">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <div class="tips" id="success_tips">
+                                        </div>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <button class="btn btn-primary" id="btn_ok">保存</button>
+                                    </td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                        </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Libs/js/jquery-3.3.1.min.js"></script>
+    <script src="~/Libs/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $("#btn_ok").click(function () {
+            alert("成功");
+            $.ajax({
+                url: '/Sheji/Delete',
+                type: "post",
+                dataType: "json",
+                data: { "id": id },
+                success: function (rs) {
+                    $.messager.alert("提示", rs.msg, "info", function () {
+                        if (rs.code == 200) {
+                            alert("成功");
+                        }
+                        else {
+                            alert("成功 ");
+                        }
+                    })
+                }
+
+            })
+        })
+    </script>
+</body>
+</html>
