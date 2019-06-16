@@ -15,5 +15,6 @@ namespace Esubao.Controllers.ZHX
         }
         public ActionResult home_page()
         { return View(); }
+        
     }
 }
