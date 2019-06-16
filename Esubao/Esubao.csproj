@@ -43,11 +43,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\lenom\Downloads\aip-csharp-sdk-3.6.6\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -92,7 +100,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Controllers\MT\Helper.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\MT\tubiao.css" />
+    <Content Include="Content\MT\XiaDan.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="script\css\Helper.css" />
     <Content Include="Global.asax" />
     <Content Include="image\20190430-banner-PC-CN-BANNER副本.jpg" />
     <Content Include="image\20190430-Heavy-Freight-Banner-PC-CN.jpg" />
@@ -115,6 +134,252 @@
     <Content Include="image\password.png" />
     <Content Include="image\timg.jpg" />
     <Content Include="image\userName.png" />
+    <Content Include="Models\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="script\Admin\Content\ace\ace.js" />
+    <Content Include="script\Admin\Content\ace\ext-searchbox.js" />
+    <Content Include="script\Admin\Content\ace\mode-html.js" />
+    <Content Include="script\Admin\Content\ace\snippets\html.js" />
+    <Content Include="script\Admin\Content\ace\theme-tomorrow.js" />
+    <Content Include="script\Admin\Content\ace\worker-html.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\layui.css" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\layui.mobile.css" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\code.css" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\laydate\default\laydate.css" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\icon-ext.png" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\icon.png" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\layer.css" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\loading-0.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\loading-1.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\css\modules\layer\default\loading-2.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\font\iconfont.svg" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\0.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\1.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\10.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\11.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\12.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\13.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\14.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\15.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\16.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\17.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\18.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\19.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\2.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\20.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\21.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\22.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\23.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\24.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\25.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\26.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\27.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\28.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\29.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\3.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\30.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\31.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\32.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\33.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\34.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\35.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\36.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\37.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\38.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\39.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\4.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\40.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\41.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\42.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\43.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\44.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\45.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\46.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\47.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\48.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\49.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\5.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\50.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\51.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\52.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\53.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\54.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\55.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\56.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\57.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\58.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\59.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\6.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\60.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\61.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\62.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\63.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\64.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\65.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\66.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\67.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\68.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\69.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\7.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\70.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\71.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\8.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\images\face\9.gif" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\layui.all.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\layui.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\carousel.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\code.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\colorpicker.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\element.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\flow.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\form.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\jquery.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\laydate.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\layedit.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\layer.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\laypage.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\laytpl.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\mobile.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\rate.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\slider.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\table.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\tree.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\upload.js" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\lay\modules\util.js" />
+    <Content Include="script\Admin\css\font.css" />
+    <Content Include="script\Admin\css\login.css" />
+    <Content Include="script\Admin\css\theme1.css" />
+    <Content Include="script\Admin\css\theme2.css" />
+    <Content Include="script\Admin\css\theme3.css" />
+    <Content Include="script\Admin\css\theme4.css" />
+    <Content Include="script\Admin\css\theme5.css" />
+    <Content Include="script\Admin\css\xadmin.css" />
+    <Content Include="script\Admin\fontAlibaba\demo.css" />
+    <Content Include="script\Admin\fontAlibaba\demo_index.html" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.css" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.js" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.svg" />
+    <Content Include="script\Admin\fonts\iconfont.svg" />
+    <Content Include="script\Admin\images\adminlogo.png" />
+    <Content Include="script\Admin\images\aiwrap.png" />
+    <Content Include="script\Admin\images\bg.png" />
+    <Content Include="script\Admin\images\demo.jpg" />
+    <Content Include="script\Admin\images\head_logo.png" />
+    <Content Include="script\Admin\js\jquery.min.js" />
+    <Content Include="script\Admin\js\xadmin.js" />
+    <Content Include="script\Admin\js\xcity.js" />
+    <Content Include="script\Admin\lib\layui\css\layui.css" />
+    <Content Include="script\Admin\lib\layui\css\layui.mobile.css" />
+    <Content Include="script\Admin\lib\layui\css\modules\code.css" />
+    <Content Include="script\Admin\lib\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\icon.png" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\layer.css" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="script\Admin\lib\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="script\Admin\lib\layui\font\iconfont.svg" />
+    <Content Include="script\Admin\lib\layui\images\face\0.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\1.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\10.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\11.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\12.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\13.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\14.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\15.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\16.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\17.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\18.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\19.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\2.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\20.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\21.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\22.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\23.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\24.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\25.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\26.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\27.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\28.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\29.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\3.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\30.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\31.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\32.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\33.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\34.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\35.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\36.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\37.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\38.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\39.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\4.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\40.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\41.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\42.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\43.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\44.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\45.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\46.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\47.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\48.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\49.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\5.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\50.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\51.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\52.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\53.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\54.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\55.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\56.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\57.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\58.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\59.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\6.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\60.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\61.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\62.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\63.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\64.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\65.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\66.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\67.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\68.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\69.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\7.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\70.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\71.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\8.gif" />
+    <Content Include="script\Admin\lib\layui\images\face\9.gif" />
+    <Content Include="script\Admin\lib\layui\layui.all.js" />
+    <Content Include="script\Admin\lib\layui\layui.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\carousel.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\code.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\colorpicker.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\element.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\flow.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\form.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\jquery.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\laydate.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\layedit.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\layer.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\laypage.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\laytpl.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\mobile.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\rate.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\slider.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\table.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\tree.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\upload.js" />
+    <Content Include="script\Admin\lib\layui\lay\modules\util.js" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.css" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap.css" />
@@ -128,6 +393,7 @@
     <Content Include="script\css\master.css" />
     <Content Include="script\css\modernforms.css" />
     <Content Include="script\css\shutter.css" />
+    <Content Include="script\css\Zixun.css" />
     <Content Include="script\jquery.carouFredSel-6.0.4-packed.js" />
     <Content Include="script\modernizr.js" />
     <Content Include="script\MT\css\default.css" />
@@ -319,9 +585,6 @@
     <Content Include="script\MT\vendor\jquery\jquery.min.js" />
     <Content Include="script\MT\vendor\moment.js" />
     <Content Include="script\MT\vendor\typeahead.jquery.js" />
-    <Content Include="script\PicLb\jquery.min.js" />
-    <Content Include="script\PicLb\shutter.js" />
-    <Content Include="script\PicLb\velocity.js" />
     <Content Include="script\require.js" />
     <Content Include="script\vue-resource-1.3.4.js" />
     <Content Include="script\vue.min.js" />
@@ -329,6 +592,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
     <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
     <Compile Include="Controllers\LWJ\BootController.cs" />
     <Compile Include="Controllers\LWJ\HomeController.cs" />
@@ -343,11 +607,72 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Company.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Fahuo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Infor.cs" />
+    <Compile Include="Models\Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\order.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Shouhuo.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Tousu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\transportation.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_AdminUser.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_expreMiss.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_Refund.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\T_replay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\User.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ZiXunJianYi.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <EntityDeploy Include="Models\Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="packages.config" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.css.map" />
     <Content Include="script\bootstrap-3.3.7-dist\bootstrap-3.3.7-dist\css\bootstrap-theme.min.css.map" />
@@ -370,6 +695,26 @@
     <Content Include="Views\Shared\AdressBook.cshtml" />
     <Content Include="Views\Shared\Esubaofool.cshtml" />
     <Content Include="Views\Shared\Order_Terms.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\AdminIndex.cshtml" />
+    <Content Include="Views\Shared\authstr.cshtml" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\font\iconfont.eot" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\font\iconfont.ttf" />
+    <Content Include="script\Admin\Content\Layui-KnifeZ\font\iconfont.woff" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.eot" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.ttf" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.woff" />
+    <Content Include="script\Admin\fontAlibaba\iconfont.woff2" />
+    <Content Include="script\Admin\fonts\iconfont.eot" />
+    <Content Include="script\Admin\fonts\iconfont.ttf" />
+    <Content Include="script\Admin\fonts\iconfont.woff" />
+    <Content Include="script\Admin\lib\layui\font\iconfont.eot" />
+    <Content Include="script\Admin\lib\layui\font\iconfont.ttf" />
+    <Content Include="script\Admin\lib\layui\font\iconfont.woff" />
+    <Content Include="Views\Admin\AdviceLaunch.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Admin\Adviceinfor.cshtml" />
+    <Content Include="Views\Admin\UserAdmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -380,6 +725,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Libs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
