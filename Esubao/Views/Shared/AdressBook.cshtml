@@ -3,36 +3,136 @@
     Layout = null;
 }
 <style type="text/css">
-.aicon-search:before { 
-    content: url("../../image/search.png") 
-}
+    .aicon-search:before {
+        content: url("../../image/search.png")
+    }
+
+.aicon-delete:before { content: url("~/image/MT/laji.png") }
 </style>
 <div class="modal fade bs-example-modal-lg" id="AdressBu" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-<div class="layui-layer layui-layer-page sf-layer line" id="layui-layer1" type="page" times="1" showtime="0" contype="string" style="z-index: 19891015; width: 680px; top: -14px; left: 334.5px;">
-    <div class="layui-layer-title" style="">从地址簿选择</div>
-    <div id="" class="layui-layer-content">
-    <div class="open-9413f14ZeL">
-        <div class="adds-book">
-        <div class="clearfix">
-            <form class="search-form fl" novalidate="novalidate">
-                <div class="input-wrapper clearfix">
-                    <input type="text" class="form-control search-input"  name="searchParm" placeholder="请输入姓名/电话查询">
-                    <button class="search primary-btn square small" type="submit">搜索</button>
-                </div>
-                </form>
-            <button type="button" class="primary-btn white square add fr">
-            <span class="aicon-zengjia-01"></span>新增地址</button>
-            </div>
-      <div class="fix-height">
-            <div class="hide-in-loading">
-          <div class="bootstrap-pagination">
-              
+    <div class="layui-layer layui-layer-page sf-layer line" id="layui-layer1" type="page" times="1" showtime="0" contype="string" style="z-index: 19891015; width: 680px; top: -14px; left: 334.5px;">
+        <div class="layui-layer-title" style="">从地址簿选择</div>
+        <div id="" class="layui-layer-content">
+            <div class="open-9413f14ZeL">
+                <div class="adds-book">
+                    <div class="clearfix">
+                        <form class="search-form fl" novalidate="novalidate">
+                            <div class="input-wrapper clearfix">
+                                <input type="text" class="form-control search-input" name="searchParm" placeholder="请输入姓名/电话查询">
+                                <button class="search primary-btn square small" type="submit">搜索</button>
+                            </div>
+                        </form>
+                        <button type="button" class="primary-btn white square add fr"data-toggle="modal" data-target="#AddRess">
+                           新增地址
+                        </button>
+                    </div>
+                    <ul class="table-title">
+                        <li style="width: 30%">联系人</li>
+                        <li style="width: 30%">地址</li>
+                        <li style="width: 20%">公司名称</li>
+                        <li style="width: 20%">操作</li>
+                    </ul>
+                    <div class="height-scroll table-wrapper" style="height: 153px;">
+                        <dl class="address_loading" style="display: none;">
+                            <dt>
+                                <img src="~/image/MT/black.png" />
+                            </dt>
+                            <dd><h5>正在加载...</h5></dd>
+                        </dl>
+                        <dl class="address_networkErr" style="display: none">
+                            <dt>
+                                <span class="aicon-28 img"></span>
+                            </dt>
+                            <dd>
+                                <h5>加载异常，请刷新重试</h5>
+                            </dd>
+                            <dd>
+                                <button type="button" class="primary-btn try-again autowidth">重试</button>
+                            </dd>
+                        </dl><dl class="address_fetch_null" style="display: none">
+                            <dt><span class="aicon-emptybox img"></span></dt>
+                            <dd><h5>地址为空</h5></dd>
+                            <dd>
+                                <p>您可先添加一条地址信息</p>
+                            </dd>
+                        </dl>
+                        <dl class="address_search_null" style="display: none">
+                            <dt><span class="aicon-emptylist img"></span></dt>
+                            <dd>
+                                <p>暂时木有内容呀...</p>
 
-          </div>
-
+                            </dd>
+                        </dl>
+                        <table class="address_success hide-in-loading table table-hover table-striped">
+                            <tbody>
+                                <tr data-addid="AC5655CB3B3C459090AE3B19FE1AF656">
+                                    <td style="width: 10%">
+                                        <a href="javascript:void(0)" class="address-check aicon-uncheck"></a>
+                                    </td>
+                                    <td style="width: 20%">
+                                        <p class="contact-name" flex="" title="as">
+                                            <span class="text">张三</span>
+                                        </p>
+                                        <p class="gray" title="178****6856">178****6856</p>
+                                    </td>
+                                    <td style="width: 30%">
+                                        <p title="广东省深圳市龙华区">广东省深圳市龙华区</p>
+                                        <p class="gray" title="aaa">东升水店</p>
+                                    </td>
+                                    <td style="width: 20%">
+                                        <p title="无">无</p>
+                                    </td>
+                                    <td class="option" style="width: 20%">
+                                       
+                                        <a href="javascript:void(0)" class="modify "style="font-size:6px;">修改</a>
+                                        <a href="javascript:void(0)"  class="delete aicon-delete" style="font-size:6px;">
+                                            删除
+                                        </a>
+                                        
+                                    </td>
+                                </tr>
+                                <tr data-addid="10D03404DFC340C294A9F80EB4DD457C">
+                                    <td style="width: 10%"><a href="javascript:void(0)" class="address-check aicon-uncheck"></a></td>
+                                    <td style="width: 20%">
+                                        <p class="contact-name" flex="" title="a">
+                                            <span class="text">a</span>
+                                        </p>
+                                        <p class="gray" title="178****2586">178****2586</p>
+                                    </td>
+                                    <td style="width: 30%">
+                                        <p title="广东省深圳市宝安区">天津市-河北区</p>
+                                        <p class="gray" title="aa">留兰鲜花店</p>
+                                    </td>
+                                    <td style="width: 20%">
+                                        <p title="无">无</p>
+                                    </td>
+                                    <td class="option" style="width: 20%">
+                                        <a href="javascript:void(0)" class="modify " style="font-size:6px;">修改</a>
+                                        <a href="javascript:void(0)" class="delete aicon-delete" style="font-size:6px;">
+                                            删除
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="fix-height">
+                        <div class="hide-in-loading">
+                            <div class="bootstrap-pagination">
+                                <ul class="pagination">
+                                    <li class="active">
+                                        <a title="Current page is 1">1</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <p style="text-align: center">
+                                <button type="button" class="primary-btn autowidth select-confirm">确认选择</button>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-          </div>
             </div>
         </div>
-        </div></div>
     </div>
+
+</div>
