@@ -130,6 +130,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
+    <Compile Include="Controllers\LWJ\MyforController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\ZHX\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -151,6 +152,7 @@
     <Content Include="Views\Helpe\HelpeIndex.cshtml" />
     <Content Include="Views\Logisticstracking\Logisticstrakcing.cshtml" />
     <Content Include="Views\Login\LoginIndex.cshtml" />
+    <Content Include="Views\Myfor\MyInfor.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -160,7 +162,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\LWJ\" />
     <Folder Include="Models\" />
     <Folder Include="Views\HomePage\" />
   </ItemGroup>
