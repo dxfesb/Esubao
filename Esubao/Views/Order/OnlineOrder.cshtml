@@ -36,11 +36,12 @@
     </script>
 </head>
 <body>
+    @Html.Partial("Esubaohead")
     <div id="app">
         <nav class="dynamic-nav-bar">
-            <a href="javascript:void(0);" class="active">我要寄件</a>
+            <a href="/Order/OnlineOrder" class="active">我要寄件</a>
             <a href="/Logisticstracking/Logisticstrakcing">运单追踪</a>
-            <a href="../../sf_care/">服务支持</a>
+            <a href="/Logisticstracking/PriceTime">服务支持</a>
         </nav>
         <div class="dynamic_content_wrapper">
             <div class="dynamic_content">
@@ -262,7 +263,7 @@
 
                     </div>
                 </div>
-              
+
             </div>
 
         </div>
@@ -270,8 +271,8 @@
         @Html.Partial("Order_Terms")
         @*地址簿*@
         @Html.Partial("AdressBook")
-      
-       
+        @Html.Partial("Esubaofool")
+
     </div>
     <script src="~/script/vue.min.js"></script>
 

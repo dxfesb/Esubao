@@ -20,7 +20,10 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row" style="z-index:101">
+            @Html.Partial("Esubaohead")
+        </div>
+        <div class="row" style="margin-top:80px;z-index:99">
             <div class="dynamic-nav-bar col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <ul class="main-nav-menu">
                     <li><a href="/Order/OnlineOrder" onclick="jumpOrder()">我要寄件</a></li>
@@ -121,67 +124,67 @@
                 <div class="delivery-item send-out-item ">
                     <!-- 地图 -->
                     @*<div class="delivery-map amap-container" id="bill-map-246752481545" style="position: relative; background: rgb(252, 249, 242); cursor: url(&quot;https://webapi.amap.com/theme/v1.3/openhand.cur&quot;), default;">
-            <object style="display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;" type="text/html" data="about:blank"></object>
-            <div class="amap-maps">
-                <div class="amap-drags" style="">
-                    <div class="amap-layers" style="transform: translateZ(0px);">
-                        <canvas class="amap-layer" width="1200" height="532" style="position: absolute; z-index: 0; transform-origin: 600px 266px; transform: scale3d(0.666667, 0.666667, 1); top: -89px; left: -200px; height: 532px; width: 1200px;"></canvas>
-                        <div class="amap-markers" style="position: absolute; z-index: 120; top: 177px; left: 400px;">
-                            <div class="amap-marker" style="top: 5px; left: 246px; z-index: 100; transform: rotate(0deg); transform-origin: 4px 4px; display: block;">
-                                <div class="amap-marker-content" style="opacity: 1;"><div class="map-point-middle"></div></div>
-                            </div>
-                            <div class="amap-marker" style="top: -8px; left: 211px; z-index: 100; transform: rotate(0deg); transform-origin: 4px 4px; display: block;">
-                                <div class="amap-marker-content" style="opacity: 1;"><div class="map-point-middle"></div></div>
-                            </div>
-                            <div class="amap-marker" style="top: 0px; left: -252px; z-index: 100; transform: rotate(0deg); transform-origin: 4px 4px; display: block;">
-                                <div class="amap-marker-content" style="opacity: 1;"><div class="map-point-middle"></div></div>
-                            </div>
-                            <div class="amap-marker" style="top: -13px; left: -254px; z-index: 100; transform: rotate(0deg); transform-origin: 4px 4px; display: block;">
-                                <div class="amap-marker-content" style="opacity: 1;">
-                                    <div class="map-point-middle"></div>
+                            <object style="display: block; position: absolute; top: 0; left: 0; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1;" type="text/html" data="about:blank"></object>
+                            <div class="amap-maps">
+                                <div class="amap-drags" style="">
+                                    <div class="amap-layers" style="transform: translateZ(0px);">
+                                        <canvas class="amap-layer" width="1200" height="532" style="position: absolute; z-index: 0; transform-origin: 600px 266px; transform: scale3d(0.666667, 0.666667, 1); top: -89px; left: -200px; height: 532px; width: 1200px;"></canvas>
+                                        <div class="amap-markers" style="position: absolute; z-index: 120; top: 177px; left: 400px;">
+                                            <div class="amap-marker" style="top: 5px; left: 246px; z-index: 100; transform: rotate(0deg); transform-origin: 4px 4px; display: block;">
+                                                <div class="amap-marker-content" style="opacity: 1;"><div class="map-point-middle"></div></div>
+                                            </div>
+                                            <div class="amap-marker" style="top: -8px; left: 211px; z-index: 100; transform: rotate(0deg); transform-origin: 4px 4px; display: block;">
+                                                <div class="amap-marker-content" style="opacity: 1;"><div class="map-point-middle"></div></div>
+                                            </div>
+                                            <div class="amap-marker" style="top: 0px; left: -252px; z-index: 100; transform: rotate(0deg); transform-origin: 4px 4px; display: block;">
+                                                <div class="amap-marker-content" style="opacity: 1;"><div class="map-point-middle"></div></div>
+                                            </div>
+                                            <div class="amap-marker" style="top: -13px; left: -254px; z-index: 100; transform: rotate(0deg); transform-origin: 4px 4px; display: block;">
+                                                <div class="amap-marker-content" style="opacity: 1;">
+                                                    <div class="map-point-middle"></div>
+                                                </div>
+                                            </div>
+                                        </div><canvas class="amap-labels" draggable="false" style="position: absolute; z-index: 99; height: 355px; width: 800px; top: 0px; left: 0px;" width="1600" height="710"></canvas><canvas class="amap-layer amap-vectors" width="1200" height="532" style="position: absolute; z-index: 110; transform-origin: 600px 266px; transform: scale3d(0.666667, 0.666667, 1); top: -89px; left: -200px;"></canvas>
+                                    </div><div class="amap-overlays" style=""></div>
+                                </div>
+                            </div><div style="display: none;"></div><div class="amap-controls">
+                                <div class="amap-toolbar" style="left: 10px; top: 10px; visibility: visible;">
+                                    <div class="amap-pancontrol" style="position: relative; display: block;">
+                                        <div class="amap-pan-left"></div>
+                                        <div class="amap-pan-top"></div><div class="amap-pan-right"></div><div class="amap-pan-bottom"></div>
+                                    </div>
+                                    <div class="amap-locate" style="position: relative; left: 17px; display: block;"></div>
+                                    <div class="amap-zoomcontrol" style="position: relative; left: 14px;">
+                                        <div class="amap-zoom-plus"></div>
+                                        <div class="amap-zoom-ruler" style="display: block;">
+                                            <div class="amap-zoom-mask" style="height: 109px;"></div>
+                                            <div class="amap-zoom-cursor" style="top: 109px;"></div><div class="amap-zoom-labels" style="display: none;">
+                                                <div class="amap-zoom-label-street"></div><div class="amap-zoom-label-city"></div>
+                                                <div class="amap-zoom-label-province"></div><div class="amap-zoom-label-country"></div>
+                                            </div>
+                                        </div>
+                                        <div class="amap-zoom-minus"></div>
+                                    </div>
+                                </div>
+                                <div class="amap-geolocation-con" style="position: absolute; z-index: 9999; left: 10px; bottom: 20px;">
+                                    <div class="amap-geo"></div>
                                 </div>
                             </div>
-                        </div><canvas class="amap-labels" draggable="false" style="position: absolute; z-index: 99; height: 355px; width: 800px; top: 0px; left: 0px;" width="1600" height="710"></canvas><canvas class="amap-layer amap-vectors" width="1200" height="532" style="position: absolute; z-index: 110; transform-origin: 600px 266px; transform: scale3d(0.666667, 0.666667, 1); top: -89px; left: -200px;"></canvas>
-                    </div><div class="amap-overlays" style=""></div>
-                </div>
-            </div><div style="display: none;"></div><div class="amap-controls">
-                <div class="amap-toolbar" style="left: 10px; top: 10px; visibility: visible;">
-                    <div class="amap-pancontrol" style="position: relative; display: block;">
-                        <div class="amap-pan-left"></div>
-                        <div class="amap-pan-top"></div><div class="amap-pan-right"></div><div class="amap-pan-bottom"></div>
-                    </div>
-                    <div class="amap-locate" style="position: relative; left: 17px; display: block;"></div>
-                    <div class="amap-zoomcontrol" style="position: relative; left: 14px;">
-                        <div class="amap-zoom-plus"></div>
-                        <div class="amap-zoom-ruler" style="display: block;">
-                            <div class="amap-zoom-mask" style="height: 109px;"></div>
-                            <div class="amap-zoom-cursor" style="top: 109px;"></div><div class="amap-zoom-labels" style="display: none;">
-                                <div class="amap-zoom-label-street"></div><div class="amap-zoom-label-city"></div>
-                                <div class="amap-zoom-label-province"></div><div class="amap-zoom-label-country"></div>
-                            </div>
-                        </div>
-                        <div class="amap-zoom-minus"></div>
-                    </div>
-                </div>
-                <div class="amap-geolocation-con" style="position: absolute; z-index: 9999; left: 10px; bottom: 20px;">
-                    <div class="amap-geo"></div>
-                </div>
-            </div>
-            <a class="amap-logo" href="http://gaode.com" target="_blank" style="display: block;">
-                <img src="https://webapi.amap.com/theme/v1.3/logo@2x.png">
-            </a><div class="amap-copyright" style="display: none; visibility: visible;">v1.4.3 © 2019 AutoNavi <span class="amap-mcode">- GS(2018)1709号</span></div>
-        </div>*@<!-- 快递简介 -->
+                            <a class="amap-logo" href="http://gaode.com" target="_blank" style="display: block;">
+                                <img src="https://webapi.amap.com/theme/v1.3/logo@2x.png">
+                            </a><div class="amap-copyright" style="display: none; visibility: visible;">v1.4.3 © 2019 AutoNavi <span class="amap-mcode">- GS(2018)1709号</span></div>
+                        </div>*@<!-- 快递简介 -->
                     <!-- 营运异常事件提醒 --><div class="warm-reminder"></div><!-- 操作按钮 --><!-- 地图标注信息 -->
                     <div class="delivery-map-hide hide"><div class="map-win-info"></div></div><!-- 路由详细信息 -->
                     <div class="routes-wrapper">
                         <div class="route-list">
                             <div class="dashed-line" style="height: 522px;"></div>
                             @*<ul class="route first ">
-                    <li class="route-status-text"><span class="signed">已签收</span></li>
-                    <li class="route-status-icon"><img src="../../../../resource/images/waybill/status-signed.png"></li>
-                    <li class="route-date-time"><span>2019-05-01 11:19</span></li>
-                    <li class="route-desc"><span>已签收,感谢使用顺丰,期待再次为您服务</span></li>
-                </ul>*@
+                                    <li class="route-status-text"><span class="signed">已签收</span></li>
+                                    <li class="route-status-icon"><img src="../../../../resource/images/waybill/status-signed.png"></li>
+                                    <li class="route-date-time"><span>2019-05-01 11:19</span></li>
+                                    <li class="route-desc"><span>已签收,感谢使用顺丰,期待再次为您服务</span></li>
+                                </ul>*@
                             <ul class="route" style="height:90px" v-for="item in billjt">
                                 <li class="route-status-text"><span class="">{{item.msg}}</span></li>
                                 <li class="route-status-icon"><img src="../../../../resource/images/waybill/status-transporting.png"></li>
@@ -192,15 +195,17 @@
                     </div>
                     <!-- 登录按钮 -->
                     @*<div class="login-btn">
-        <button class="primary-btn big a_link_login">登录</button><br><span class="gray">如是您的包裹可登录查询更详细信息</span></div>*@<!-- 分隔线 -->
+                        <button class="primary-btn big a_link_login">登录</button><br><span class="gray">如是您的包裹可登录查询更详细信息</span></div>*@<!-- 分隔线 -->
                     <div class="separation-line"></div>
-                  
+
                 </div>
-               
+
             </div>
         </div>
     </div>
-
+    <div class="row" style="margin-top:400px">
+        <div class="col-lg-12"> @Html.Partial("Esubaofool");</div>
+    </div>
 </div>
                             <!--运单号查询访问数据-->
                             <script>

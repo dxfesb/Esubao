@@ -599,6 +599,8 @@
     <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
     <Compile Include="Controllers\LWJ\BootController.cs" />
     <Compile Include="Controllers\LWJ\HomeController.cs" />
+    <Compile Include="Controllers\LWJ\MyforController.cs" />
+    <Compile Include="Controllers\LWJ\ShejiController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\MT\HelperController.cs" />
     <Compile Include="Controllers\MT\OnlineOrderController.cs" />
@@ -720,6 +722,10 @@
     <Content Include="Views\Admin\UserAdmin.cshtml" />
     <Content Include="Views\Registers\Registration_page.cshtml" />
     <Content Include="Views\Shared\SUHead.cshtml" />
+    <Content Include="Views\Sheji\Guanyu.cshtml" />
+    <Content Include="Views\Sheji\Jieshao.cshtml" />
+    <Content Include="Views\Sheji\Jingyun.cshtml" />
+    <Content Include="Views\Sheji\Ziliao.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
