@@ -1,0 +1,178 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>投诉管理</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../script/Admin/css/font.css">
+    <link rel="stylesheet" href="../script/Admin/css/xadmin.css">
+    <script src="../script/Admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../script/Admin/js/xadmin.js"></script>
+</head>
+<body>
+    <!-- <div class="x-nav">
+        <span class="layui-breadcrumb">
+            <a href="">工作台</a>
+            <a>
+                <cite>我发起的</cite></a>
+        </span>
+        <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
+            <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
+        </a>
+    </div> -->
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body ">
+                        <form class="layui-form layui-col-space5">
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <input class="layui-input" placeholder="投诉时间" name="start" id="start">
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <input class="layui-input" placeholder="投诉人" name="start" id="start">
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <select name="contrller">
+                                    <option>状态</option>
+                                    <option>已处理</option>
+                                    <option>未处理</option>
+                                </select>
+                            </div>
+
+                            <div class="layui-input-inline lafite_search layui-show-xs-block">
+                                <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                                    查询
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="layui-card-body">
+                        <table class="layui-table layui-form ">
+                            <thead>
+                                <tr style="background: #F8E5E5;">
+                                    <th>投诉编号</th>
+                                    <th>投诉标题</th>
+                                    
+                                    <th>投诉人</th>
+                                    <th>电话号码</th>
+                              
+                                    <th>运单号</th>
+                                    <th>留言内容</th>
+                                    <th>角色</th>
+                                    <th>时间</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item,index) in compainList">
+                                    <td>{{item.Tousu_id}}</td>
+                                    <td>{{item.Tousu_title}}</td>
+                                    <td>{{item.Tousu_name}}</td>
+                                    <td>{{item.Contact_number}}</td>
+                                    <td>{{item.role}}</td>
+                                    <td>{{item.Waybill_No}}</td>
+                                    <td>{{item.Tousu_Message}}</td>
+                                    <td>{{item.Tousu_Date}}</td>
+                                    <td class="td-manage">
+                                        <a class="lafitewu_look" title="查看" onclick="xadmin.open('回复','/Admin/Camplaininfor')" href="javascript:;">
+                                            回复
+                                        </a>
+                                        <a class="lafitewu_auditing lafitewu_margin_left_20" title="审核" @@click="member_del(Tousu_id)" href="javascript:;">
+                                            审核
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="layui-card-body ">
+                        <div class="page">
+                            <div>
+                                <a class="prev" href="">&lt;&lt;</a>
+                                <a class="num" href="">1</a>
+                                <span class="current">2</span>
+                                <a class="num" href="">3</a>
+                                <a class="num" href="">489</a>
+                                <a class="next" href="">&gt;&gt;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/script/vue.min.js"></script>
+    <script src="~/script/vue-resource-1.3.4.js"></script>
+    <script>
+        layui.use(['laydate', 'form'],
+            function () {
+                var laydate = layui.laydate;
+
+                //执行一个laydate实例
+                laydate.render({
+                    elem: '#start' //指定元素
+                });
+
+                //执行一个laydate实例
+                laydate.render({
+                    elem: '#end' //指定元素
+                });
+            });
+        /*用户-删除*/
+        var vm = new Vue({
+            el: ".layui-fluid",
+            data: {
+                compainList:[]
+            },
+            mounted() {
+                this.ComplainLiset();
+            } ,
+            methods: {
+                ComplainLiset: function () {
+                    this.$http.get('/Admin/CompainList').then(function (date) {
+                            console.log(date.body)
+                        this.compainList = date.body;
+                        }, function () {
+                            console.log('请求失败处理')
+                        })
+                },
+                member_del: function (id) {
+                    layer.confirm('确认要删除吗？', function () {
+                        $.ajax({
+                            url: "/Admin/ComplainDel",
+                            type: "post",
+                            dataType: "json",
+                            data: { "id": id },
+                            success: function (date) {
+                                if (date.code == 200) {
+                                    vm.ComplainLiset();
+                                    layer.msg('已删除!', {
+                                        icon: 1,
+                                        time: 1000
+                                    });
+                                }
+                            }
+
+                        })
+                    })
+
+
+                }
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>
