@@ -21,8 +21,6 @@ namespace Esubao.Models
         public string Corporate_name { get; set; }
         public string Receiving_address { get; set; }
         public string city_adddress { get; set; }
-        public string xian_address { get; set; }
-        public string address { get; set; }
         public string Address { get; set; }
     }
 }

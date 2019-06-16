@@ -724,6 +724,10 @@
     <Content Include="Views\Admin\UserAdmin.cshtml" />
     <Content Include="Views\Helpe\Jin.cshtml" />
     <Content Include="Views\Helpe\HelpZiLiao.cshtml" />
+    <Content Include="Views\Admin\AdminCompain.cshtml" />
+    <Content Include="Views\Admin\Camplaininfor.cshtml" />
+    <Content Include="Views\Admin\AdminUsergl.cshtml" />
+    <Content Include="Views\Admin\AdminUserAdd.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

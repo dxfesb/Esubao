@@ -35,7 +35,7 @@ namespace Esubao.Controllers.Admin
             }
         }
         /// <summary>
-        /// 咨询与投诉管理数据查询
+        /// 咨询与建议管理数据查询
         /// </summary>
         /// <returns></returns>
         public JsonResult Advicemesslist()
@@ -158,6 +158,74 @@ namespace Esubao.Controllers.Admin
                 }
                 return Json(obj);
             }
+        }
+        /// <summary>
+        /// 投诉信息管理
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult AdminCompain() {
+            return View();
+        }
+        /// <summary>
+        /// 投诉信息展示
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult CompainList() {
+            using (EsuBaoEntities Esubao = new EsuBaoEntities()) {
+                var list = Esubao.Tousus.ToList().Select(c => new {
+                    Tousu_id=c.Tousu_id,
+                    Tousu_Message=c.Tousu_Message,
+                    Tousu_name=c.Tousu_name,
+                    Tousu_title=c.Tousu_title,
+                    Waybill_No=c.Waybill_No,
+                    Tousu_Date= c.Tousu_Date.ToString("yyyy-MM-dd"),
+                    role=c.role,
+                    Contact_number=c.Contact_number
+                    
+                });
+                return Json(list, JsonRequestBehavior.AllowGet);
+            }
+        }
+        /// <summary>
+        /// 投诉信息删除
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public JsonResult ComplainDel(int id) {
+            using (EsuBaoEntities Esubao = new EsuBaoEntities())
+            {
+                var list = Esubao.Tousus.Where(c => c.Tousu_id == id).FirstOrDefault();
+                Esubao.Tousus.Remove(list);
+                int rs = Esubao.SaveChanges();
+                var obj = new { msg = "删除失败", code = 201 };
+                if (rs > 0)
+                {
+                    obj = new { msg = "删除成功", code = 200 };
+                }
+                return Json(obj);
+            }
+        }
+        /// <summary>
+        /// 投诉信息回复
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Camplaininfor() {
+            return View();
+        }
+
+        /// <summary>
+        /// 管理员角色管理
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult AdminUsergl() {
+            return View();
+        }
+        /// <summary>
+        /// 管理员信息展示
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult AdminUserAdd() {
+            return View();
         }
     }
 }
