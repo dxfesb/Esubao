@@ -80,16 +80,29 @@
           <Property Name="Express_number" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Refund_status" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <!--生成过程中发现错误:
-警告 6013: 表/视图“EsuBao.dbo.Tousu”未定义主键，并且无法推断有效的主键。已排除了此表/视图。若要使用实体，将需要检查您的架构、添加正确的键并取消对实体的注释。
+        <EntityType Name="T_replay">
+          <Key>
+            <PropertyRef Name="Replay_id" />
+          </Key>
+          <Property Name="Replay_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Replay_mess" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="advice_id" Type="int" Nullable="false" />
+          <Property Name="Replay_date" Type="date" Nullable="false" />
+          <Property Name="Replay_zt" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="Tousu">
+          <Key>
+            <PropertyRef Name="Tousu_id" />
+          </Key>
+          <Property Name="Tousu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Tousu_title" Type="varchar" MaxLength="50" />
           <Property Name="Tousu_name" Type="varchar" MaxLength="50" />
           <Property Name="role" Type="varchar" MaxLength="50" />
           <Property Name="Contact_number" Type="varchar" MaxLength="50" />
           <Property Name="Waybill_No" Type="varchar" MaxLength="50" />
           <Property Name="Tousu_Message" Type="varchar(max)" />
-        </EntityType>-->
+          <Property Name="Tousu_Date" Type="date" Nullable="false" />
+        </EntityType>
         <EntityType Name="transportation">
           <Key>
             <PropertyRef Name="id" />
@@ -105,7 +118,7 @@
           <Key>
             <PropertyRef Name="User_Id" />
           </Key>
-          <Property Name="User_Id" Type="int" Nullable="false" />
+          <Property Name="User_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="User_uaername" Type="nvarchar" MaxLength="50" />
           <Property Name="User_password" Type="nvarchar" MaxLength="50" />
           <Property Name="User_Name" Type="nvarchar" MaxLength="50" />
@@ -179,6 +192,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_T_replay_ZiXunJianYi">
+          <End Role="ZiXunJianYi" Type="Self.ZiXunJianYi" Multiplicity="1" />
+          <End Role="T_replay" Type="Self.T_replay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZiXunJianYi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="T_replay">
+              <PropertyRef Name="advice_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="EsuBaoModelStoreContainer">
           <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Fahuo" EntityType="Self.Fahuo" Schema="dbo" store:Type="Tables" />
@@ -187,6 +212,8 @@
           <EntitySet Name="T_AdminUser" EntityType="Self.T_AdminUser" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_expreMiss" EntityType="Self.T_expreMiss" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="T_Refund" EntityType="Self.T_Refund" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_replay" EntityType="Self.T_replay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tousu" EntityType="Self.Tousu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="transportation" EntityType="Self.transportation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ZiXunJianYi" EntityType="Self.ZiXunJianYi" Schema="dbo" store:Type="Tables" />
@@ -205,6 +232,10 @@
           <AssociationSet Name="FK_T_Refund_PiLiangXiaDan" Association="Self.FK_T_Refund_PiLiangXiaDan">
             <End Role="order" EntitySet="order" />
             <End Role="T_Refund" EntitySet="T_Refund" />
+          </AssociationSet>
+          <AssociationSet Name="FK_T_replay_ZiXunJianYi" Association="Self.FK_T_replay_ZiXunJianYi">
+            <End Role="ZiXunJianYi" EntitySet="ZiXunJianYi" />
+            <End Role="T_replay" EntitySet="T_replay" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -334,6 +365,7 @@
           <Property Name="Waybill_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="MessDate" Type="DateTime" Precision="0" Nullable="false" />
+          <NavigationProperty Name="T_replay" Relationship="EsuBaoModel.FK_T_replay_ZiXunJianYi" FromRole="ZiXunJianYi" ToRole="T_replay" />
         </EntityType>
         <Association Name="FK_quick_order_Table_2">
           <End Role="transportation" Type="Self.transportation" Multiplicity="0..1" />
@@ -410,7 +442,49 @@
             <End Role="order" EntitySet="orders" />
             <End Role="T_Refund" EntitySet="T_Refund" />
           </AssociationSet>
+          <EntitySet Name="Tousus" EntityType="EsuBaoModel.Tousu" />
+          <EntitySet Name="T_replay" EntityType="EsuBaoModel.T_replay" />
+          <AssociationSet Name="FK_T_replay_ZiXunJianYi" Association="EsuBaoModel.FK_T_replay_ZiXunJianYi">
+            <End Role="ZiXunJianYi" EntitySet="ZiXunJianYis" />
+            <End Role="T_replay" EntitySet="T_replay" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Tousu">
+          <Key>
+            <PropertyRef Name="Tousu_id" />
+          </Key>
+          <Property Name="Tousu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tousu_title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tousu_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contact_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Waybill_No" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Tousu_Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Tousu_Date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="T_replay">
+          <Key>
+            <PropertyRef Name="Replay_id" />
+          </Key>
+          <Property Name="Replay_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Replay_mess" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="advice_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ZiXunJianYi" Relationship="EsuBaoModel.FK_T_replay_ZiXunJianYi" FromRole="T_replay" ToRole="ZiXunJianYi" />
+          <Property Name="Replay_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Replay_zt" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_T_replay_ZiXunJianYi">
+          <End Type="EsuBaoModel.ZiXunJianYi" Role="ZiXunJianYi" Multiplicity="1" />
+          <End Type="EsuBaoModel.T_replay" Role="T_replay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ZiXunJianYi">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="T_replay">
+              <PropertyRef Name="advice_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -540,6 +614,31 @@
                 <ScalarProperty Name="Mail_box" ColumnName="Mail_box" />
                 <ScalarProperty Name="Waybill_No" ColumnName="Waybill_No" />
                 <ScalarProperty Name="Message" ColumnName="Message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tousus">
+            <EntityTypeMapping TypeName="EsuBaoModel.Tousu">
+              <MappingFragment StoreEntitySet="Tousu">
+                <ScalarProperty Name="Tousu_Date" ColumnName="Tousu_Date" />
+                <ScalarProperty Name="Tousu_Message" ColumnName="Tousu_Message" />
+                <ScalarProperty Name="Waybill_No" ColumnName="Waybill_No" />
+                <ScalarProperty Name="Contact_number" ColumnName="Contact_number" />
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="Tousu_name" ColumnName="Tousu_name" />
+                <ScalarProperty Name="Tousu_title" ColumnName="Tousu_title" />
+                <ScalarProperty Name="Tousu_id" ColumnName="Tousu_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_replay">
+            <EntityTypeMapping TypeName="EsuBaoModel.T_replay">
+              <MappingFragment StoreEntitySet="T_replay">
+                <ScalarProperty Name="Replay_zt" ColumnName="Replay_zt" />
+                <ScalarProperty Name="Replay_date" ColumnName="Replay_date" />
+                <ScalarProperty Name="advice_id" ColumnName="advice_id" />
+                <ScalarProperty Name="Replay_mess" ColumnName="Replay_mess" />
+                <ScalarProperty Name="Replay_id" ColumnName="Replay_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

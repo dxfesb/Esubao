@@ -19,6 +19,9 @@
         <AssociationConnector Association="EsuBaoModel.FK_PiLiangXiaDan_transportation" ManuallyRouted="false" />
         <AssociationConnector Association="EsuBaoModel.FK_T_expreMiss_PiLiangXiaDan" ManuallyRouted="false" />
         <AssociationConnector Association="EsuBaoModel.FK_T_Refund_PiLiangXiaDan" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="EsuBaoModel.Tousu" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="EsuBaoModel.T_replay" Width="1.5" PointX="12" PointY="1.25" />
+        <AssociationConnector Association="EsuBaoModel.FK_T_replay_ZiXunJianYi" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

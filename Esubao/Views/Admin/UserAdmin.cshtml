@@ -1,0 +1,220 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>用户列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <link rel="stylesheet" href="../script/Admin/css/font.css">
+    <link rel="stylesheet" href="../script/Admin/css/xadmin.css">
+    <script src="../script/Admin/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="../script/Admin/js/xadmin.js"></script>
+</head>
+<body>
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-body ">
+                        <form class="layui-form layui-col-space5">
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <input type="text" name="username" placeholder="用户名" autocomplete="off" class="layui-input">
+                            </div>
+                            <div class="layui-input-inline layui-show-xs-block">
+                                <select name="contrller">
+                                    <option>用户状态</option>
+                                    <option>支付宝</option>
+                                    <option>微信</option>
+                                    <option>货到付款</option>
+                                </select>
+                            </div>
+                            <div class="layui-input-inline lafite_search layui-show-xs-block">
+                                <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                                    查询
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="layui-card-header">
+                        <a class="layui-btn lafite_main_color" onclick="xadmin.open('新增用户','./adduser.html',600,500)"><i class="layui-icon"></i>新增用户</a>
+                    </div>
+
+                    <div class="layui-card-body">
+                        <table class="layui-table layui-form">
+                            <thead>
+                                <tr style="background: #F8E5E5;">
+                                    <th>用户编号</th>
+                                    <th>登录名</th>
+                                    <th>登录密码</th>
+                                    <th>用户名</th>
+                                    <th>性别</th>
+                                    <th>用户公司名称</th>
+                                    <th>固定电话</th>
+                                    <th>手机号</th>
+                                    <th>邮箱</th>
+                                    <th>所在城市</th>
+                                    <th>状态</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in Userlist">
+                                    <td>{{item.User_Id}}</td>
+                                    <td>{{item.User_uaername}}</td>
+                                    <td>{{item.User_password}}</td>
+                                    <td>{{item.User_Name}}</td>
+                                    <td>{{item.User_Sex}}</td>
+                                    <td>{{item.User_Company}}</td>
+                                    <td>{{item.User_fixedphone}}</td>
+                                    <td>{{item.User_Phone}}</td>
+                                    <td>{{item.User_Email}}</td>
+                                    <td>{{item.User_city}}</td>
+                                    <td>{{item.User_note}}</td>
+                                    <td class="td-manage">
+                                        <a class="lafitewu_auditing" title="编辑" onclick="xadmin.open('编辑','./adduser.html',600,500)" href="javascript:;">
+                                            编辑
+                                        </a>
+                                        <a class="lafitewu_del lafitewu_margin_left_10" title="冻结" href="javascript:;" @@click="Freeze(item.User_Id,item.User_note)" id="userfree">
+                                            {{item.User_status}}
+                                        </a>
+        @*<a class="lafitewu_auditing lafitewu_margin_left_10" title="发布" onclick="member_revoke(this,'确认发布吗？')" href="javascript:;">
+            发布
+        </a>*@ 
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="lafite_pages"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/script/Admin/js/jquery.min.js"></script>
+    <script src="~/script/vue.min.js"></script>
+    <script src="~/script/vue-resource-1.3.4.js"></script>
+    <script>
+        $(function () {
+          
+
+        })
+        layui.use(['laypage', 'laydate', 'form'],
+            function () {
+                var laydate = layui.laydate;
+                var laypage = layui.laypage;
+
+                // 分页样式
+                laypage.render({
+                    elem: 'lafite_pages'
+                    , count: 100
+                    , theme: '#D91715',
+                    jump: function (obj) {
+                        //模拟渲染
+                        console.log(obj);
+                    }
+                });
+
+                //执行一个laydate实例
+                laydate.render({
+                    elem: '#start' //指定元素
+                });
+
+                //执行一个laydate实例
+                laydate.render({
+                    elem: '#end' //指定元素
+                });
+            });
+
+        /*用户-删除*/
+        function member_del(obj, id) {
+            layer.confirm('是否确认删除当前项目？',
+                { title: "项目删除" },
+                function (index) {
+                    //发异步删除数据
+                    $(obj).parents("tr").remove();
+                    layer.msg('已删除!', {
+                        icon: 1,
+                        time: 1000
+                    });
+                });
+        }
+
+        /*用户-撤销*/
+        function member_revoke(obj, id) {
+            layer.confirm('确认冻结吗？',
+                { title: "用户冻结" },
+                function (index) {
+                    //发异步删除数据
+                    // $(obj).parents("tr").remove();
+                    // layer.msg('已删除!', {
+                    //     icon: 1,
+                    //     time: 1000
+                    // });
+                });
+        }
+        var vm = new Vue({
+            el: ".layui-fluid",
+            data: {
+                Userlist: [],
+                Notestatus: "",
+            },
+            mounted() {
+                this.UserList();
+             
+            },
+            methods: {
+                UserList: function () {
+                    this.$http.get('/Admin/UserList').then(function (date) {
+                        console.log(date.body)
+                        this.Userlist = date.body;                      
+                    }, function () {
+                        console.log('请求失败处理')
+                        })
+                },
+                Freeze: function (id, status) {
+                    if (status == "可用") {
+                        this.Notestatus = "不可用";
+                        this.$http.post('/Admin/Freeze', {
+                            id:id,
+                            User_note: this.Notestatus
+                        }, {
+                                emulateJSON: true
+                            }).then(function (date) {
+                                this.msg = "解冻";
+                                this.UserList();
+                            }), function () {
+                                alert('请求失败处理');
+                            }
+                    }
+                    else if (status == "不可用") {
+                        this.Notestatus = "可用";
+                        this.$http.post('/Admin/Freeze', {
+                            id: id,
+                            User_note: this.Notestatus
+                        }, {
+                                emulateJSON: true
+                            }).then(function (date) {
+                                this.msg = "冻结";
+                                this.UserList();
+                            }), function () {
+                                alert('请求失败处理');
+                            }
+                    }
+        
+                }
+
+            }
+        })
+    </script>
+
+</body>
+
+</html>

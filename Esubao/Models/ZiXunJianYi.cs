@@ -14,6 +14,12 @@ namespace Esubao.Models
     
     public partial class ZiXunJianYi
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public ZiXunJianYi()
+        {
+            this.T_replay = new HashSet<T_replay>();
+        }
+    
         public int Id { get; set; }
         public string title { get; set; }
         public string Message_type { get; set; }
@@ -23,5 +29,8 @@ namespace Esubao.Models
         public string Waybill_No { get; set; }
         public string Message { get; set; }
         public System.DateTime MessDate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<T_replay> T_replay { get; set; }
     }
 }

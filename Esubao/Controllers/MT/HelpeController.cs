@@ -67,6 +67,50 @@ namespace Esubao.Controllers.MT
             }
         }
         /// <summary>
+        /// 投诉
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult Complain(Tousu complain)
+        {
+            using (EsuBaoEntities Esubao = new EsuBaoEntities())
+            {
+                complain.Tousu_Date = DateTime.Now.Date;
+                var list = Esubao.Tousus.Add(complain);
+                int rs = Esubao.SaveChanges();
+                var obj = new { msg = "客官，不好意思，系统正在维护", code = 201 };
+                if (rs > 0)
+                {
+                    obj = new { msg = "客官，收到您的建议了喔", code = 200 };
+                }
+                return Json(obj);
+            }
+        } 
+        /// <summary>
+          /// 投诉查询
+          /// </summary>
+          /// <returns></returns>
+        public JsonResult ComplainList()
+        {
+            using (EsuBaoEntities Esubao = new EsuBaoEntities())
+            {
+                var list = Esubao.Tousus.ToList()
+                    .Select(c => new {
+                        Tousu_id = c.Tousu_id,
+                        Tousu_title = c.Tousu_title,
+                        Tousu_name = c.Tousu_name,
+                        role = c.role,
+                        Contact_number = c.Contact_number,
+                        Waybill_No = c.Waybill_No,
+                        Tousu_Date = c.Tousu_Date.ToString("yyyy-MM-dd"),
+                        Tousu_Message = c.Tousu_Message
+                    });
+                return Json(list, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
+        /// <summary>
         /// 留言查询
         /// </summary>
         /// <returns></returns>

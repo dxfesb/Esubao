@@ -127,21 +127,21 @@
                                         <div class="form-row">
                                             <div class="col col-6">
                                                 <div class="field-group">
-                                                    <input type="text" class="mdn-input" placeholder="Placeholder" v-model="advive.title">
+                                                    <input type="text" class="mdn-input" placeholder="Placeholder" v-model="advive.title" required="required">
                                                     <label class="mdn-label"><span style="color:red">*</span>标题</label>
                                                     <span class="mdn-bar"></span>
                                                 </div>
                                             </div><!-- end col-6 --><!-- end col-6 -->
                                             <div class="col col-6">
                                                 <div class="field-group">
-                                                    <input type="text" class="mdn-input" placeholder="Placeholder" v-model="advive.Message_person">
+                                                    <input type="text" class="mdn-input" placeholder="Placeholder" v-model="advive.Message_person" required="required">
                                                     <label class="mdn-label"><span style="color:red">*</span>留言人</label>
                                                     <span class="mdn-bar"></span>
                                                 </div>
                                             </div><!-- end col-6 -->
                                             <div class="col col-6">
                                                 <div class="field-group prepend-icon">
-                                                    <input type="email" class="mdn-input" placeholder="Placeholder" v-model="advive.Contact_number">
+                                                    <input type="email" class="mdn-input" placeholder="Placeholder" v-model="advive.Contact_number" required="required">
                                                     <label class="mdn-label"><span style="color:red">*</span>联系电话</label>
                                                     <span class="mdn-icon"><i class="fa fa-envelope"></i></span>
                                                     <span class="mdn-bar"></span>
@@ -149,7 +149,7 @@
                                             </div>
                                             <div class="col col-6">
                                                 <div class="field-group prepend-icon">
-                                                    <input type="email" class="mdn-input" placeholder="Placeholder" v-model="advive.Mail_box">
+                                                    <input type="email" class="mdn-input" placeholder="Placeholder" v-model="advive.Mail_box" required="required">
                                                     <label class="mdn-label"><span style="color:red">*</span>电子邮箱</label>
                                                     <span class="mdn-icon"><i class="fa fa-envelope"></i></span>
                                                     <span class="mdn-bar"></span>
@@ -157,7 +157,7 @@
                                             </div>
                                             <div class="col col-6">
                                                 <div class="field-group prepend-icon">
-                                                    <input type="email" class="mdn-input" placeholder="Placeholder" v-model="advive.Waybill_No">
+                                                    <input type="email" class="mdn-input" placeholder="Placeholder" v-model="advive.Waybill_No" required="required">
                                                     <label class="mdn-label"><span style="color:red">*</span>运单号</label>
                                                     <span class="mdn-icon"><i class="fa fa-envelope"></i></span>
                                                     <span class="mdn-bar"></span>
@@ -166,7 +166,7 @@
 
                                             <div class="col col-6">
                                                 <div class="field-group prepend-icon">
-                                                    <input type="email" class="mdn-input" placeholder="Placeholder">
+                                                    <input type="email" class="mdn-input" placeholder="Placeholder" required="required">
                                                     <label class="mdn-label"><span style="color:red">*</span>验证码</label>
                                                     <span class="mdn-icon"><i class="fa fa-envelope"></i></span>
                                                     <span class="mdn-bar"></span>
@@ -179,18 +179,16 @@
                                                 <div class="col col-4">
                                                     <div class="mdn-group block-group">
                                                         <label class="mdn-switch">
-                                                            <input type="checkbox" name="advice_type" value="建议" v-model="checkx">
+                                                            <input type="checkbox" name="advicetype" value="建议" >
                                                             <span class="switch-toggle"></span>
                                                             <span class="switch-label">建议</span>
                                                         </label>
-                                                        <label>{{checkx}}</label>
                                                         <label class="mdn-switch">
-                                                            <input type="checkbox" value="咨询" name="advice_type" v-model="checkx1">
+                                                            <input type="checkbox" value="咨询" name="advicetype" >
                                                             <span class="switch-toggle"></span>
                                                             <span class="switch-label">咨询</span>
                                                         </label>
 
-                                                        <label>{{checkx1}}</label>
                                                     </div><!-- mdn-group -->
                                                 </div>
                                             </div><!-- mdn-group -->
@@ -203,7 +201,7 @@
 
                                         <div class="mdn-footer">
                                             <button type="button" @@click="advice_qr" class="mdn-button btn-primary btn-raised">确认，并反馈给速宝</button>
-                                            <button type="button" class="mdn-button btn-primary" disabled>取消</button>
+                                            <button type="button" class="mdn-button btn-primary">取消</button>
                                         </div>
                                     </div>
                                     <div style="width:800px;height:30px;background-color:#F2F5F7;color:#34495E;margin-left:50px;font-size:20px;margin-top:-40px">留言记录</div>
@@ -224,23 +222,6 @@
                                             <div class="reply">回复：亲，本次服务给您带来的不便，向您深表歉意。此单货物22日正常送货办理签收交付手续。时隔多日后现反馈少货问题，无法证实签收时即出现少货情况。如需其他帮助，亲可联系客服热线400-808-6666，我们将竭诚为您服务。</div>
                                         </div>
                                     </div>
-                                    @*<div class="comment_box" style="margin-left:40px;border-bottom:1px dashed #ccc">
-                                        <div class="info">
-                                            <span class="c_info fr" style="margin-left:-50px">2019-05-25</span>
-                                            <div>
-                                                <span class="mr40">姓名：关伟龙</span>
-                                                <span class="mr40">运单号：D1019944</span>
-                                                <span>
-                                                    状态：
-                                                    已处理
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="c_cont">只收到9件货，少了一件</div>
-                                        <div class="reply_box">
-                                            <div class="reply">回复：亲，本次服务给您带来的不便，向您深表歉意。此单货物22日正常送货办理签收交付手续。时隔多日后现反馈少货问题，无法证实签收时即出现少货情况。如需其他帮助，亲可联系客服热线400-808-6666，我们将竭诚为您服务。</div>
-                                        </div>
-                                    </div>*@
                                 </div>
                             </div>
 
@@ -252,21 +233,21 @@
                                         <div class="form-row">
                                             <div class="col col-6">
                                                 <div class="field-group">
-                                                    <input type="text" class="mdn-input" placeholder="Placeholder">
+                                                    <input type="text" class="mdn-input" placeholder="Placeholder" v-model="Tousu.Tousu_title" required="required">
                                                     <label class="mdn-label"><span style="color:red">*</span>标题</label>
                                                     <span class="mdn-bar"></span>
                                                 </div>
                                             </div><!-- end col-6 --><!-- end col-6 -->
                                             <div class="col col-6">
                                                 <div class="field-group">
-                                                    <input type="text" class="mdn-input" placeholder="Placeholder">
+                                                    <input type="text" class="mdn-input" placeholder="Placeholder" v-model="Tousu.Tousu_name" required="required">
                                                     <label class="mdn-label"><span style="color:red">*</span>留言人</label>
                                                     <span class="mdn-bar"></span>
                                                 </div>
                                             </div><!-- end col-6 -->
                                             <div class="col col-6">
                                                 <div class="field-group prepend-icon">
-                                                    <input type="email" class="mdn-input" placeholder="Placeholder">
+                                                    <input type="email" class="mdn-input" placeholder="Placeholder" v-model="Tousu.Contact_number" required="required">
                                                     <label class="mdn-label"><span style="color:red">*</span>联系电话</label>
                                                     <span class="mdn-icon"><i class="fa fa-envelope"></i></span>
                                                     <span class="mdn-bar"></span>
@@ -274,15 +255,7 @@
                                             </div>
                                             <div class="col col-6">
                                                 <div class="field-group prepend-icon">
-                                                    <input type="email" class="mdn-input" placeholder="Placeholder">
-                                                    <label class="mdn-label"><span style="color:red">*</span>电子邮箱</label>
-                                                    <span class="mdn-icon"><i class="fa fa-envelope"></i></span>
-                                                    <span class="mdn-bar"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col col-6">
-                                                <div class="field-group prepend-icon">
-                                                    <input type="email" class="mdn-input" placeholder="Placeholder">
+                                                    <input type="email" class="mdn-input" placeholder="Placeholder" v-model="Tousu.Waybill_No" required="required">
                                                     <label class="mdn-label"><span style="color:red">*</span>运单号</label>
                                                     <span class="mdn-icon"><i class="fa fa-envelope"></i></span>
                                                     <span class="mdn-bar"></span>
@@ -299,7 +272,7 @@
                                             </div><!-- end col-6 -->
                                         </div>
                                         <div class="field-group">
-                                            <textarea class="mdn-textarea" placeholder="Enter Comments"></textarea>
+                                            <textarea class="mdn-textarea" placeholder="Enter Comments" v-model="Tousu.Tousu_Message" required="required" @@blur.prevent="TouBlur"></textarea>
                                             <label class="mdn-label">留言内容</label>
                                             <span class="mdn-bar"></span>
                                         </div>
@@ -329,42 +302,25 @@
                                         </div>
 
                                         <div class="mdn-footer">
-                                            <button type="button" class="mdn-button btn-primary btn-raised">确认，并反馈给速宝</button>
-                                            <button type="button" class="mdn-button btn-primary" disabled>取消</button>
+                                            <button type="button" class="mdn-button btn-primary btn-raised" @@click="complain_qr">确认，并反馈给速宝</button>
+                                            <button type="reset" class="mdn-button btn-primary">取消</button>
                                         </div>
                                         <!-- end mdn-group#F2F5F7 -->
                                     </div>
                                     <div style="width:800px;height:30px;background-color:#F2F5F7;color:#34495E;margin-left:50px;font-size:20px;margin-top:-40px">留言记录</div>
-                                    <div class="comment_box" style="margin-left:40px;border-bottom:1px dashed #ccc">
+                                    <div class="comment_box" style="margin-left:40px;border-bottom:1px dashed #ccc" v-for="item in conplainlist">
                                         <div class="info">
-                                            <span class="c_info fr" style="margin-left:-50px">2019-05-25</span>
+                                            <span class="c_info fr" style="margin-left:-50px">{{item.Tousu_Message}}</span>
                                             <div>
-                                                <span class="mr40">姓名：关伟龙</span>
-                                                <span class="mr40">运单号：D1019944</span>
+                                                <span class="mr40">姓名：{{item.Tousu_name}}</span>
+                                                <span class="mr40">运单号：{{item.Waybill_No}}</span>
                                                 <span>
                                                     状态：
                                                     已处理
                                                 </span>
                                             </div>
                                         </div>
-                                        <div class="c_cont">只收到9件货，少了一件</div>
-                                        <div class="reply_box">
-                                            <div class="reply">回复：亲，本次服务给您带来的不便，向您深表歉意。此单货物22日正常送货办理签收交付手续。时隔多日后现反馈少货问题，无法证实签收时即出现少货情况。如需其他帮助，亲可联系客服热线400-808-6666，我们将竭诚为您服务。</div>
-                                        </div>
-                                    </div>
-                                    <div class="comment_box" style="margin-left:40px;border-bottom:1px dashed #ccc">
-                                        <div class="info">
-                                            <span class="c_info fr" style="margin-left:-50px">2019-05-25</span>
-                                            <div>
-                                                <span class="mr40">姓名：关伟龙</span>
-                                                <span class="mr40">运单号：D1019944</span>
-                                                <span>
-                                                    状态：
-                                                    已处理
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div class="c_cont">只收到9件货，少了一件</div>
+                                        <div class="c_cont">{{item.Tousu_Message}}</div>
                                         <div class="reply_box">
                                             <div class="reply">回复：亲，本次服务给您带来的不便，向您深表歉意。此单货物22日正常送货办理签收交付手续。时隔多日后现反馈少货问题，无法证实签收时即出现少货情况。如需其他帮助，亲可联系客服热线400-808-6666，我们将竭诚为您服务。</div>
                                         </div>
@@ -385,13 +341,12 @@
     <script src="~/script/vue.min.js"></script>
     <script src="~/script/vue-resource-1.3.4.js"></script>
     <script>
-        
+      
         var vm = new Vue({
             el: ".container-fluid",
             data: {
-                checkx: "咨询",
-                checkx1: "建议",
-                listdata:[],
+                listdata: [],
+                conplainlist:[],
                 advive: {
                     title: "",
                     Message_type: "",
@@ -402,15 +357,80 @@
                     Message: ""
 
                 },
+                Tousu: {
+                    Tousu_title: "",
+                    Tousu_name: "",
+                    role: "",
+                    Contact_number: "",
+                    Waybill_No: "",
+                    Tousu_Message: "",
+                    Tousu_Date: ""
+
+                },
             },
             mounted() {
                 this.LeaveMess();
+                this.ConplainList();
             },
             methods: {
+                //取消操作
+                cancel: function () {
+                  
+                },
+                //投诉文本框失焦判断敏感词
+                TouBlur: function () {
+                    this.$http.post('/Helpe/Test', {
+                        content: this.Tousu.Tousu_Message
+                    }, {
+                            emulateJSON: true
+                        }).then(function (date) {
+                            console.log(date);
+                            if (date.body.indexOf("*") != -1) {
+                                alert("您输入的留言包含敏感字符，请重新输入！");
+                                this.advive.Message = "";
+                            }
+
+                        }), function () {
+                            alert('请求失败处理');
+                        }
+                },
+                //投诉内容展示
+                ConplainList: function () {
+                    this.$http.get('/Helpe/ComplainList').then(function (date) {
+                        console.log(date.body)
+                        this.conplainlist = date.body;
+                        console.log(this.conplainlist);
+                    }, function () {
+                        console.log('请求失败处理')
+                    })
+                },
+                //投诉内容添加
+                complain_qr: function () {
+                    var role = $("input[name='radio1']:checked").val();
+                    this.$http.post('/Helpe/Complain', {
+                        Tousu_title: this.Tousu.Tousu_title,
+                        Tousu_name: this.Tousu.Tousu_name,
+                        role: role,
+                        Contact_number: this.Tousu.Contact_number,
+                        Waybill_No: this.Tousu.Waybill_No,
+                        Tousu_Message: this.Tousu.Tousu_Message,
+                        Tousu_Date: this.Tousu.Tousu_Date
+                    }, {
+                            emulateJSON: true
+                        }).then(function (date) {
+                            if (date.body.code == 200) {
+                                alert(date.body.msg);
+                            }
+                        }), function () {
+
+                        }
+                },
+                //咨询与建议内容添加
                 advice_qr: function () {
+                    var neirong = $("input[name='advicetype']:checked").val();
                     this.$http.post('/Helpe/Advicesuggestions', {
                         title: this.advive.title,
-                        Message_type: this.advive.Message_type,
+                        Message_type: neirong,
                         Message_person: this.advive.Message_person,
                         Contact_number: this.advive.Contact_number,
                         Mail_box: this.advive.Mail_box,
@@ -419,12 +439,16 @@
                     }, {
                             emulateJSON: true
                         }).then(function (date) {
-                            console.log(date);
+                            if (date.body.code == 200) {
+                                alert(date.body.msg);
+                            }
 
                         }), function () {
                         
                         }
                 },
+
+                //文本框失焦事件判断敏感词
                 blufn: function () {
                     this.$http.post('/Helpe/Test', {
                         content: this.advive.Message
@@ -441,6 +465,7 @@
                             alert('请求失败处理');
                         }
                 },
+                //留言内容数据展示
                 LeaveMess: function () {
                     this.$http.get('/Helpe/Leavingmess').then(function (date) {
                         console.log(date.body)

@@ -35,5 +35,7 @@ namespace Esubao.Models
         public virtual DbSet<transportation> transportations { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<ZiXunJianYi> ZiXunJianYis { get; set; }
+        public virtual DbSet<Tousu> Tousus { get; set; }
+        public virtual DbSet<T_replay> T_replay { get; set; }
     }
 }
