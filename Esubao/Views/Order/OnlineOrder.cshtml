@@ -13,24 +13,27 @@
 
     <link href="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="~/script/MT/City/Popt.js"></script>
     <script src="~/script/MT/City/city.json.js"></script>
     <script src="~/script/MT/City/citySet.js"></script>
-    <script src="~/script/MT/City/Popt.js"></script>
-   <link href="~/Content/MT/tubiao.css" rel="stylesheet" />
-   <style type="text/css">
-       .aicon-circle-check:before {
-           content: url("../../image/MT/black.png")
-       }
 
-   .aicon-circle-check1:before { content: url("../../image/MT/red.png"); }
-     
-   </style>
+    <link href="~/Content/MT/tubiao.css" rel="stylesheet" />
+    <style type="text/css">
+        .aicon-circle-check:before {
+            content: url("../../image/MT/black.png")
+        }
+
+        .aicon-circle-check1:before {
+            content: url("../../image/MT/red.png");
+        }
+
+    </style>
     <script type="text/javascript">
         $(function () {
             $(".city").click(function (e) {
-                 SelCity(this, e);
+                SelCity(this, e);
             });
-         
+
         })
 
     </script>
@@ -100,7 +103,7 @@
                                             <div class="form-group">
                                                 <div class="col-xs-10">
                                                     <label class="control-label required" for="address">详细地址</label>
-                                                    <input type="text" class="form-control ui-autocomplete-input" name="address" placeholder="请填写所在街道以及详细地址" autocomplete="off" v-model="Fahuo.fa_Detailedaddress">
+                                                    <input type="text" class="form-control " name="address" placeholder="请填写所在街道以及详细地址" autocomplete="off" v-model="Fahuo.fa_Detailedaddress">
                                                 </div>
                                             </div>
                                         </form>
@@ -147,14 +150,14 @@
                                             <div class="form-group">
                                                 <div class="col-xs-10">
                                                     <label class="control-label required" for="address">详细地址</label>
-                                                    <input type="text" class="form-control " name="address" placeholder="请填写所在街道以及详细地址" autocomplete="off" v-model="Shouhuo.shou_Detailedaddress">
+                                                    <input type="text" class="form-control " name="address" placeholder="请填写所在街道以及详细地址" v-model="Shouhuo.shou_Detailedaddress">
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
                                     <div class="form-group">
 
-                                        <a href="javascript:void(0)" class="aicon-circle-check save-address-check maidian fr " data-md-name="点击收件人保存到地址簿" data-md-id="111007">保存到地址簿</a>
+                                        <a href="javascript:void(0)" class="aicon-circle-check save-address-check maidian fr " data-md-name="点击收件人保存到地址簿" data-md-id="111007" >保存到地址簿</a>
                                     </div>
                                     <div class="text-center">
 
@@ -262,7 +265,7 @@
 
                     </div>
                 </div>
-              
+
             </div>
 
         </div>
@@ -270,8 +273,10 @@
         @Html.Partial("Order_Terms")
         @*地址簿*@
         @Html.Partial("AdressBook")
-      
-       
+        @*新增地址*@
+        @Html.Partial("AddRess")
+
+
     </div>
     <script src="~/script/vue.min.js"></script>
 
@@ -334,9 +339,7 @@
                                     this.jkj = "chenggong";
                                 };
                                
-                      })
-                           
-
+                      }) 
                     }
                 }
             }

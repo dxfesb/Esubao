@@ -109,6 +109,7 @@
     <Content Include="image\MT\black.png" />
     <Content Include="image\MT\book.png" />
     <Content Include="image\MT\jsj.png" />
+    <Content Include="image\MT\laji.png" />
     <Content Include="image\MT\location.png" />
     <Content Include="image\MT\red.png" />
     <Content Include="image\MT\Rightarrow.png" />
@@ -404,6 +405,10 @@
     <Content Include="script\css\Zixun.css" />
     <Content Include="script\jquery.carouFredSel-6.0.4-packed.js" />
     <Content Include="script\modernizr.js" />
+    <Content Include="script\MT\City\city.json.js" />
+    <Content Include="script\MT\City\citySet.js" />
+    <Content Include="script\MT\City\jquery.min.js" />
+    <Content Include="script\MT\City\Popt.js" />
     <Content Include="script\MT\css\default.css" />
     <Content Include="script\MT\css\normalize.css" />
     <Content Include="script\MT\demo\foundation\horizontalForm.html" />
@@ -728,6 +733,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\Quequ.cshtml" />
+    <Content Include="Views\Shared\AddRess.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
