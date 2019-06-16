@@ -9045,9 +9045,7 @@ input[name=monthAccount]::-ms-clear {
     content: "\ea18"
 }
 
-.aicon-bs-refused:before {
-    content: "\ea19"
-}
+
 
 .aicon-calculator:before {
     content: "\ea1a"

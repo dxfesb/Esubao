@@ -50,8 +50,7 @@
           <Property Name="Consignoee" Type="varchar" MaxLength="50" />
           <Property Name="mobile" Type="varchar" MaxLength="50" />
           <Property Name="phone" Type="varchar" MaxLength="50" />
-          <Property Name="Corporate_name" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Receiving_address" Type="varchar" MaxLength="50" />
+          <Property Name="Corporate_name" Type="varchar" MaxLength="50" />
           <Property Name="city_adddress" Type="varchar" MaxLength="50" />
           <Property Name="Address" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -290,9 +289,7 @@
           <Property Name="Consignoee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Corporate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Receiving_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="city_adddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Corporate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="T_AdminUser">
@@ -538,8 +535,6 @@
                 <ScalarProperty Name="mobile" ColumnName="mobile" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
                 <ScalarProperty Name="Corporate_name" ColumnName="Corporate_name" />
-                <ScalarProperty Name="Receiving_address" ColumnName="Receiving_address" />
-                <ScalarProperty Name="city_adddress" ColumnName="city_adddress" />
                 </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

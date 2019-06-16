@@ -13,6 +13,9 @@
 .aicon-location:before {
     content: url("../../image/MT/location.png");
 }
+.aicon-bs-refused:before {
+    content: "\ea19"
+}
 /*城市选择插件的样式*/
 * {
     -ms-word-wrap: break-word;
