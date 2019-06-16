@@ -53,8 +53,7 @@
           <Property Name="Corporate_name" Type="varchar" MaxLength="50" />
           <Property Name="Receiving_address" Type="varchar" MaxLength="50" />
           <Property Name="city_adddress" Type="varchar" MaxLength="50" />
-          <Property Name="xian_address" Type="varchar" MaxLength="50" />
-          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="T_AdminUser">
           <Key>
@@ -296,6 +295,7 @@
           <Property Name="city_adddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="xian_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="T_AdminUser">
           <Key>
@@ -534,6 +534,7 @@
           <EntitySetMapping Name="Shouhuos">
             <EntityTypeMapping TypeName="EsuBaoModel.Shouhuo">
               <MappingFragment StoreEntitySet="Shouhuo">
+                <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Express_number" ColumnName="Express_number" />
                 <ScalarProperty Name="Consignoee" ColumnName="Consignoee" />
                 <ScalarProperty Name="mobile" ColumnName="mobile" />
@@ -541,9 +542,7 @@
                 <ScalarProperty Name="Corporate_name" ColumnName="Corporate_name" />
                 <ScalarProperty Name="Receiving_address" ColumnName="Receiving_address" />
                 <ScalarProperty Name="city_adddress" ColumnName="city_adddress" />
-                <ScalarProperty Name="xian_address" ColumnName="xian_address" />
-                <ScalarProperty Name="address" ColumnName="address" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="T_AdminUser">

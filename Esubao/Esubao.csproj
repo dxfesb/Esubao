@@ -105,6 +105,13 @@
     <Content Include="Content\MT\tubiao.css" />
     <Content Include="Content\MT\XiaDan.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="image\MT\black.png" />
+    <Content Include="image\MT\book.png" />
+    <Content Include="image\MT\jsj.png" />
+    <Content Include="image\MT\location.png" />
+    <Content Include="image\MT\red.png" />
+    <Content Include="image\MT\Rightarrow.png" />
+    <Content Include="image\MT\zhineng.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -715,6 +722,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Admin\Adviceinfor.cshtml" />
     <Content Include="Views\Admin\UserAdmin.cshtml" />
+    <Content Include="Views\Helpe\Jin.cshtml" />
+    <Content Include="Views\Helpe\HelpZiLiao.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

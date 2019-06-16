@@ -23,5 +23,6 @@ namespace Esubao.Models
         public string city_adddress { get; set; }
         public string xian_address { get; set; }
         public string address { get; set; }
+        public string Address { get; set; }
     }
 }
