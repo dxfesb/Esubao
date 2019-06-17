@@ -51,6 +51,7 @@
           <Property Name="mobile" Type="varchar" MaxLength="50" />
           <Property Name="phone" Type="varchar" MaxLength="50" />
           <Property Name="Corporate_name" Type="varchar" MaxLength="50" />
+          <Property Name="Receiving_address" Type="varchar" MaxLength="50" />
           <Property Name="city_adddress" Type="varchar" MaxLength="50" />
           <Property Name="Address" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -291,6 +292,7 @@
           <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Corporate_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Receiving_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="T_AdminUser">
           <Key>
@@ -529,6 +531,7 @@
           <EntitySetMapping Name="Shouhuos">
             <EntityTypeMapping TypeName="EsuBaoModel.Shouhuo">
               <MappingFragment StoreEntitySet="Shouhuo">
+                <ScalarProperty Name="Receiving_address" ColumnName="Receiving_address" />
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Express_number" ColumnName="Express_number" />
                 <ScalarProperty Name="Consignoee" ColumnName="Consignoee" />
