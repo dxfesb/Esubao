@@ -19,6 +19,8 @@
     @*bootstrap引用*@
     <script src="~/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <link href="/script/bootstrap-3.3.7-dist/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/script/Nav/jquery.min.js"></script>
+    <script src="~/script/Nav/yyui.js"></script>
     <style>
         #bodyPage {
             width: 100%;
@@ -112,41 +114,95 @@
                 font-size: 30px;
                 margin-top: 10px;
             }
+
         .yiji {
-        
-        position:relative;
-        
+            position: relative;
         }
+
         .lis > li {
-        text-align:center;
-        font-size:15px;
-        height:50px
+            text-align: center;
+            font-size: 15px;
+            height: 50px
         }
+
         .lis {
             display: none;
             width: 100px;
             height: 150px;
-            position:absolute;
-            background-color:white;
+            position: absolute;
+            background-color: white;
         }
-        .lis > li a{
-           text-decoration:none;
+
+            .lis > li a {
+                text-decoration: none;
+            }
+
+        .yyui_menu1 {
+            height: 35px;
+            line-height: 35px;
+            font-size: 15px;
+            background-color: #f2f2f2;
         }
+
+            .yyui_menu1 li {
+                float: left;
+                position: relative;
+            }
+                /*这一级是导航*/
+                .yyui_menu1 li a {
+                    display: block;
+                    text-decoration: none;
+                   line-height:30px;
+                    padding: 0px 20px;
+                    color: #333333;
+                }
+
+                    .yyui_menu1 li a:hover {
+                        background: #7c74c1;
+                    }
+
+                    .yyui_menu1 li a.more:after {
+                        content: " »";
+                    }
+
+                .yyui_menu1 li ul {
+                    height: 180px;
+                    float: left;
+                    border: 1px solid #D2D2D2;
+                    display: none;
+                    background-color: #FFFfff;
+                    z-index: 9999;
+                }
+                    /*这是第二级菜单*/
+                    .yyui_menu1 li ul a {
+                        text-decoration: none;
+                        color: #333333;
+                        line-height: 20px;
+                        width: 100px;
+                        height: 20px;
+                    }
+
+                        .yyui_menu1 li ul a:hover {
+                            background: #f2f2f2;
+                        }
+
+                    .yyui_menu1 li ul ul {
+                    }
     </style>
 </head>
 <body>
     <div id="bodyPage">
         <img src="~/image/20190430-banner-PC-CN-BANNER副本.jpg" />
         @*<div class="shutter">
-            <div class="shutter-img">
-                <a href="#" data-shutter-title="Iron Man"><img src="~/image/20190430-banner-PC-CN-BANNER副本.jpg" /></a>
-                <a href="#" data-shutter-title="Iron Man"> <img src="~/image/20190430-Heavy-Freight-Banner-PC-CN.jpg" alt="#"  /></a>
-            </div>
-            <ul class="shutter-btn">
-                <li class="prev"></li>
-                <li class="next"></li>
-            </ul>
-        </div>*@
+                <div class="shutter-img">
+                    <a href="#" data-shutter-title="Iron Man"><img src="~/image/20190430-banner-PC-CN-BANNER副本.jpg" /></a>
+                    <a href="#" data-shutter-title="Iron Man"> <img src="~/image/20190430-Heavy-Freight-Banner-PC-CN.jpg" alt="#"  /></a>
+                </div>
+                <ul class="shutter-btn">
+                    <li class="prev"></li>
+                    <li class="next"></li>
+                </ul>
+            </div>*@
     </div>
     <div class="container-fluid">
         <div class="row">
@@ -156,11 +212,11 @@
                 </div>
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-top:18px">
                     <nav class="nav navbar-form">
-                        <ul class="nav  navbar-nav licor">
+                        <ul class="nav  navbar-nav licor yyui_menu1">
                             <li>
                                 <a href="/Home_page/home_page">首页</a>
                             </li>
-                            <li onmouseover="onOver(this)" onmouseout="onOut(this)" class="yiji">
+                            <li class="yiji">
                                 <a>我的速宝</a>
                                 <ul class="lis">
                                     <li><a href="/Order/OnlineOrder">网上下单</a></li>
@@ -168,16 +224,16 @@
                                     <li><a href="/Sheji/Ziliao">我的资料管理</a></li>
                                 </ul>
                             </li>
-                            <li onmouseover="onOver(this)" onmouseout="onOut(this)" class="yiji">
+                            <li class="yiji">
                                 <a>自助服务</a>
-                                <ul class="lis">
+                                <ul class="lis" onmousemove="aa()">
                                     <li><a href="/Logisticstracking/Logisticstrakcing">货物跟踪</a></li>
                                     <li><a href="">网点查询</a></li>
                                     <li><a href="/Logisticstracking/PriceTime">价格时效查询</a></li>
                                     <li><a href="">订单查询</a></li>
                                 </ul>
                             </li>
-                            <li onmouseover="onOver(this)" onmouseout="onOut(this)" class="yiji">
+                            <li>
                                 <a>帮助与支持</a>
                                 <ul class="lis">
                                     <li><a href="/Helpe/HelpeIndex">禁运品</a></li>
@@ -185,7 +241,7 @@
                                     <li><a href="/Helpe/HelpZiXun">咨询与建议</a></li>
                                 </ul>
                             </li>
-                            <li onmouseover="onOver(this)" onmouseout="onOut(this)">
+                            <li>
                                 <a href="#">关于速宝</a>
                                 <ul class="lis">
                                     <li><a href="/Sheji/Guanyu">速宝概述</a></li>
@@ -223,32 +279,32 @@
             </div>
         </div>@*功能导航*@
         @*<div class="row" style="height:50vh">
-            <div class="col-lg-4 operation"></div>
-            <div class="col-lg-4 operation">
-                <h3>E速宝业务流程</h3>
-                <p>基于物流   融通金融  流通商业</p>
-                <hr style="height:1px;border:none;border-top:1px dashed #000000" />
-                <div class="col-lg-6">
-                    <img class="col-lg-12" src="~/image/lengyunbusiness-img2.jpg" />
-                    <div class="div_p">
-                        <span class="ly">
-                            冷运服务
-                        </span>
-                        <p></p><p>E速宝依托强大的温控管理系统，为食品&amp;医药冷链客户提供专业的冷运服务。</p><p></p>
+                <div class="col-lg-4 operation"></div>
+                <div class="col-lg-4 operation">
+                    <h3>E速宝业务流程</h3>
+                    <p>基于物流   融通金融  流通商业</p>
+                    <hr style="height:1px;border:none;border-top:1px dashed #000000" />
+                    <div class="col-lg-6">
+                        <img class="col-lg-12" src="~/image/lengyunbusiness-img2.jpg" />
+                        <div class="div_p">
+                            <span class="ly">
+                                冷运服务
+                            </span>
+                            <p></p><p>E速宝依托强大的温控管理系统，为食品&amp;医药冷链客户提供专业的冷运服务。</p><p></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img class="col-lg-12" src="~/image/business-wl3.jpg" />
+                        <div class="div_p">
+                            <span>
+                                仓储服务
+                            </span>
+                            <p></p><p>E速宝依托自身强大运输网络资源，为电商客户打造的一站式物流服务。</p><p></p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <img class="col-lg-12" src="~/image/business-wl3.jpg" />
-                    <div class="div_p">
-                        <span>
-                            仓储服务
-                        </span>
-                        <p></p><p>E速宝依托自身强大运输网络资源，为电商客户打造的一站式物流服务。</p><p></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 operation"></div>
-        </div>*@
+                <div class="col-lg-4 operation"></div>
+            </div>*@
         <div class="row">
             <div class="col-lg-12 div_fool">
                 <div class="col-lg-2"></div>
@@ -287,31 +343,35 @@
     </div>
 
     @*<script src="~/script/PicLb/jquery.min.js"></script>
-    <script src="~/script/PicLb/shutter.js"></script>
-    <script src="~/script/PicLb/velocity.js"></script>
-    <script>
-        $(function () {
-            $('.shutter').shutter({
-                shutterW: 1300, // 容器宽度
-                shutterH: 608, // 容器高度
-                isAutoPlay: true, // 是否自动播放
-                playInterval: 3000, // 自动播放时间
-                curDisplay: 3, // 当前显示页
-                fullPage: false // 是否全屏展示
+        <script src="~/script/PicLb/shutter.js"></script>
+        <script src="~/script/PicLb/velocity.js"></script>
+        <script>
+            $(function () {
+                $('.shutter').shutter({
+                    shutterW: 1300, // 容器宽度
+                    shutterH: 608, // 容器高度
+                    isAutoPlay: true, // 是否自动播放
+                    playInterval: 3000, // 自动播放时间
+                    curDisplay: 3, // 当前显示页
+                    fullPage: false // 是否全屏展示
+                });
             });
-        });
-    </script>*@
+        </script>*@
 
-<script>
-      function onOver(obj){
-            var sub_url=obj.getElementsByTagName("ul")
-            sub_url[0].style.display="block";
-        }
-        function onOut(obj){
-            var sub_url=obj.getElementsByTagName("ul")
-            sub_url[0].style.display="none";
-        }
-</script>
+    @*<script>
+              function onOver(obj){
+                  var sub_url = obj.getElementsByTagName("ul");
+                    sub_url[0].style.display="block";
+                }
+                function onOut(obj){
+                    var sub_url=obj.getElementsByTagName("ul")
+                    sub_url[0].style.display="none";
+            }
+
+        </script>*@
+    <script type="text/javascript">
+        yyui_menu('.yyui_menu1');
+    </script>
 </body>
 </html>
 
