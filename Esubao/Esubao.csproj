@@ -588,6 +588,8 @@
     <Content Include="script\MT\vendor\jquery\jquery.min.js" />
     <Content Include="script\MT\vendor\moment.js" />
     <Content Include="script\MT\vendor\typeahead.jquery.js" />
+    <Content Include="script\Nav\jquery.min.js" />
+    <Content Include="script\Nav\yyui.js" />
     <Content Include="script\require.js" />
     <Content Include="script\vue-resource-1.3.4.js" />
     <Content Include="script\vue.min.js" />
