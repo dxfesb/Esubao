@@ -728,6 +728,7 @@
     <Content Include="Views\Sheji\Jieshao.cshtml" />
     <Content Include="Views\Sheji\Jingyun.cshtml" />
     <Content Include="Views\Sheji\Ziliao.cshtml" />
+    <Content Include="Views\Helpe\Jin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
