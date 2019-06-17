@@ -21,9 +21,12 @@
 
 </head>
 <body>
+   
     <div id="app">
+        <div style="margin-top:30px">@Html.Partial("Esubaohead")</div>
         <div class="dynamic_content_wrapper">
-            <div class="dynamic_content">
+            <div class="dynamic_content" style="margin-top:100px">
+
                 <div id="function">
                     <div class="order-page" style="min-height: 0px;">
                         <div class="order-service ui-front">
@@ -82,7 +85,7 @@
                                                                     <label class="control-label required" for="location">省市区</label>
                                                                     <div class="detail-location-input" data-max-level="4" data-hide-globe="true">
                                                                         <input type="text" class="form-control origins ui-autocomplete-input city" name="location" placeholder="请选择所在地区，例如：广东省－深圳市－福田区" autocomplete="off">
-                                                                       
+
                                                                     </div>
                                                                 </div>
                                                                 <a class="getNearbyAddress aicon-location maidian" data-md-name="点击省市区后地标" data-md-id="OWF010103" href="javascript:void(0)"></a>
@@ -139,7 +142,7 @@
                                                                             <label class="control-label required" for="location">省市区</label>
                                                                             <div class="detail-location-input" data-max-level="4" data-hide-globe="true">
                                                                                 <input type="text" class="form-control dests ui-autocomplete-input city" name="location" placeholder="请选择所在地区，例如：广东省－深圳市－福田区" autocomplete="off">
-                                                                               
+
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -214,7 +217,7 @@
                                                                 </div>
                                                             </div>
                                                             <div class="show-by-self warm-reminder">下单后可打印电子运单二维码，向收派员或到顺丰服务点出示二维码，扫码后快速寄件</div>
-                                                           
+
                                                             <div class="warm-reminder-wrapper"></div>
                                                             <!-- 快递产品 --><label class="control-label required">快递产品</label>
                                                             <div class="product-wrapper">
@@ -241,15 +244,16 @@
                                                                             <span class="aicon-right"></span>
                                                                             <span class="angle"></span>
                                                                             <dl>
-                                                                            <dt>
-                                                                                <span class="currency">￥</span>
-                                                                                <span class="rate">23</span>
-                                                                                <span class="up">起</span>
+                                                                                <dt>
+                                                                                    <span class="currency">￥</span>
+                                                                                    <span class="rate">23</span>
+                                                                                    <span class="up">起</span>
                                                                                 </dt>
-                                                                            <dd><p>预计 周三 12:00 前</p>
+                                                                                <dd>
+                                                                                    <p>预计 周三 12:00 前</p>
                                                                                 </dd>
-                                                                            <dd>
-                                                                                <p>截单时间：21:00</p>
+                                                                                <dd>
+                                                                                    <p>截单时间：21:00</p>
                                                                                 </dd>
                                                                             </dl>
                                                                         </a>
@@ -380,24 +384,27 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12"> @Html.Partial("Esubaofool");</div>
+        </div>
     </div>
-    <script src="~/script/vue.min.js"></script>
-    <script type="text/javascript">
-        var app = new Vue({
-            el: "#app",
-            data: {
-                jkj: 'ji',
-                //批量下单步骤页面跳转
-                active: "active",
-                active2: "",
-                active3: "",
-                active4: ""
-            },
-            methods: {
-               
-            }
-        })
-    </script>
+<script src="~/script/vue.min.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+        el: "#app",
+        data: {
+            jkj: 'ji',
+            //批量下单步骤页面跳转
+            active: "active",
+            active2: "",
+            active3: "",
+            active4: ""
+        },
+        methods: {
+
+        }
+    })
+</script>
 </body>
 
 </html>

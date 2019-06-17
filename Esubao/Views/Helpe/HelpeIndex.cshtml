@@ -95,21 +95,22 @@
 <body>
     <div id="app">
         @*<div class="daohang">
-                <div class="container row">
-                    <div class="col-md-3">
-                        <h3>帮助与支持</h3>
-                        <ul class="list-group">
-                            <li class="list-group-item">常见答疑</li>
-                            <li class="list-group-item">资料下载中心</li>
-                            <li class="list-group-item">咨询/投诉/建议</li>
-                            <li class="list-group-item">在线客服</li>
-                            <li class="list-group-item"><a href="Jin">禁运品</a></li>
-                        </ul>
-                    </div>
+            <div class="container row">
+                <div class="col-md-3">
+                    <h3>帮助与支持</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">常见答疑</li>
+                        <li class="list-group-item">资料下载中心</li>
+                        <li class="list-group-item">咨询/投诉/建议</li>
+                        <li class="list-group-item">在线客服</li>
+                        <li class="list-group-item"><a href="Jin">禁运品</a></li>
+                    </ul>
                 </div>
-            </div>*@
+            </div>
+        </div>*@
         @*整个页面的宽度*@
-        <div id="kuan" style="height:auto">
+       @Html.Partial("Esubaohead")
+        <div id="kuan" style="margin:auto">
             <div class="container">
                 @*标题图片*@
                 <div id="img"> <img src="~/image/help_banner .jpg" /> </div>
@@ -122,7 +123,7 @@
                             <button type="submit" class=" btn btn-success">提交</button>
                         </form>
                     </div>
-                    <div class="questions" id="questions" >
+                    <div class="questions" id="questions">
                         <ul class="unstyled" v-for="item in dayi">
                             <li>
                                 <div class="question">
@@ -137,6 +138,7 @@
                 </div>
             </div>
         </div>
+        @Html.Partial("Esubaofool")
     </div>
     <script type="text/javascript">
         var app = new Vue({

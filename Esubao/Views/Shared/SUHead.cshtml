@@ -1,0 +1,70 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SUHead</title>
+    <link href="~/Scripts/headpage.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color:#ffffff">
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 ">
+                    <a style="font-size:8vh;font-family:'AR BERKLEY';text-decoration:none;color:#23527c; margin-left:30px;line-height:15vh;">E速宝</a>
+                </div>
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10" style="margin-top:18px">
+                    <nav class="nav navbar-form">
+                        <ul class="nav  navbar-nav licor">
+                            <li>
+                                <a href="/Home_page/home_page">首页</a>
+                            </li>
+                            <li onmouseover="onOver(this)" onmouseout="onOut(this)" class="yiji">
+                                <a>我的速宝</a>
+                                <ul class="lis">
+                                    <li><a href="/Order/OnlineOrder">网上下单</a></li>
+                                    <li><a href="/Order/bulkOrder">批量下单</a></li>
+                                    <li><a href="">我的资料管理</a></li>
+                                </ul>
+                            </li>
+                            <li onmouseover="onOver(this)" onmouseout="onOut(this)" class="yiji">
+                                <a>自助服务</a>
+                                <ul class="lis">
+                                    <li><a href="/Logisticstracking/Logisticstrakcing">货物跟踪</a></li>
+                                    <li><a href="">网点查询</a></li>
+                                    <li><a href="/Logisticstracking/PriceTime">价格时效查询</a></li>
+                                    <li><a href="">订单查询</a></li>
+                                </ul>
+                            </li>
+                            <li onmouseover="onOver(this)" onmouseout="onOut(this)" class="yiji">
+                                <a>帮助与支持</a>
+                                <ul class="lis">
+                                    <li><a href="/Helpe/HelpeIndex">禁运品</a></li>
+                                    <li><a href="">常见答疑</a></li>
+                                    <li><a href="/Helpe/HelpZiXun">咨询与建议</a></li>
+                                </ul>
+                            </li>
+                            <li onmouseover="onOver(this)" onmouseout="onOut(this)">
+                                <a href="#">关于速宝</a>
+                                <ul class="lis">
+                                    <li><a href="">速宝概述</a></li>
+                                    <li><a href="">速宝新闻</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div style="float:right;position:absolute; top:25px;right:0px;">
+                        <a href="/Login/LoginIndex" style="color:#000000">快速登录</a>/
+                        <a href="/Registers/Registration_page" style="color:#000000">注册</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

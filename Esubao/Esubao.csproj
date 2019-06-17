@@ -109,6 +109,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\headpage.css" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -600,6 +601,7 @@
     <Compile Include="Controllers\DXF\LogisticstrackingController.cs" />
     <Compile Include="Controllers\LWJ\BootController.cs" />
     <Compile Include="Controllers\LWJ\HomeController.cs" />
+    <Compile Include="Controllers\LWJ\MyforController.cs" />
     <Compile Include="Controllers\LWJ\ShejiController.cs" />
     <Compile Include="Controllers\MT\HelpeController.cs" />
     <Compile Include="Controllers\MT\HelperController.cs" />
@@ -721,6 +723,7 @@
     <Content Include="Views\Admin\Adviceinfor.cshtml" />
     <Content Include="Views\Admin\UserAdmin.cshtml" />
     <Content Include="Views\Registers\Registration_page.cshtml" />
+    <Content Include="Views\Shared\SUHead.cshtml" />
     <Content Include="Views\Sheji\Guanyu.cshtml" />
     <Content Include="Views\Sheji\Jieshao.cshtml" />
     <Content Include="Views\Sheji\Jingyun.cshtml" />
