@@ -274,6 +274,7 @@
         @Html.Partial("Esubaofool")
 
     </div>
+  
     <script src="~/script/vue.min.js"></script>
 
     <script src="~/script/vue-resource-1.3.4.js"></script>
@@ -281,24 +282,24 @@
         var app = new Vue({
             el: "#app",
             data: {
-                jkj:"xia",
+                jkj: "xia",
                 aicon_circle_check: "aicon-circle-check",//我同意之前和保存到地址簿的图标样式
-                Express_number:"",
+                Express_number: "",
                 Fahuo: {
-                fa_name: "",//发货人姓名
-                fa_company: "", //发货人公司
-                fa_Mobilephone: "",//发货人手机号
-                fa_Fixednumber: "",//发货人固定号码
-                fa_city: "",//发货人城市
-                 fa_Detailedaddress: "",//发货人详细地址
+                    fa_name: "",//发货人姓名
+                    fa_company: "", //发货人公司
+                    fa_Mobilephone: "",//发货人手机号
+                    fa_Fixednumber: "",//发货人固定号码
+                    fa_city: "",//发货人城市
+                    fa_Detailedaddress: "",//发货人详细地址
                 },
                 Shouhuo: {
-                shou_name: "",//收货人姓名
-                shou_company: "",//收货人公司
-                shou_Mobilephone: "",//收货人手机号
-                shou_Fixednumber: "",//收货人固定号码
-                shou_city: "",//收货人城市
-                shou_Detailedaddress: ""//收货人详细地址
+                    shou_name: "",//收货人姓名
+                    shou_company: "",//收货人公司
+                    shou_Mobilephone: "",//收货人手机号
+                    shou_Fixednumber: "",//收货人固定号码
+                    shou_city: "",//收货人城市
+                    shou_Detailedaddress: ""//收货人详细地址
                 }
 
             },
@@ -329,14 +330,14 @@
                             }).then(res => {
                                 // 响应成功回调
                                 if (res.body != null) {
-                                    
+
                                     this.Express_number = res.body;
-                                 
+
                                     this.jkj = "chenggong";
                                 };
-                               
-                      })
-                           
+
+                            })
+
 
                     }
                 }
