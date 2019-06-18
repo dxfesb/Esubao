@@ -2651,7 +2651,6 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     right: 0;
     bottom: 0;
     left: 0;
-    z-index: 1040
 }
 
     .modal.fade .modal-dialog {
@@ -2676,7 +2675,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     margin-right: auto;
     width: auto;
     padding: 10px;
-    z-index: 1050
+ 
 }
 
 .modal-content {
@@ -2691,15 +2690,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
     outline: 0
 }
 
-.modal-backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1030;
-    background-color: #000
-}
+
 
     .modal-backdrop.fade {
         opacity: 0
@@ -24532,6 +24523,7 @@ html #layuicss-layer {
 }
 
 .layui-layer-content {
+    z-index:1049;
     position: relative
 }
 
@@ -24564,7 +24556,7 @@ html #layuicss-layer {
     cursor: move;
     opacity: 0;
     background-color: #fff;
-    z-index: 2147483647
+  
 }
 
 .layui-layer-resize {

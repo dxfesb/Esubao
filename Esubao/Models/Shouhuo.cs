@@ -20,5 +20,6 @@ namespace Esubao.Models
         public string phone { get; set; }
         public string Corporate_name { get; set; }
         public string Address { get; set; }
+        public string Receiving_address { get; set; }
     }
 }
